@@ -1,27 +1,18 @@
 <script>
-	import PageSpace from '$shared/PageSpace.svelte'
-	import PageHeading from '$shared/PageHeading.svelte'
-
 	export let title = ''
-	export let tabTitle = title
 
 	if (title) {
-		tabTitle = `${tabTitle} | Skeptical Goose`
+		title = `${title} | Svelte GDS Design System`
 	} else {
-		tabTitle = 'Skeptical Goose'
+		title = 'Svelte GDS Design System'
 	}
 </script>
 
 <svelte:head>
-	<title>{tabTitle}</title>
+	<title>{title}</title>
 </svelte:head>
 
 <main class="main">
-	{#if title}
-		<PageSpace xs />
-		<PageHeading>{title}</PageHeading>
-		<PageSpace md />
-	{/if}
 	<slot />
 </main>
 

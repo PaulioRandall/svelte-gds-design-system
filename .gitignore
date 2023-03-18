@@ -6,3 +6,6 @@ node_modules
 .env
 .env.*
 !.env.example
+**/govuk-frontend*
+/static/assets
+!govuk-frontend*.sh

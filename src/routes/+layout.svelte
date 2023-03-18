@@ -1,5 +1,6 @@
 <script>
-	import Header from '$shared/Header.svelte'
+	import Header from '$govuk/Header.svelte'
+	import Footer from '$govuk/Footer.svelte'
 </script>
 
 <div class="page">
@@ -8,10 +9,12 @@
 	<slot>
 		<div></div>
 	</slot>
+
+	<Footer />
 </div>
 
 <style>
-	@import '$routes/styles.css';
+	@import '$govuk/govuk-frontend-4.5.0.min.css';
 
 	.page {
 		display: flex;

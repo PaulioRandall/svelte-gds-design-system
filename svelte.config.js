@@ -8,6 +8,7 @@ export default {
 		alias: {
 			$routes: path.resolve('./src/routes'),
 			$shared: path.resolve('./src/lib'),
+			$govuk: path.resolve('./src/lib/govuk'),
 		},
 	},
 	preprocess: [importAssets()],

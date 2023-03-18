@@ -12,8 +12,6 @@ const testForStatus = (path, status) =>
 
 const routes = [
 	{ path: '/', status: 200 },
-	{ path: '/copyright', status: 200 },
-	{ path: '/tutorial', status: 200 },
 	{ path: '/error', status: 404 },
 ]
 
