@@ -1,14 +1,18 @@
 <script>
 	import Header from '$govuk/Header.svelte'
 	import Footer from '$govuk/Footer.svelte'
+	import HiddenTabLinkToMain from '$govuk/HiddenTabLinkToMain.svelte'
 </script>
 
 <div class="page">
-	<Header />
+	<HiddenTabLinkToMain />
+	<Header homePage="/home" />
 
-	<slot>
-		<div></div>
-	</slot>
+	<div class="content">
+		<slot>
+			<div></div>
+		</slot>
+	</div>
 
 	<Footer />
 </div>
@@ -20,9 +24,10 @@
 		display: flex;
 		flex-direction: column;
 
-		align-items: center;
-		justify-content: center;
-
 		min-height: 100vh;
+	}
+
+	.content {
+		flex-grow: 1;
 	}
 </style>

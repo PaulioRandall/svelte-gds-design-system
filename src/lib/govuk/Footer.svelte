@@ -33,9 +33,3 @@
 		</div>
 	</div>
 </footer>
-
-<style>
-	footer {
-		width: 100%;
-	}
-</style>

@@ -1,4 +1,6 @@
 <script>
+	import PhaseBanner from '$govuk/PhaseBanner.svelte'
+
 	export let title = ''
 
 	if (title) {
@@ -12,15 +14,7 @@
 	<title>{title}</title>
 </svelte:head>
 
-<main class="main">
+<div class="govuk-width-container">
+	<PhaseBanner feedbackTo="/feedback" />
 	<slot />
-</main>
-
-<style>
-	.main {
-		flex-grow: 1;
-
-		max-width: 100%;
-		width: 100%;
-	}
-</style>
+</div>

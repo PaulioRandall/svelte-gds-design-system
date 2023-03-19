@@ -9,7 +9,11 @@
 		%sveltekit.head%
 	</head>
 
-	<body style="margin: 0">
+	<body class="govuk-template__body">
+		<script>
+			document.body.className = document.body.className + ' js-enabled'
+		</script>
+
 		<div id="top" style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

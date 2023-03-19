@@ -1,7 +1,13 @@
+<script>
+	export let homePage = '/'
+</script>
+
 <header class="govuk-header " role="banner" data-module="govuk-header">
 	<div class="govuk-header__container govuk-width-container">
 		<div class="govuk-header__logo">
-			<a href="#" class="govuk-header__link govuk-header__link--homepage">
+			<a
+				href="{homePage}"
+				class="govuk-header__link govuk-header__link--homepage">
 				<span class="govuk-header__logotype">
 					<!--[if gt IE 8]><!-->
 					<svg
@@ -28,9 +34,3 @@
 		</div>
 	</div>
 </header>
-
-<style>
-	header {
-		width: 100%;
-	}
-</style>
