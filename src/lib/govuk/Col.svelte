@@ -19,28 +19,48 @@
 	export let quarter_desktop = false
 	export let one_quarter_desktop = quarter_desktop
 
-	const noneSelected =
-		!full &&
-		!three_quarters &&
-		!two_thirds &&
-		!half &&
-		!one_half &&
-		!third &&
-		!one_third &&
-		!quarter &&
-		!one_quarter &&
-		!full_desktop &&
-		!three_quarters_desktop &&
-		!two_thirds_desktop &&
-		!half_desktop &&
-		!one_half_desktop &&
-		!third_desktop &&
-		!one_third_desktop &&
-		!quarter_desktop &&
-		!one_quarter_desktop
+	const countTruthy = (...values) => {
+		let n = 0
 
-	if (noneSelected) {
+		for (const v of values) {
+			if (!!v) {
+				n++
+			}
+		}
+
+		return n
+	}
+
+	const selectedCount = countTruthy(
+		full,
+		three_quarters,
+		two_thirds,
+		half,
+		one_half,
+		third,
+		one_third,
+		quarter,
+		one_quarter
+	)
+
+	const desktopSelectedCount = countTruthy(
+		full_desktop,
+		three_quarters_desktop,
+		two_thirds_desktop,
+		half_desktop,
+		one_half_desktop,
+		third_desktop,
+		one_third_desktop,
+		quarter_desktop,
+		one_quarter_desktop
+	)
+
+	if (selectedCount + desktopSelectedCount === 0) {
 		throw new Error('You must specify a column width')
+	} else if (selectedCount > 1) {
+		throw new Error('You cannot spcify more than one standard width')
+	} else if (desktopSelectedCount > 1) {
+		throw new Error('You cannot spcify more than one desktop width')
 	}
 </script>
 

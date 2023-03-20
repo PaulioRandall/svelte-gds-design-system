@@ -12,19 +12,34 @@
 	export let quarter = false
 	export let one_quarter = quarter
 
-	const noneSelected =
-		!full &&
-		!three_quarters &&
-		!two_thirds &&
-		!half &&
-		!one_half &&
-		!third &&
-		!one_third &&
-		!quarter &&
-		!one_quarter
+	const countTruthy = (...values) => {
+		let n = 0
 
-	if (noneSelected) {
+		for (const v of values) {
+			if (!!v) {
+				n++
+			}
+		}
+
+		return n
+	}
+
+	const selectedCount = countTruthy(
+		full,
+		three_quarters,
+		two_thirds,
+		half,
+		one_half,
+		third,
+		one_third,
+		quarter,
+		one_quarter
+	)
+
+	if (selectedCount === 0) {
 		throw new Error('You must specify a column width')
+	} else if (selectedCount > 1) {
+		throw new Error('You cannot spcify more than one width')
 	}
 </script>
 
