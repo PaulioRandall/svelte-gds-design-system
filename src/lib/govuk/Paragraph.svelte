@@ -2,11 +2,12 @@
 	export let lead = false
 	export let small = false
 
+	export let regular = false // by default but used to force regular
+	export let bold = false
+
+	export let left = false // by default but used to force left
 	export let centre = false
 	export let right = false
-
-	export let regular = false
-	export let bold = false
 
 	export let override_font_80 = false
 	export let override_font_48 = false
@@ -16,24 +17,6 @@
 	export let override_font_19 = false
 	export let override_font_16 = false
 	export let override_font_14 = false
-
-	if (lead && small) {
-		throw new Error(
-			'A paragraph cannot be both leading (lead) and small at the same time'
-		)
-	}
-
-	if (centre && right) {
-		throw new Error(
-			'A paragraph cannot be both centred (centre) and right aligned at the same time'
-		)
-	}
-
-	if (regular && bold) {
-		throw new Error(
-			'A paragraph cannot be both regular and bold at the same time'
-		)
-	}
 
 	const countTruthy = (...values) => {
 		let n = 0
@@ -45,6 +28,25 @@
 		}
 
 		return n
+	}
+
+	if (lead && small) {
+		throw new Error(
+			'A paragraph cannot be both leading (lead) and small at the same time'
+		)
+	}
+
+	if (regular && bold) {
+		throw new Error(
+			'A paragraph cannot be both regular and bold at the same time'
+		)
+	}
+
+	const numOfAlignments = countTruthy(left, centre, right)
+	if (numOfAlignments > 1) {
+		throw new Error(
+			'A paragraph cannot have more than one alignment (left, centre, or right)'
+		)
 	}
 
 	const numOfOverrides = countTruthy(
@@ -67,7 +69,7 @@
 	class:govuk-body="{!lead && !small}"
 	class:govuk-body-l="{lead}"
 	class:govuk-body-s="{small}"
-	class:govuk-!-text-align-left="{!centre && !right}"
+	class:govuk-!-text-align-left="{left}"
 	class:govuk-!-text-align-centre="{centre}"
 	class:govuk-!-text-align-right="{right}"
 	class:govuk-!-font-weight-regular="{regular}"
