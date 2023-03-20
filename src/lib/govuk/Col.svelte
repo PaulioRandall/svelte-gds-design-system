@@ -1,4 +1,11 @@
 <script>
+	// TODO: Think about display override classes
+	// - govuk-!-display-block
+	// - govuk-!-display-inline
+	// - govuk-!-display-inline-block
+	// - govuk-!-display-none
+	// - govuk-!-display-none-print
+
 	export let full = false
 	export let three_quarters = false
 	export let two_thirds = false
