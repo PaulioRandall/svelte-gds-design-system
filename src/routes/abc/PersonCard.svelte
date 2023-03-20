@@ -1,8 +1,8 @@
 <script>
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Summary from '$govuk/Summary.svelte'
+	import SummaryActionItem from '$govuk/SummaryActionItem.svelte'
 	import SummaryActions from '$govuk/SummaryActions.svelte'
-	import SummaryActionsItem from '$govuk/SummaryActionsItem.svelte'
 	import SummaryCard from '$govuk/SummaryCard.svelte'
 	import SummaryItem from '$govuk/SummaryItem.svelte'
 
@@ -12,12 +12,12 @@
 
 <SummaryCard heading="{name}">
 	<SummaryActions slot="actions">
-		<SummaryActionsItem href="/abc/xyz?delete={name}">
+		<SummaryActionItem href="/abc/xyz?delete={name}">
 			Delete {name}
-		</SummaryActionsItem>
-		<SummaryActionsItem href="/abc/xyz?edit={name}">
+		</SummaryActionItem>
+		<SummaryActionItem href="/abc/xyz?edit={name}">
 			Edit {name}
-		</SummaryActionsItem>
+		</SummaryActionItem>
 	</SummaryActions>
 
 	<Summary>
