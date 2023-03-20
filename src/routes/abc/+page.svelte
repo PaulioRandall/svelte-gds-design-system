@@ -15,6 +15,7 @@
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
+	import Tag from '$govuk/Tag.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
 	import PersonCard from './PersonCard.svelte'
@@ -96,6 +97,21 @@
 						Link that opens in a new tab
 						<Link as_new_tab href="/abc/xyz">Xyz</Link>.
 					</li>
+				</List>
+
+				<SectionBreak lg show_line />
+
+				<List>
+					<li><Tag>Completed</Tag></li>
+					<li><Tag inactive>Inactive</Tag></li>
+					<li><Tag fresh>New (fresh)</Tag></li>
+					<li><Tag active>Active</Tag></li>
+					<li><Tag pending>Pending</Tag></li>
+					<li><Tag received>Received</Tag></li>
+					<li><Tag sent>Sent</Tag></li>
+					<li><Tag rejected>Rejected</Tag></li>
+					<li><Tag declined>Declined</Tag></li>
+					<li><Tag delayed>Delayed</Tag></li>
 				</List>
 
 				<SectionBreak md />
