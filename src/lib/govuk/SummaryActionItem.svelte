@@ -1,6 +1,6 @@
 <script>
 	export let href // = ""
-	export let hidden // = ""
+	export let hidden = ''
 </script>
 
 <li class="govuk-summary-card__action">

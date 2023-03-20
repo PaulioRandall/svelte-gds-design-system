@@ -1,11 +1,11 @@
 <script>
 	import Header from '$govuk/Header.svelte'
 	import Footer from '$govuk/Footer.svelte'
-	import HiddenTabLinkToMain from '$govuk/HiddenTabLinkToMain.svelte'
+	import SkipLink from '$govuk/SkipLink.svelte'
 </script>
 
 <div class="page">
-	<HiddenTabLinkToMain />
+	<SkipLink />
 	<Header homePage="/home" />
 
 	<div class="content">

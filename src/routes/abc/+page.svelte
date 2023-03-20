@@ -2,14 +2,20 @@
 	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Col from '$govuk/Col.svelte'
+	import Details from '$govuk/Details.svelte'
 	import Heading from '$govuk/Heading.svelte'
+	import InsetText from '$govuk/InsetText.svelte'
 	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import Main from '$govuk/Main.svelte'
+	import NotificationBanner from '$govuk/NotificationBanner.svelte'
+	import NotificationBannerHeading from '$govuk/NotificationBannerHeading.svelte'
+	import NotificationBannerLink from '$govuk/NotificationBannerLink.svelte'
 	import Page from '$govuk/Page.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
+	import WarningText from '$govuk/WarningText.svelte'
 
 	import PersonCard from './PersonCard.svelte'
 </script>
@@ -23,6 +29,26 @@
 		]}" />
 
 	<Main>
+		<Row>
+			<Col two_thirds one_half_desktop>
+				<NotificationBanner title="Excuse me">
+					<NotificationBannerHeading>
+						This is a notification banner heading.
+					</NotificationBannerHeading>
+					<Paragraph>
+						And here is a notification banner link <NotificationBannerLink
+							href="/abc/xyz"
+							>Xyz
+						</NotificationBannerLink>.
+					</Paragraph>
+				</NotificationBanner>
+
+				<NotificationBanner success title="Success">
+					<Paragraph>Well done.</Paragraph>
+				</NotificationBanner>
+			</Col>
+		</Row>
+
 		<Heading h1 xl>
 			<Caption xl>Group</Caption>
 			Abc
@@ -36,6 +62,15 @@
 				<Paragraph right>Right aligned paragraph.</Paragraph>
 				<Paragraph bold>Bold paragraph.</Paragraph>
 				<Paragraph override_font_36>Font size overriden paragraph.</Paragraph>
+
+				<SectionBreak lg show_line />
+
+				<InsetText>This is inset text.</InsetText>
+				<WarningText>This is a warning!</WarningText>
+
+				<Details summary="Here are some details">
+					These are the details.
+				</Details>
 
 				<SectionBreak lg show_line />
 
