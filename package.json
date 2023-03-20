@@ -12,7 +12,7 @@
 	},
 	"scripts": {
 		"govuk-clean": "./scripts/govuk-frontend-clean.sh",
-		"govuk-build": "./scripts/govuk-frontend-build.sh",
+		"govuk-init": "./scripts/govuk-frontend-init.sh",
 		"===========================#===========================": "",
 		"clean": "rm -rf .svelte-kit .vercel",
 		"fmt": "npx prettier --loglevel warn --write --plugin-search-dir=. .",
