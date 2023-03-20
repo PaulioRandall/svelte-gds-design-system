@@ -18,6 +18,7 @@
 	import WarningText from '$govuk/WarningText.svelte'
 
 	import PersonCard from './PersonCard.svelte'
+	import Tabs from './Tabs.svelte'
 </script>
 
 <Page title="Abc">
@@ -102,6 +103,8 @@
 				<PersonCard name="Alice" age="21" />
 				<PersonCard name="Bob" age="69" />
 				<PersonCard name="Charlie" age="32" />
+
+				<Tabs />
 			</Col>
 		</Row>
 
