@@ -18,9 +18,9 @@
 
 	const numOfSizes = countTruthy(sm, md, lg, xl)
 	if (numOfSizes < 1) {
-		throw new Error('You must specify a caption font size (sm, md, lg, or xl)')
+		throw new Error('A caption must have a font size (sm, md, lg, or xl)')
 	} else if (numOfSizes > 1) {
-		throw new Error('You cannot specify more than one caption font size')
+		throw new Error('A caption cannot have more than one font size')
 	}
 </script>
 

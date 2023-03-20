@@ -37,9 +37,9 @@
 	)
 
 	if (numOfWidths === 0) {
-		throw new Error('You must specify a column width')
+		throw new Error('A width override must have a width')
 	} else if (numOfWidths > 1) {
-		throw new Error('You cannot specify more than one column width')
+		throw new Error('A width override cannot have more than one width')
 	}
 </script>
 

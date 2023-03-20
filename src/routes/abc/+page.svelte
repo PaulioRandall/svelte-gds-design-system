@@ -28,8 +28,31 @@
 
 		<Row>
 			<Col one_half two_thirds_desktop>
+				<Paragraph lead>Leading paragraph.</Paragraph>
+				<Paragraph small>Small paragraph.</Paragraph>
+				<Paragraph centre>Centred aligned paragraph.</Paragraph>
+				<Paragraph right>Right aligned paragraph.</Paragraph>
+				<Paragraph bold>Bold paragraph.</Paragraph>
+				<Paragraph override_font_36>Font size overriden paragraph.</Paragraph>
+
 				<Paragraph>
-					Visit <Link href="/abc/xyz">Xyz</Link>...
+					Link <Link href="/abc/xyz">Xyz</Link>.
+				</Paragraph>
+				<Paragraph>
+					Invert color link <span style="background: #1d70b8; padding: 5px;">
+						<Link invert_color href="/abc/xyz">Xyz</Link>.
+					</span>
+				</Paragraph>
+				<Paragraph>
+					No undlerline link <Link no_underline href="/abc/xyz">Xyz</Link>.
+				</Paragraph>
+				<Paragraph>
+					Link to frequently changing content
+					<Link dynamic_page href="/abc/xyz">Xyz</Link>.
+				</Paragraph>
+				<Paragraph>
+					Link that opens in new tab
+					<Link as_new_tab href="/abc/xyz">Xyz</Link>.
 				</Paragraph>
 
 				<PersonCard name="Alice" age="21" />
