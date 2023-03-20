@@ -1,15 +1,15 @@
 <script>
 	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
-	import GridPage from '$govuk/GridPage.svelte'
-	import GridRow from '$govuk/GridRow.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import Link from '$govuk/Link.svelte'
 	import Main from '$govuk/Main.svelte'
+	import Page from '$govuk/Page.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
+	import Row from '$govuk/Row.svelte'
 	import SpanTwoThirds from '$govuk/SpanTwoThirds.svelte'
 </script>
 
-<GridPage title="Abc">
+<Page title="Abc">
 	<BreadCrumbs
 		collapsable
 		crumbs="{[
@@ -20,12 +20,12 @@
 	<Main>
 		<Heading h1 xl>Abc</Heading>
 
-		<GridRow>
+		<Row>
 			<SpanTwoThirds>
 				Visit <Link href="/abc/xyz">Xyz</Link>...
 			</SpanTwoThirds>
-		</GridRow>
+		</Row>
 
 		<!-- TODO: Next button -->
 	</Main>
-</GridPage>
+</Page>

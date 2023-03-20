@@ -1,22 +1,22 @@
 <script>
 	import { page } from '$app/stores'
 
-	import GridPage from '$govuk/GridPage.svelte'
-	import GridRow from '$govuk/GridRow.svelte'
 	import Main from '$govuk/Main.svelte'
+	import Page from '$govuk/Page.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
+	import Row from '$govuk/Row.svelte'
 	import SpanTwoThirds from '$govuk/SpanTwoThirds.svelte'
 </script>
 
-<GridPage title="{$page.status}">
+<Page title="{$page.status}">
 	<Main autospace>
-		<GridRow>
+		<Row>
 			<SpanTwoThirds>
 				<Paragraph>
 					<b>{$page.status}:</b>
 					{$page.error.message}
 				</Paragraph>
 			</SpanTwoThirds>
-		</GridRow>
+		</Row>
 	</Main>
-</GridPage>
+</Page>

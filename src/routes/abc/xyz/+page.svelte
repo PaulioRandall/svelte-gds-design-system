@@ -1,14 +1,14 @@
 <script>
 	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
-	import GridPage from '$govuk/GridPage.svelte'
-	import GridRow from '$govuk/GridRow.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import Main from '$govuk/Main.svelte'
+	import Page from '$govuk/Page.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
+	import Row from '$govuk/Row.svelte'
 	import SpanTwoThirds from '$govuk/SpanTwoThirds.svelte'
 </script>
 
-<GridPage title="Xyz">
+<Page title="Xyz">
 	<BreadCrumbs
 		collapsable
 		crumbs="{[
@@ -20,12 +20,12 @@
 	<Main>
 		<Heading h1 xl>Xyz</Heading>
 
-		<GridRow>
+		<Row>
 			<SpanTwoThirds>
 				<Paragraph>A paragraph...</Paragraph>
 			</SpanTwoThirds>
-		</GridRow>
+		</Row>
 
 		<!-- TODO: Next button -->
 	</Main>
-</GridPage>
+</Page>
