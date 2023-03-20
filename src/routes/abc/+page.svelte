@@ -39,8 +39,9 @@
 					Link <Link href="/abc/xyz">Xyz</Link>.
 				</Paragraph>
 				<Paragraph>
-					Invert color link <span style="background: #1d70b8; padding: 5px;">
-						<Link invert_color href="/abc/xyz">Xyz</Link>.
+					Invert link color <span
+						style="background: var(--color-blue); padding: 5px;">
+						<Link invert_color href="/abc/xyz">Xyz.</Link>
 					</span>
 				</Paragraph>
 				<Paragraph>
@@ -51,7 +52,7 @@
 					<Link dynamic_page href="/abc/xyz">Xyz</Link>.
 				</Paragraph>
 				<Paragraph>
-					Link that opens in new tab
+					Link that opens in a new tab
 					<Link as_new_tab href="/abc/xyz">Xyz</Link>.
 				</Paragraph>
 

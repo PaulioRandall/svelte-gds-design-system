@@ -29,6 +29,12 @@
 		)
 	}
 
+	if (regular && bold) {
+		throw new Error(
+			'A paragraph cannot be both regular and bold at the same time'
+		)
+	}
+
 	const countTruthy = (...values) => {
 		let n = 0
 
@@ -54,12 +60,6 @@
 
 	if (numOfOverrides > 1) {
 		throw new Error('A paragraph cannot have more than one font size override')
-	}
-
-	if (regular && bold) {
-		throw new Error(
-			'A paragraph cannot be both regular and bold at the same time'
-		)
 	}
 </script>
 
