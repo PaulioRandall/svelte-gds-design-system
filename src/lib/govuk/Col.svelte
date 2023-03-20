@@ -2,15 +2,22 @@
 	export let full = false
 	export let three_quarters = false
 	export let two_thirds = false
-
 	export let half = false
 	export let one_half = half
-
 	export let third = false
 	export let one_third = third
-
 	export let quarter = false
 	export let one_quarter = quarter
+
+	export let full_desktop = false
+	export let three_quarters_desktop = false
+	export let two_thirds_desktop = false
+	export let half_desktop = false
+	export let one_half_desktop = half_desktop
+	export let third_desktop = false
+	export let one_third_desktop = third_desktop
+	export let quarter_desktop = false
+	export let one_quarter_desktop = quarter_desktop
 
 	const noneSelected =
 		!full &&
@@ -21,7 +28,16 @@
 		!third &&
 		!one_third &&
 		!quarter &&
-		!one_quarter
+		!one_quarter &&
+		!full_desktop &&
+		!three_quarters_desktop &&
+		!two_thirds_desktop &&
+		!half_desktop &&
+		!one_half_desktop &&
+		!third_desktop &&
+		!one_third_desktop &&
+		!quarter_desktop &&
+		!one_quarter_desktop
 
 	if (noneSelected) {
 		throw new Error('You must specify a column width')
@@ -34,6 +50,15 @@
 	class:govuk-grid-column-two-thirds="{two_thirds}"
 	class:govuk-grid-column-one-half="{half || one_half}"
 	class:govuk-grid-column-one-third="{third || one_third}"
-	class:govuk-grid-column-one-quarter="{quarter || one_quarter}">
+	class:govuk-grid-column-one-quarter="{quarter || one_quarter}"
+	class:govuk-grid-column-full-from-desktop="{full_desktop}"
+	class:govuk-grid-column-three-quarters-from-desktop="{three_quarters_desktop}"
+	class:govuk-grid-column-two-thirds-from-desktop="{two_thirds_desktop}"
+	class:govuk-grid-column-one-half-from-desktop="{half_desktop ||
+		one_half_desktop}"
+	class:govuk-grid-column-one-third-from-desktop="{third_desktop ||
+		one_third_desktop}"
+	class:govuk-grid-column-one-quarter-from-desktop="{quarter_desktop ||
+		one_quarter_desktop}">
 	<slot />
 </div>

@@ -23,7 +23,7 @@
 		<Heading h1 xl>Abc</Heading>
 
 		<Row>
-			<Col two_thirds>
+			<Col one_half two_thirds_desktop>
 				<Paragraph>
 					Visit <Link href="/abc/xyz">Xyz</Link>...
 				</Paragraph>
