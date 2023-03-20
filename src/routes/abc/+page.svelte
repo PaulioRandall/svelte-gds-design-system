@@ -9,6 +9,7 @@
 	import Page from '$govuk/Page.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
+	import SectionBreak from '$govuk/SectionBreak.svelte'
 
 	import PersonCard from './PersonCard.svelte'
 </script>
@@ -36,6 +37,8 @@
 				<Paragraph bold>Bold paragraph.</Paragraph>
 				<Paragraph override_font_36>Font size overriden paragraph.</Paragraph>
 
+				<SectionBreak lg show_line />
+
 				<List bullets spaced>
 					<li>
 						Link <Link href="/abc/xyz">Xyz</Link>.
@@ -58,6 +61,8 @@
 						<Link as_new_tab href="/abc/xyz">Xyz</Link>.
 					</li>
 				</List>
+
+				<SectionBreak md />
 
 				<PersonCard name="Alice" age="21" />
 				<PersonCard name="Bob" age="69" />
