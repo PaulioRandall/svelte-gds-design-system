@@ -1,5 +1,6 @@
 <script>
 	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
+	import Caption from '$govuk/Caption.svelte'
 	import Col from '$govuk/Col.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import Link from '$govuk/Link.svelte'
@@ -20,7 +21,10 @@
 		]}" />
 
 	<Main>
-		<Heading h1 xl>Abc</Heading>
+		<Heading h1 xl>
+			<Caption xl>Group</Caption>
+			Abc
+		</Heading>
 
 		<Row>
 			<Col one_half two_thirds_desktop>

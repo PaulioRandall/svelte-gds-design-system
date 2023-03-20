@@ -38,7 +38,7 @@
 		return n
 	}
 
-	const selectedCount = countTruthy(
+	const numOfWidths = countTruthy(
 		full,
 		three_quarters,
 		two_thirds,
@@ -50,7 +50,7 @@
 		one_quarter
 	)
 
-	const desktopSelectedCount = countTruthy(
+	const numOfDesktopWidths = countTruthy(
 		full_desktop,
 		three_quarters_desktop,
 		two_thirds_desktop,
@@ -62,12 +62,12 @@
 		one_quarter_desktop
 	)
 
-	if (selectedCount + desktopSelectedCount === 0) {
+	if (numOfWidths + numOfDesktopWidths === 0) {
 		throw new Error('You must specify a column width')
-	} else if (selectedCount > 1) {
-		throw new Error('You cannot spcify more than one standard width')
-	} else if (desktopSelectedCount > 1) {
-		throw new Error('You cannot spcify more than one desktop width')
+	} else if (numOfWidths > 1) {
+		throw new Error('You cannot spcify more than one standard column width')
+	} else if (numOfDesktopWidths > 1) {
+		throw new Error('You cannot spcify more than one desktop column width')
 	}
 </script>
 

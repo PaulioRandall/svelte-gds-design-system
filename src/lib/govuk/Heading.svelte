@@ -1,21 +1,37 @@
 <script>
-	// TODO: add captions
-
-	export let h3 = false
-	export let h2 = false
 	export let h1 = false
+	export let h2 = false
+	export let h3 = false
 
 	export let sm = false
 	export let md = false
 	export let lg = false
 	export let xl = false
 
-	if (!h1 && !h2 && !h3) {
-		throw new Error('Must select a heading element (h1, h2, or h3)')
+	const countTruthy = (...values) => {
+		let n = 0
+
+		for (const v of values) {
+			if (!!v) {
+				n++
+			}
+		}
+
+		return n
 	}
 
-	if (!sm && !md && !lg && !xl) {
-		throw new Error('Must select a heading size (sm, md, lg, or xl)')
+	const numOfTypes = countTruthy(h1, h2, h3)
+	if (numOfTypes < 1) {
+		throw new Error('You must specify a heading element type (h1, h2, or h3)')
+	} else if (numOfTypes > 1) {
+		throw new Error('You cannot specify more than one heading element type')
+	}
+
+	const numOfSizes = countTruthy(sm, md, lg, xl)
+	if (numOfSizes < 1) {
+		throw new Error('You must specify a heading font size (sm, md, lg, or xl)')
+	} else if (numOfSizes > 1) {
+		throw new Error('You cannot specify more than one heading font size')
 	}
 </script>
 

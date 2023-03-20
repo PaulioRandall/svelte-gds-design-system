@@ -24,7 +24,7 @@
 		return n
 	}
 
-	const selectedCount = countTruthy(
+	const numOfWidths = countTruthy(
 		full,
 		three_quarters,
 		two_thirds,
@@ -36,10 +36,10 @@
 		one_quarter
 	)
 
-	if (selectedCount === 0) {
+	if (numOfWidths === 0) {
 		throw new Error('You must specify a column width')
-	} else if (selectedCount > 1) {
-		throw new Error('You cannot spcify more than one width')
+	} else if (numOfWidths > 1) {
+		throw new Error('You cannot specify more than one column width')
 	}
 </script>
 
