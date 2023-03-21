@@ -3,12 +3,12 @@
 	import Col from '$govuk/Col.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import Main from '$govuk/Main.svelte'
-	import Page from '$govuk/Page.svelte'
+	import PageContent from '$govuk/PageContent.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
 </script>
 
-<Page title="Xyz">
+<PageContent title="Xyz">
 	<BreadCrumbs
 		collapsable
 		crumbs="{[
@@ -28,4 +28,4 @@
 
 		<!-- TODO: Next button -->
 	</Main>
-</Page>
+</PageContent>

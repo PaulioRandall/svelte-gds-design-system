@@ -11,10 +11,11 @@
 	import NotificationBanner from '$govuk/NotificationBanner.svelte'
 	import NotificationBannerHeading from '$govuk/NotificationBannerHeading.svelte'
 	import NotificationBannerLink from '$govuk/NotificationBannerLink.svelte'
-	import Page from '$govuk/Page.svelte'
+	import PageContent from '$govuk/PageContent.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
+	import Table from '$govuk/Table.svelte'
 	import Tag from '$govuk/Tag.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
@@ -22,7 +23,7 @@
 	import Tabs from './Tabs.svelte'
 </script>
 
-<Page title="Abc">
+<PageContent title="Abc">
 	<BreadCrumbs
 		collapsable
 		crumbs="{[
@@ -31,6 +32,31 @@
 		]}" />
 
 	<Main>
+		<!--
+			TODO:
+			+ Accordion
+			+ Panel
+			+ Error summary
+			+ Pagination
+			+ Cookie banner
+			+ Forms
+				+ Error message
+			  + Button
+			  + Character count
+			  + Checkboxes
+			  + Data input
+			  + Fieldset
+			  + File upload
+			  + Radios
+			  + Select
+			  + Text input
+			  + Textarea
+
+			REDO:
+			+ Summary list?
+			+ Notification banner?
+		-->
+
 		<Row>
 			<Col two_thirds one_half_desktop>
 				<NotificationBanner title="Excuse me">
@@ -121,9 +147,22 @@
 				<PersonCard name="Charlie" age="32" />
 
 				<Tabs />
+
+				<Table
+					caption="Monthly costs"
+					headers="{[
+						{ key: 'duration', label: 'Duration', rowHead: true },
+						{ key: 'cost', label: 'Cost' },
+					]}"
+					records="{[
+						{ duration: '1 Month', cost: '£3.50' },
+						{ duration: '3 months', cost: '£10' },
+						{ duration: '6 months', cost: '£18' },
+						{ duration: '12 months', cost: '£32' },
+					]}" />
 			</Col>
 		</Row>
 
 		<!-- TODO: Next button -->
 	</Main>
-</Page>
+</PageContent>

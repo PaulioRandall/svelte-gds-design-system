@@ -3,12 +3,12 @@
 
 	import Col from '$govuk/Col.svelte'
 	import Main from '$govuk/Main.svelte'
-	import Page from '$govuk/Page.svelte'
+	import PageContent from '$govuk/PageContent.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
 </script>
 
-<Page title="{$page.status}">
+<PageContent title="{$page.status}">
 	<Main autospace>
 		<Row>
 			<Col two_thirds>
@@ -19,4 +19,4 @@
 			</Col>
 		</Row>
 	</Main>
-</Page>
+</PageContent>

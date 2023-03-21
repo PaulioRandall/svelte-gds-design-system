@@ -3,12 +3,12 @@
 	import Heading from '$govuk/Heading.svelte'
 	import Link from '$govuk/Link.svelte'
 	import Main from '$govuk/Main.svelte'
-	import Page from '$govuk/Page.svelte'
+	import PageContent from '$govuk/PageContent.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
 </script>
 
-<Page title="Home">
+<PageContent title="Home">
 	<Main>
 		<Heading h1 xl>Home</Heading>
 
@@ -20,4 +20,4 @@
 			</Col>
 		</Row>
 	</Main>
-</Page>
+</PageContent>
