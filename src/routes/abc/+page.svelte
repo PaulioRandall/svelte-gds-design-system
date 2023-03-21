@@ -149,16 +149,25 @@
 				<Tabs />
 
 				<Table
-					caption="Monthly costs"
+					caption_md="Monthly costs"
 					headers="{[
 						{ key: 'duration', label: 'Duration', rowHead: true },
-						{ key: 'cost', label: 'Cost' },
+						{ key: 'notes', label: 'Notes' },
+						{ key: 'cost', label: 'Cost', numeric: true },
 					]}"
 					records="{[
-						{ duration: '1 Month', cost: '£3.50' },
+						{
+							duration: '1 Month',
+							notes: 'Shortest but least cost effective',
+							cost: '£3.50',
+						},
 						{ duration: '3 months', cost: '£10' },
 						{ duration: '6 months', cost: '£18' },
-						{ duration: '12 months', cost: '£32' },
+						{
+							duration: '12 months',
+							notes: 'Most cost effective',
+							cost: '£32',
+						},
 					]}" />
 			</Col>
 		</Row>
