@@ -23,7 +23,7 @@
 	import Tag from '$govuk/Tag.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
-	import PersonCard from './PersonCard.svelte'
+	import SummaryCard from './SummaryCard.svelte'
 	import Tabs from './Tabs.svelte'
 </script>
 
@@ -38,7 +38,6 @@
 	<Main>
 		<!--
 			TODO:
-			+ Error summary
 			+ Pagination
 			+ Cookie banner
 			+ Forms
@@ -55,7 +54,6 @@
 			  + Textarea
 
 			REDO:
-			+ Summary list?
 			+ Notification banner?
 		-->
 
@@ -63,7 +61,7 @@
 			<Col two_thirds one_half_desktop>
 				<NotificationBanner title="Excuse me">
 					<NotificationBannerHeading>
-						This is a notification banner heading.
+						This is a notification banner content heading.
 					</NotificationBannerHeading>
 					<Paragraph>
 						And here is a notification banner link <NotificationBannerLink
@@ -85,8 +83,8 @@
 		</Row>
 
 		<Heading h1 xl>
-			<Caption xl>Group</Caption>
-			Abc
+			<Caption xl>Group caption</Caption>
+			The page title
 		</Heading>
 
 		<Row>
@@ -151,9 +149,9 @@
 
 				<SectionBreak md />
 
-				<PersonCard name="Alice" age="21" />
-				<PersonCard name="Bob" age="69" />
-				<PersonCard name="Charlie" age="32" />
+				<SummaryCard name="Alice" age="21" />
+				<SummaryCard name="Bob" age="69" />
+				<SummaryCard name="Charlie" age="32" />
 
 				<Tabs />
 

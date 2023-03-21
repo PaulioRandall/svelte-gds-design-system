@@ -1,6 +1,10 @@
 <script>
-	export let title = 'Important'
+	export let title // = ""
 	export let success = false
+
+	if (!title) {
+		throw new Error('A notification banner must have a title')
+	}
 </script>
 
 <div
