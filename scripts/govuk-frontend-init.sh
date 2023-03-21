@@ -21,6 +21,7 @@ mkdir -p ${assets_dst}
 # Copy the files
 cp ${css_src} ${css_dst}
 cp ${js_src} ${js_dst}
+cp ${js_map_src} ${js_map_dst}
 cp -r ${assets_src} ${assets_dst}
 
 # Delete the cloned govuk-frontend repo 

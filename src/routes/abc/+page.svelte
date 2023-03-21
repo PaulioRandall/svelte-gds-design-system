@@ -1,4 +1,6 @@
 <script>
+	import Accordion from '$govuk/Accordion.svelte'
+	import AccordionSection from '$govuk/AccordionSection.svelte'
 	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Col from '$govuk/Col.svelte'
@@ -169,6 +171,18 @@
 							cost: '£32',
 						},
 					]}" />
+
+				<Accordion id="accordion-example">
+					<AccordionSection heading="Abc" summary="Abc summary">
+						Abc content.
+					</AccordionSection>
+					<AccordionSection heading="Efg" summary="Efg summary">
+						Efg content.
+					</AccordionSection>
+					<AccordionSection heading="Xyz" summary="Xyz summary">
+						Xyz content.
+					</AccordionSection>
+				</Accordion>
 			</Col>
 		</Row>
 

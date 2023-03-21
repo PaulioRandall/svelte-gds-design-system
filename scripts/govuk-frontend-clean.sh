@@ -8,4 +8,5 @@ source ./scripts/govuk-frontend-vars.sh
 
 rm -rf ${css_dst}
 rm -rf ${js_dst}
+rm -rf ${js_map_dst}
 rm -rf ${assets_dst}
