@@ -1,4 +1,6 @@
 <script>
+	import { countTruthy } from '$govuk/util.js'
+
 	export let lead = false
 	export let small = false
 
@@ -18,18 +20,6 @@
 	export let override_font_16 = false
 	export let override_font_14 = false
 
-	const countTruthy = (...values) => {
-		let n = 0
-
-		for (const v of values) {
-			if (!!v) {
-				n++
-			}
-		}
-
-		return n
-	}
-
 	if (lead && small) {
 		throw new Error(
 			'A paragraph cannot be both leading (lead) and small at the same time'
@@ -43,6 +33,7 @@
 	}
 
 	const numOfAlignments = countTruthy(left, centre, right)
+
 	if (numOfAlignments > 1) {
 		throw new Error(
 			'A paragraph cannot have more than one alignment (left, centre, or right)'

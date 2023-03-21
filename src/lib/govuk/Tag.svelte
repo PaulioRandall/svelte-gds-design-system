@@ -1,4 +1,6 @@
 <script>
+	import { countTruthy } from '$govuk/util.js'
+
 	export let inactive = false
 	export let fresh = false // Because 'new' is a JS keyword
 	export let active = false
@@ -8,18 +10,6 @@
 	export let rejected = false
 	export let declined = false
 	export let delayed = false
-
-	const countTruthy = (...values) => {
-		let n = 0
-
-		for (const v of values) {
-			if (!!v) {
-				n++
-			}
-		}
-
-		return n
-	}
 
 	const numOfStatuses = countTruthy(
 		inactive,

@@ -1,4 +1,6 @@
 <script>
+	import { countTruthy } from '$govuk/util.js'
+
 	export let large = false
 	export let small = false
 
@@ -24,18 +26,6 @@
 		throw new Error(
 			'A text restyle cannot be both regular and bold at the same time'
 		)
-	}
-
-	const countTruthy = (...values) => {
-		let n = 0
-
-		for (const v of values) {
-			if (!!v) {
-				n++
-			}
-		}
-
-		return n
 	}
 
 	const numOfOverrides = countTruthy(

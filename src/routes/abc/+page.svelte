@@ -52,9 +52,6 @@
 			  + Select
 			  + Text input
 			  + Textarea
-
-			REDO:
-			+ Notification banner?
 		-->
 
 		<Row>

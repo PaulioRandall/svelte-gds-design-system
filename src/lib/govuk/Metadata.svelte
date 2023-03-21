@@ -1,1 +1,0 @@
-<!-- TODO: <head> metadata props -->

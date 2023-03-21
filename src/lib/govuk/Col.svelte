@@ -1,4 +1,6 @@
 <script>
+	import { countTruthy } from '$govuk/util.js'
+
 	// TODO: Think about display override classes
 	// - govuk-!-display-block
 	// - govuk-!-display-inline
@@ -25,18 +27,6 @@
 	export let one_third_desktop = third_desktop
 	export let quarter_desktop = false
 	export let one_quarter_desktop = quarter_desktop
-
-	const countTruthy = (...values) => {
-		let n = 0
-
-		for (const v of values) {
-			if (!!v) {
-				n++
-			}
-		}
-
-		return n
-	}
 
 	const numOfWidths = countTruthy(
 		full,

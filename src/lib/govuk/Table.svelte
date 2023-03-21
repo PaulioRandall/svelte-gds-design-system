@@ -1,4 +1,6 @@
 <script>
+	import { countTruthy, findTruthy } from '$govuk/util.js'
+
 	export let caption_sm = ''
 	export let caption_md = ''
 	export let caption_lg = ''
@@ -26,27 +28,6 @@
 		throw new Error('A table must have at least one record')
 	}
 
-	const countTruthy = (...values) => {
-		let n = 0
-
-		for (const v of values) {
-			if (!!v) {
-				n++
-			}
-		}
-
-		return n
-	}
-
-	const findTruthy = (...values) => {
-		for (const v of values) {
-			if (!!v) {
-				return v
-			}
-		}
-		return null
-	}
-
 	const numOfCaptions = countTruthy(
 		caption_sm,
 		caption_md,
@@ -54,11 +35,11 @@
 		caption_xl
 	)
 
-	const caption = findTruthy(caption_sm, caption_md, caption_lg, caption_xl)
-
 	if (numOfCaptions > 1) {
 		throw new Error('A table cannot have more than one caption')
 	}
+
+	const caption = findTruthy(caption_sm, caption_md, caption_lg, caption_xl)
 </script>
 
 <table class="govuk-table">

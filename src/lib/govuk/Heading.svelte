@@ -1,4 +1,6 @@
 <script>
+	import { countTruthy } from '$govuk/util.js'
+
 	export let h1 = false
 	export let h2 = false
 	export let h3 = false
@@ -8,19 +10,8 @@
 	export let lg = false
 	export let xl = false
 
-	const countTruthy = (...values) => {
-		let n = 0
-
-		for (const v of values) {
-			if (!!v) {
-				n++
-			}
-		}
-
-		return n
-	}
-
 	const numOfTypes = countTruthy(h1, h2, h3)
+
 	if (numOfTypes < 1) {
 		throw new Error('You must specify a heading element type (h1, h2, or h3)')
 	} else if (numOfTypes > 1) {
@@ -28,6 +19,7 @@
 	}
 
 	const numOfSizes = countTruthy(sm, md, lg, xl)
+
 	if (numOfSizes < 1) {
 		throw new Error('You must specify a heading font size (sm, md, lg, or xl)')
 	} else if (numOfSizes > 1) {

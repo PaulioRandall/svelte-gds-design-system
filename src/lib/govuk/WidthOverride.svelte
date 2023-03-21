@@ -1,4 +1,6 @@
 <script>
+	import { countTruthy } from '$govuk/util.js'
+
 	export let full = false
 	export let three_quarters = false
 	export let two_thirds = false
@@ -12,18 +14,6 @@
 	export let quarter = false
 	export let one_quarter = quarter
 
-	const countTruthy = (...values) => {
-		let n = 0
-
-		for (const v of values) {
-			if (!!v) {
-				n++
-			}
-		}
-
-		return n
-	}
-
 	const numOfWidths = countTruthy(
 		full,
 		three_quarters,
@@ -36,7 +26,7 @@
 		one_quarter
 	)
 
-	if (numOfWidths === 0) {
+	if (numOfWidths < 1) {
 		throw new Error('A width override must have a width')
 	} else if (numOfWidths > 1) {
 		throw new Error('A width override cannot have more than one width')
