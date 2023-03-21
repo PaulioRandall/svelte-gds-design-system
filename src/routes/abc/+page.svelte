@@ -5,6 +5,7 @@
 	import Caption from '$govuk/Caption.svelte'
 	import Col from '$govuk/Col.svelte'
 	import Details from '$govuk/Details.svelte'
+	import ErrorSummary from '$govuk/ErrorSummary.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import InsetText from '$govuk/InsetText.svelte'
 	import Link from '$govuk/Link.svelte'
@@ -37,7 +38,6 @@
 	<Main>
 		<!--
 			TODO:
-			+ Panel
 			+ Error summary
 			+ Pagination
 			+ Cookie banner
@@ -76,6 +76,11 @@
 				<NotificationBanner success title="Success">
 					<Paragraph>Well done.</Paragraph>
 				</NotificationBanner>
+
+				<ErrorSummary heading="You screwed up somewhere!">
+					<li>This component takes &lt;li&gt; elements.</li>
+					<li><a href="#">A link to a none existent error.</a></li>
+				</ErrorSummary>
 			</Col>
 		</Row>
 
