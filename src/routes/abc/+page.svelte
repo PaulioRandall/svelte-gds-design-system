@@ -14,6 +14,7 @@
 	import NotificationBannerHeading from '$govuk/NotificationBannerHeading.svelte'
 	import NotificationBannerLink from '$govuk/NotificationBannerLink.svelte'
 	import PageContent from '$govuk/PageContent.svelte'
+	import Panel from '$govuk/Panel.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
@@ -36,7 +37,6 @@
 	<Main>
 		<!--
 			TODO:
-			+ Accordion
 			+ Panel
 			+ Error summary
 			+ Pagination
@@ -86,6 +86,8 @@
 
 		<Row>
 			<Col two_thirds one_half_desktop>
+				<Panel heading="A panel">The panel content</Panel>
+
 				<Paragraph lead>Leading paragraph.</Paragraph>
 				<Paragraph small>Small paragraph.</Paragraph>
 				<Paragraph centre>Centred aligned paragraph.</Paragraph>
