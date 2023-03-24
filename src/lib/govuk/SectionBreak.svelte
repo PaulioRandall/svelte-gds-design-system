@@ -1,6 +1,8 @@
 <script>
 	import { countTruthy } from '$govuk/util.js'
 
+	export let id = undefined // ""
+
 	export let md = false
 	export let lg = false
 	export let xl = false
@@ -17,6 +19,7 @@
 </script>
 
 <hr
+	id="{id}"
 	class="govuk-section-break"
 	class:govuk-section-break--m="{md}"
 	class:govuk-section-break--l="{lg}"

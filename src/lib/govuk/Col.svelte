@@ -1,12 +1,7 @@
 <script>
 	import { countTruthy } from '$govuk/util.js'
 
-	// TODO: Think about display override classes
-	// - govuk-!-display-block
-	// - govuk-!-display-inline
-	// - govuk-!-display-inline-block
-	// - govuk-!-display-none
-	// - govuk-!-display-none-print
+	export let c = ''
 
 	export let full = false
 	export let three_quarters = false
@@ -76,6 +71,7 @@
 	class:govuk-grid-column-one-third-from-desktop="{third_desktop ||
 		one_third_desktop}"
 	class:govuk-grid-column-one-quarter-from-desktop="{quarter_desktop ||
-		one_quarter_desktop}">
+		one_quarter_desktop}"
+	class="{c}">
 	<slot />
 </div>

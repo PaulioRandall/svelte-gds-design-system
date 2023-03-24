@@ -1,6 +1,8 @@
 <script>
 	import { countTruthy } from '$govuk/util.js'
 
+	export let id = undefined // ""
+
 	export let h1 = false
 	export let h2 = false
 	export let h3 = false
@@ -29,6 +31,7 @@
 
 {#if h1}
 	<h1
+		id="{id}"
 		class:govuk-heading-s="{sm}"
 		class:govuk-heading-m="{md}"
 		class:govuk-heading-l="{lg}"
@@ -37,6 +40,7 @@
 	</h1>
 {:else if h2}
 	<h2
+		id="{id}"
 		class:govuk-heading-s="{sm}"
 		class:govuk-heading-m="{md}"
 		class:govuk-heading-l="{lg}"
@@ -45,6 +49,7 @@
 	</h2>
 {:else if h3}
 	<h3
+		id="{id}"
 		class:govuk-heading-s="{sm}"
 		class:govuk-heading-m="{md}"
 		class:govuk-heading-l="{lg}"

@@ -34,3 +34,31 @@
 
 	--color-blue: #1d70b8;
 }
+
+:root {
+	--spacing-responsive-0: var(--spacing-responsive-sm-0);
+	--spacing-responsive-1: var(--spacing-responsive-sm-1);
+	--spacing-responsive-2: var(--spacing-responsive-sm-2);
+	--spacing-responsive-3: var(--spacing-responsive-sm-3);
+	--spacing-responsive-4: var(--spacing-responsive-sm-4);
+	--spacing-responsive-5: var(--spacing-responsive-sm-5);
+	--spacing-responsive-6: var(--spacing-responsive-sm-6);
+	--spacing-responsive-7: var(--spacing-responsive-sm-7);
+	--spacing-responsive-8: var(--spacing-responsive-sm-8);
+	--spacing-responsive-9: var(--spacing-responsive-sm-9);
+}
+
+@media (min_width: 641px) {
+	:root {
+		--spacing-responsive-0: var(--spacing-responsive-lg-0);
+		--spacing-responsive-1: var(--spacing-responsive-lg-1);
+		--spacing-responsive-2: var(--spacing-responsive-lg-2);
+		--spacing-responsive-3: var(--spacing-responsive-lg-3);
+		--spacing-responsive-4: var(--spacing-responsive-lg-4);
+		--spacing-responsive-5: var(--spacing-responsive-lg-5);
+		--spacing-responsive-6: var(--spacing-responsive-lg-6);
+		--spacing-responsive-7: var(--spacing-responsive-lg-7);
+		--spacing-responsive-8: var(--spacing-responsive-lg-8);
+		--spacing-responsive-9: var(--spacing-responsive-lg-9);
+	}
+}
