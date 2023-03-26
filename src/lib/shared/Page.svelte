@@ -1,6 +1,7 @@
 <script>
-	import WidthContainer from '$govuk/WidthContainer.svelte'
+	import Main from '$govuk/Main.svelte'
 	import PhaseBanner from '$govuk/PhaseBanner.svelte'
+	import WidthContainer from '$govuk/WidthContainer.svelte'
 
 	export let title = ''
 
@@ -13,5 +14,8 @@
 
 <WidthContainer title="{title}">
 	<PhaseBanner feedbackTo="/feedback" />
-	<slot />
+	<slot name="breadcrumbs" />
+	<Main>
+		<slot />
+	</Main>
 </WidthContainer>

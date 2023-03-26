@@ -10,7 +10,9 @@
 
 	if (numOfSizes < 1) {
 		throw new Error('A caption must have a font size (sm, md, lg, or xl)')
-	} else if (numOfSizes > 1) {
+	}
+
+	if (numOfSizes > 1) {
 		throw new Error('A caption cannot have more than one font size')
 	}
 </script>

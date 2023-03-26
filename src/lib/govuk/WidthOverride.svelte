@@ -28,7 +28,9 @@
 
 	if (numOfWidths < 1) {
 		throw new Error('A width override must have a width')
-	} else if (numOfWidths > 1) {
+	}
+
+	if (numOfWidths > 1) {
 		throw new Error('A width override cannot have more than one width')
 	}
 </script>

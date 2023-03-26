@@ -49,9 +49,13 @@
 
 	if (numOfWidths + numOfDesktopWidths === 0) {
 		throw new Error('A column (Col) must have a column width')
-	} else if (numOfWidths > 1) {
+	}
+
+	if (numOfWidths > 1) {
 		throw new Error('A column (Col) cannot have more than one standard width')
-	} else if (numOfDesktopWidths > 1) {
+	}
+
+	if (numOfDesktopWidths > 1) {
 		throw new Error('A column (Col) cannot have more than one desktop width')
 	}
 </script>

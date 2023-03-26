@@ -16,7 +16,9 @@
 
 	if (numOfTypes < 1) {
 		throw new Error('You must specify a heading element type (h1, h2, or h3)')
-	} else if (numOfTypes > 1) {
+	}
+
+	if (numOfTypes > 1) {
 		throw new Error('You cannot specify more than one heading element type')
 	}
 
@@ -24,7 +26,9 @@
 
 	if (numOfSizes < 1) {
 		throw new Error('You must specify a heading font size (sm, md, lg, or xl)')
-	} else if (numOfSizes > 1) {
+	}
+
+	if (numOfSizes > 1) {
 		throw new Error('You cannot specify more than one heading font size')
 	}
 </script>

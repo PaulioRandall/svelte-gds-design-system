@@ -1,23 +1,19 @@
 <script>
 	import Col from '$govuk/Col.svelte'
-	import Heading from '$govuk/Heading.svelte'
-	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
+	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
+
+	import SearchForm from '$govuk/forms/SearchForm.svelte'
 
 	import Page from '$shared/Page.svelte'
 </script>
 
-<Page title="Home">
-	<Heading h1 xl>Home</Heading>
-
+<Page title="Form components">
 	<Row>
 		<Col two_thirds>
-			<List spaced>
-				<MenuItem href="/general">General</MenuItem>
-				<MenuItem href="/forms">Forms</MenuItem>
-			</List>
+			<SearchForm GET="/forms/search-form" />
 		</Col>
 	</Row>
 </Page>
