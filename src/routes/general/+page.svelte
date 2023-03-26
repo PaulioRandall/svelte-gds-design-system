@@ -31,12 +31,12 @@
 	import Tabs from './Tabs.svelte'
 </script>
 
-<PageContent title="Abc">
+<PageContent title="General components">
 	<BreadCrumbs
 		collapsable
 		crumbs="{[
 			['/home', 'Home'],
-			['/abc', 'Abc'],
+			['/general', 'General'],
 		]}" />
 
 	<Main>
@@ -90,7 +90,7 @@
 							</NotificationBannerHeading>
 							<Paragraph>
 								And here is a notification banner link <NotificationBannerLink
-									href="/abc/xyz"
+									href="/general/xyz"
 									>Xyz
 								</NotificationBannerLink>.
 							</Paragraph>
@@ -146,26 +146,28 @@
 						<Heading h2 lg>Lists</Heading>
 						<List bullets spaced>
 							<li>
-								Link <Link href="/abc/xyz">Xyz</Link>.
+								Link <Link href="/general/xyz">Xyz</Link>.
 							</li>
 							<li>
 								Invert link color <span
 									style="background: var(--color-blue); padding: 5px;">
-									<Link invert_color href="/abc/xyz">Xyz.</Link>
+									<Link invert_color href="/general/xyz">Xyz.</Link>
 								</span>
 							</li>
 							<li>
-								No undlerline link <Link no_underline href="/abc/xyz">Xyz</Link
+								No undlerline link <Link no_underline href="/general/xyz"
+									>Xyz</Link
 								>.
 							</li>
 							<li>
 								Link to frequently changing content
-								<Link dynamic_page href="/abc/xyz">Xyz</Link>.
+								<Link dynamic_page href="/general/xyz">Xyz</Link>.
 							</li>
 							<li>
 								Link that opens in a new tab
-								<Link as_new_tab href="/abc/xyz">Xyz</Link>.
+								<Link as_new_tab href="/general/xyz">Xyz</Link>.
 							</li>
+							<MenuItem href="/general/xyz">A menu item component</MenuItem>
 						</List>
 					</Col>
 				</Section>

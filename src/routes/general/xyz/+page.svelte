@@ -13,8 +13,8 @@
 		collapsable
 		crumbs="{[
 			['/home', 'Home'],
-			['/abc', 'Abc'],
-			['/abc/xyz', 'Xyz'],
+			['/general', 'General'],
+			['/general/xyz', 'Xyz'],
 		]}" />
 
 	<Main>

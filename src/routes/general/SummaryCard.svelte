@@ -12,10 +12,10 @@
 
 <SummaryCard heading="{name}">
 	<SummaryActions slot="actions">
-		<SummaryActionItem href="/abc/xyz?delete={name}">
+		<SummaryActionItem href="/general/xyz?delete={name}">
 			Delete {name}
 		</SummaryActionItem>
-		<SummaryActionItem href="/abc/xyz?edit={name}">
+		<SummaryActionItem href="/general/xyz?edit={name}">
 			Edit {name}
 		</SummaryActionItem>
 	</SummaryActions>

@@ -2,10 +2,12 @@
 	import Col from '$govuk/Col.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import Link from '$govuk/Link.svelte'
+	import List from '$govuk/List.svelte'
 	import Main from '$govuk/Main.svelte'
 	import PageContent from '$govuk/PageContent.svelte'
-	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
+
+	import MenuItem from '$shared/MenuItem.svelte'
 </script>
 
 <PageContent title="Home">
@@ -14,9 +16,10 @@
 
 		<Row>
 			<Col two_thirds>
-				<Paragraph>
-					Visit <Link href="/abc">Abc</Link>...
-				</Paragraph>
+				<List spaced>
+					<MenuItem href="/general">General</MenuItem>
+					<MenuItem href="/forms">Forms</MenuItem>
+				</List>
 			</Col>
 		</Row>
 	</Main>
