@@ -13,6 +13,6 @@
 	<SectionBreak id="{section_break_id}" md show_line="{show_break_line}" />
 {/if}
 
-<Row id="{row_id}" {...$$restProps}>
+<Row id="{row_id}">
 	<slot />
 </Row>

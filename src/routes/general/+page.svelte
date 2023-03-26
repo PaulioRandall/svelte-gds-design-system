@@ -15,7 +15,6 @@
 	import NotificationBanner from '$govuk/NotificationBanner.svelte'
 	import NotificationBannerHeading from '$govuk/NotificationBannerHeading.svelte'
 	import NotificationBannerLink from '$govuk/NotificationBannerLink.svelte'
-	import PageContent from '$govuk/PageContent.svelte'
 	import Panel from '$govuk/Panel.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
@@ -24,14 +23,15 @@
 	import Tag from '$govuk/Tag.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
-	import Section from '$shared/Section.svelte'
+	import Page from '$shared/Page.svelte'
 	import PageMenuCol from '$shared/PageMenuCol.svelte'
+	import Section from '$shared/Section.svelte'
 
 	import SummaryCard from './SummaryCard.svelte'
 	import Tabs from './Tabs.svelte'
 </script>
 
-<PageContent title="General components">
+<Page title="General components">
 	<BreadCrumbs
 		collapsable
 		crumbs="{[
@@ -64,14 +64,21 @@
 					<MenuItem href="#page-title">Page title</MenuItem>
 					<MenuItem href="#banner">Banner</MenuItem>
 					<MenuItem href="#panel">Panel</MenuItem>
-					<MenuItem href="#paragraph">Paragraph</MenuItem>
-					<MenuItem href="#special-text">Special text</MenuItem>
-					<MenuItem href="#list">List</MenuItem>
-					<MenuItem href="#tag">Tag</MenuItem>
-					<MenuItem href="#table">Table</MenuItem>
-					<MenuItem href="#tabs">Tabs</MenuItem>
-					<MenuItem href="#accordion">Accordion</MenuItem>
-					<MenuItem href="#summary">Summary</MenuItem>
+					<MenuItem bold href="#text">Text</MenuItem>
+					<List spaced sub_list>
+						<MenuItem href="#paragraph">Paragraph</MenuItem>
+						<MenuItem href="#special-text">Special text</MenuItem>
+						<MenuItem href="#tag">Tag</MenuItem>
+					</List>
+					<MenuItem bold href="#structured-information"
+						>Structured information</MenuItem>
+					<List spaced sub_list>
+						<MenuItem href="#list">List</MenuItem>
+						<MenuItem href="#table">Table</MenuItem>
+						<MenuItem href="#tabs">Tabs</MenuItem>
+						<MenuItem href="#accordion">Accordion</MenuItem>
+						<MenuItem href="#summary">Summary</MenuItem>
+					</List>
 				</List>
 			</PageMenuCol>
 
@@ -116,9 +123,15 @@
 					</Col>
 				</Section>
 
-				<Section section_break_id="paragraph">
+				<Section section_break_id="text">
 					<Col full>
-						<Heading h2 lg>Paragraph</Heading>
+						<Heading h2 lg>Text</Heading>
+					</Col>
+				</Section>
+
+				<Section no_break row_id="paragraph">
+					<Col full>
+						<Heading h3 md>Paragraph</Heading>
 						<Paragraph lead>Leading paragraph.</Paragraph>
 						<Paragraph small>Small paragraph.</Paragraph>
 						<Paragraph centre>Centred aligned paragraph.</Paragraph>
@@ -131,7 +144,7 @@
 
 				<Section section_break_id="special-text">
 					<Col full>
-						<Heading h2 lg>Special text</Heading>
+						<Heading h3 md>Special text</Heading>
 						<InsetText>This is inset text.</InsetText>
 						<WarningText>This is a warning!</WarningText>
 
@@ -141,9 +154,33 @@
 					</Col>
 				</Section>
 
-				<Section section_break_id="list">
+				<Section section_break_id="tag">
 					<Col full>
-						<Heading h2 lg>List</Heading>
+						<Heading h3 md>Tag</Heading>
+						<List>
+							<li><Tag>Completed</Tag></li>
+							<li><Tag inactive>Inactive</Tag></li>
+							<li><Tag fresh>New (fresh)</Tag></li>
+							<li><Tag active>Active</Tag></li>
+							<li><Tag pending>Pending</Tag></li>
+							<li><Tag received>Received</Tag></li>
+							<li><Tag sent>Sent</Tag></li>
+							<li><Tag rejected>Rejected</Tag></li>
+							<li><Tag declined>Declined</Tag></li>
+							<li><Tag delayed>Delayed</Tag></li>
+						</List>
+					</Col>
+				</Section>
+
+				<Section section_break_id="structured-information">
+					<Col full>
+						<Heading h2 lg>Structured information</Heading>
+					</Col>
+				</Section>
+
+				<Section no_break row_id="list">
+					<Col full>
+						<Heading h3 md>List</Heading>
 						<List bullets spaced>
 							<li>
 								Link <Link href="/general/xyz">Xyz</Link>.
@@ -172,27 +209,9 @@
 					</Col>
 				</Section>
 
-				<Section section_break_id="tag">
-					<Col full>
-						<Heading h2 lg>Tag</Heading>
-						<List>
-							<li><Tag>Completed</Tag></li>
-							<li><Tag inactive>Inactive</Tag></li>
-							<li><Tag fresh>New (fresh)</Tag></li>
-							<li><Tag active>Active</Tag></li>
-							<li><Tag pending>Pending</Tag></li>
-							<li><Tag received>Received</Tag></li>
-							<li><Tag sent>Sent</Tag></li>
-							<li><Tag rejected>Rejected</Tag></li>
-							<li><Tag declined>Declined</Tag></li>
-							<li><Tag delayed>Delayed</Tag></li>
-						</List>
-					</Col>
-				</Section>
-
 				<Section section_break_id="table">
 					<Col full>
-						<Heading h2 lg>Table</Heading>
+						<Heading h3 md>Table</Heading>
 						<Table
 							caption_md="Monthly costs"
 							headers="{[
@@ -219,14 +238,14 @@
 
 				<Section section_break_id="tabs">
 					<Col full>
-						<Heading h2 lg>Tabs</Heading>
+						<Heading h3 md>Tabs</Heading>
 						<Tabs />
 					</Col>
 				</Section>
 
 				<Section section_break_id="accordion">
 					<Col full>
-						<Heading h2 lg>Accordion</Heading>
+						<Heading h3 md>Accordion</Heading>
 						<Accordion id="accordion-example">
 							<AccordionSection heading="Abc" summary="Abc summary">
 								Abc content.
@@ -243,7 +262,7 @@
 
 				<Section section_break_id="summary">
 					<Col full>
-						<Heading h2 lg>Summary</Heading>
+						<Heading h3 md>Summary</Heading>
 						<SummaryCard name="Alice" age="21" />
 						<SummaryCard name="Bob" age="69" />
 						<SummaryCard name="Charlie" age="32" />
@@ -252,4 +271,4 @@
 			</Col>
 		</Row>
 	</Main>
-</PageContent>
+</Page>

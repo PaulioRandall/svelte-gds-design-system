@@ -3,14 +3,14 @@
 	import List from '$govuk/List.svelte'
 	import Main from '$govuk/Main.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
-	import PageContent from '$govuk/PageContent.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
 
+	import Page from '$shared/Page.svelte'
 	import PageMenuCol from '$shared/PageMenuCol.svelte'
 </script>
 
-<PageContent title="Form components">
+<Page title="Form components">
 	<Main>
 		<!--
 			TODO:
@@ -42,4 +42,4 @@
 			<Col two_thirds />
 		</Row>
 	</Main>
-</PageContent>
+</Page>

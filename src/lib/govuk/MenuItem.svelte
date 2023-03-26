@@ -2,24 +2,15 @@
 	import Link from '$govuk/Link.svelte'
 
 	export let href // = ""
+	export let bold = false
 
 	if (!href) {
 		throw new Error('A menu item requires a href value')
 	}
 </script>
 
-<li class="menu-item">
-	<Link href="{href}">
+<li class="menu-item" class:govuk-!-font-weight-bold="{bold}">
+	<Link href="{href}" no_underline thick_underline>
 		<slot />
 	</Link>
 </li>
-
-<style>
-	@media (max-width: 640px) {
-		.menu-item::before {
-			content: '—';
-			margin-left: calc(0 - var(--spacing-responsive-4));
-			padding-right: var(--spacing-responsive-1);
-		}
-	}
-</style>
