@@ -4,10 +4,9 @@
 	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import Main from '$govuk/Main.svelte'
+	import MenuItem from '$govuk/MenuItem.svelte'
 	import PageContent from '$govuk/PageContent.svelte'
 	import Row from '$govuk/Row.svelte'
-
-	import MenuItem from '$shared/MenuItem.svelte'
 </script>
 
 <PageContent title="Home">

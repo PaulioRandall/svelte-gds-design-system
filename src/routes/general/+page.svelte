@@ -11,6 +11,7 @@
 	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import Main from '$govuk/Main.svelte'
+	import MenuItem from '$govuk/MenuItem.svelte'
 	import NotificationBanner from '$govuk/NotificationBanner.svelte'
 	import NotificationBannerHeading from '$govuk/NotificationBannerHeading.svelte'
 	import NotificationBannerLink from '$govuk/NotificationBannerLink.svelte'
@@ -23,7 +24,6 @@
 	import Tag from '$govuk/Tag.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
-	import MenuItem from '$shared/MenuItem.svelte'
 	import Section from '$shared/Section.svelte'
 	import PageMenuCol from '$shared/PageMenuCol.svelte'
 
