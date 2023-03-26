@@ -62,16 +62,16 @@
 			<PageMenuCol>
 				<List spaced>
 					<MenuItem href="#page-title">Page title</MenuItem>
-					<MenuItem href="#banners">Banners</MenuItem>
-					<MenuItem href="#panels">Panels</MenuItem>
-					<MenuItem href="#paragraphs">Paragraphs</MenuItem>
+					<MenuItem href="#banner">Banner</MenuItem>
+					<MenuItem href="#panel">Panel</MenuItem>
+					<MenuItem href="#paragraph">Paragraph</MenuItem>
 					<MenuItem href="#special-text">Special text</MenuItem>
-					<MenuItem href="#lists">Lists</MenuItem>
-					<MenuItem href="#tags">Tags</MenuItem>
-					<MenuItem href="#tables">Tables</MenuItem>
+					<MenuItem href="#list">List</MenuItem>
+					<MenuItem href="#tag">Tag</MenuItem>
+					<MenuItem href="#table">Table</MenuItem>
 					<MenuItem href="#tabs">Tabs</MenuItem>
-					<MenuItem href="#accordions">Accordions</MenuItem>
-					<MenuItem href="#summaries">Summaries</MenuItem>
+					<MenuItem href="#accordion">Accordion</MenuItem>
+					<MenuItem href="#summary">Summary</MenuItem>
 				</List>
 			</PageMenuCol>
 
@@ -81,9 +81,9 @@
 					The page title
 				</Heading>
 
-				<Section section_break_id="banners">
+				<Section section_break_id="banner">
 					<Col full>
-						<Heading h2 lg>Banners</Heading>
+						<Heading h2 lg>Banner</Heading>
 						<NotificationBanner title="Excuse me">
 							<NotificationBannerHeading>
 								This is a notification banner content heading.
@@ -109,16 +109,16 @@
 					</Col>
 				</Section>
 
-				<Section section_break_id="panels">
+				<Section section_break_id="panel">
 					<Col full>
-						<Heading h2 lg>Panels</Heading>
+						<Heading h2 lg>Panel</Heading>
 						<Panel heading="A panel">The panel content</Panel>
 					</Col>
 				</Section>
 
-				<Section section_break_id="paragraphs">
+				<Section section_break_id="paragraph">
 					<Col full>
-						<Heading h2 lg>Paragraphs</Heading>
+						<Heading h2 lg>Paragraph</Heading>
 						<Paragraph lead>Leading paragraph.</Paragraph>
 						<Paragraph small>Small paragraph.</Paragraph>
 						<Paragraph centre>Centred aligned paragraph.</Paragraph>
@@ -141,9 +141,9 @@
 					</Col>
 				</Section>
 
-				<Section section_break_id="lists">
+				<Section section_break_id="list">
 					<Col full>
-						<Heading h2 lg>Lists</Heading>
+						<Heading h2 lg>List</Heading>
 						<List bullets spaced>
 							<li>
 								Link <Link href="/general/xyz">Xyz</Link>.
@@ -172,9 +172,9 @@
 					</Col>
 				</Section>
 
-				<Section section_break_id="tags">
+				<Section section_break_id="tag">
 					<Col full>
-						<Heading h2 lg>Tags</Heading>
+						<Heading h2 lg>Tag</Heading>
 						<List>
 							<li><Tag>Completed</Tag></li>
 							<li><Tag inactive>Inactive</Tag></li>
@@ -190,9 +190,9 @@
 					</Col>
 				</Section>
 
-				<Section section_break_id="tables">
+				<Section section_break_id="table">
 					<Col full>
-						<Heading h2 lg>Tables</Heading>
+						<Heading h2 lg>Table</Heading>
 						<Table
 							caption_md="Monthly costs"
 							headers="{[
@@ -224,9 +224,9 @@
 					</Col>
 				</Section>
 
-				<Section section_break_id="accordions">
+				<Section section_break_id="accordion">
 					<Col full>
-						<Heading h2 lg>Accordions</Heading>
+						<Heading h2 lg>Accordion</Heading>
 						<Accordion id="accordion-example">
 							<AccordionSection heading="Abc" summary="Abc summary">
 								Abc content.
@@ -241,9 +241,9 @@
 					</Col>
 				</Section>
 
-				<Section section_break_id="summaries">
+				<Section section_break_id="summary">
 					<Col full>
-						<Heading h2 lg>Summaries</Heading>
+						<Heading h2 lg>Summary</Heading>
 						<SummaryCard name="Alice" age="21" />
 						<SummaryCard name="Bob" age="69" />
 						<SummaryCard name="Charlie" age="32" />

@@ -19,3 +19,11 @@ export const findTruthy = (...values) => {
 
 	return null
 }
+
+export const isObject = (v) => {
+	return typeof v === 'object' && !Array.isArray(v) && v !== null
+}
+
+export const isNonEmptyString = (v) => {
+	return typeof v === 'string' && v === null && v.length > 0
+}

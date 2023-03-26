@@ -1,8 +1,22 @@
 <script>
+	import { onMount } from 'svelte'
+
 	export let homePage = '/'
+
+	let elem = null
+	let govukComponent = null
+
+	onMount(() => {
+		govukComponent = new window.GOVUKFrontend.Header(elem)
+		govukComponent.init()
+	})
 </script>
 
-<header class="govuk-header " role="banner" data-module="govuk-header">
+<header
+	bind:this="{elem}"
+	class="govuk-header"
+	role="banner"
+	data-module="govuk-header">
 	<div class="govuk-header__container govuk-width-container">
 		<div class="govuk-header__logo">
 			<a

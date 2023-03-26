@@ -1,15 +1,7 @@
 <script>
-	import { onMount } from 'svelte'
-
 	import Header from '$govuk/Header.svelte'
 	import Footer from '$govuk/Footer.svelte'
 	import SkipLink from '$govuk/SkipLink.svelte'
-
-	onMount(async () => {
-		// Important!
-		// GOVUK JS stuff must initalise after component rendering.
-		window.GOVUKFrontend.initAll()
-	})
 </script>
 
 <div class="page">

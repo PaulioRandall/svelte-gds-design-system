@@ -1,13 +1,26 @@
 <script>
+	import { onMount } from 'svelte'
+
 	export let title // = ""
 	export let success = false
+	export let disableAutoFocus = false
+
+	let elem = null
+	let govukComponent = null
 
 	if (!title) {
 		throw new Error('A notification banner must have a title')
 	}
+
+	onMount(async () => {
+		const config = { disableAutoFocus }
+		govukComponent = new window.GOVUKFrontend.NotificationBanner(elem, config)
+		govukComponent.init()
+	})
 </script>
 
 <div
+	bind:this="{elem}"
 	class="govuk-notification-banner"
 	class:govuk-notification-banner--success="{success}"
 	role="{success ? 'alert' : 'region'}"
