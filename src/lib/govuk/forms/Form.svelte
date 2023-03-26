@@ -15,14 +15,19 @@
 	*/
 
 	export let target = '_self'
+
 	const targets = ['_self', '_blank', '_parent', '_top']
+	const newFormError = (err) => {
+		const prefix = name ? `Form ${name}` : `A form`
+		return new Error(`${prefix} ${err}`)
+	}
 
 	if (!GET && !POST) {
-		throw new Error('A form must have a GET or POST destination url')
+		throw newFormError('must have a GET or POST destination url')
 	}
 
 	if (GET && POST) {
-		throw new Error('A form cannot have both GET and POST destination urls')
+		throw newFormError('cannot have both a GET and POST destination urls')
 	}
 
 	const method = GET ? 'GET' : 'POST'
@@ -30,8 +35,8 @@
 
 	if (!targets.include(target)) {
 		const targetList = targets.join(', ')
-		throw new Error(
-			`A form must use one of the following targets [${targetList}] '_self' is the default`
+		throw new newFormError(
+			`must use one of the following targets [${targetList}] '_self' is the default`
 		)
 	}
 

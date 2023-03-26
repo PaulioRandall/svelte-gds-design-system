@@ -9,6 +9,8 @@
 			'A list cannot have both bullet points and be numbered at the same time'
 		)
 	}
+
+	// TODO: try out https://svelte.dev/docs#template-syntax-slot-slot-key-value
 </script>
 
 {#if numbers}

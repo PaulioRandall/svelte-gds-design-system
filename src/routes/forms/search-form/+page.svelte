@@ -6,6 +6,8 @@
 	import Row from '$govuk/Row.svelte'
 
 	import SearchForm from '$govuk/forms/SearchForm.svelte'
+	import Fieldset from '$govuk/forms/Fieldset.svelte'
+	import Legend from '$govuk/forms/Legend.svelte'
 
 	import Page from '$shared/Page.svelte'
 </script>
@@ -13,7 +15,11 @@
 <Page title="Form components">
 	<Row>
 		<Col two_thirds>
-			<SearchForm GET="/forms/search-form" />
+			<SearchForm GET="/forms/search-form">
+				<Fieldset>
+					<Legend slot="legend" h1 xl>A legend</Legend>
+				</Fieldset>
+			</SearchForm>
 		</Col>
 	</Row>
 </Page>

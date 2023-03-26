@@ -11,14 +11,9 @@
 	export let autocomplete = false
 	export let target = '_self'
 
-	if (!GET && !POST) {
-		throw new Error('A search form must have a GET or POST destination url')
-	}
-
-	if (GET && POST) {
-		throw new Error(
-			'A search form cannot have both GET and POST destination urls'
-		)
+	const newSearchFormError = (err) => {
+		const prefix = name ? `Form ${name}` : `A form`
+		return new Error(`${prefix} ${err}`)
 	}
 
 	const method = GET ? 'GET' : 'POST'
@@ -26,10 +21,18 @@
 	const autoCompleteValue = autocomplete ? 'on' : 'off'
 	const targets = ['_self', '_blank', '_parent', '_top']
 
+	if (!GET && !POST) {
+		throw newSearchFormError('must have a GET or POST destination url')
+	}
+
+	if (GET && POST) {
+		throw newSearchFormError('cannot have both a GET and POST destination urls')
+	}
+
 	if (!targets.includes(target)) {
 		const targetList = targets.join(', ')
-		throw new Error(
-			`A form must use one of the following targets [${targetList}] '_self' is the default`
+		throw newSearchFormError(
+			`must use one of the following targets [${targetList}] '_self' is the default`
 		)
 	}
 </script>

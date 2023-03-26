@@ -1,5 +1,5 @@
 <script>
-	import { countTruthy } from '$govuk/util.js'
+	import { countTruthy, getHeadingElemName } from '$govuk/util.js'
 
 	export let id = undefined // ""
 
@@ -31,33 +31,16 @@
 	if (numOfSizes > 1) {
 		throw new Error('You cannot specify more than one heading font size')
 	}
+
+	const headingType = getHeadingElemName(h1, h2, h3)
 </script>
 
-{#if h1}
-	<h1
-		id="{id}"
-		class:govuk-heading-s="{sm}"
-		class:govuk-heading-m="{md}"
-		class:govuk-heading-l="{lg}"
-		class:govuk-heading-xl="{xl}">
-		<slot />
-	</h1>
-{:else if h2}
-	<h2
-		id="{id}"
-		class:govuk-heading-s="{sm}"
-		class:govuk-heading-m="{md}"
-		class:govuk-heading-l="{lg}"
-		class:govuk-heading-xl="{xl}">
-		<slot />
-	</h2>
-{:else if h3}
-	<h3
-		id="{id}"
-		class:govuk-heading-s="{sm}"
-		class:govuk-heading-m="{md}"
-		class:govuk-heading-l="{lg}"
-		class:govuk-heading-xl="{xl}">
-		<slot />
-	</h3>
-{/if}
+<svelte:element
+	this="{headingType}"
+	id="{id}"
+	class:govuk-heading-s="{sm}"
+	class:govuk-heading-m="{md}"
+	class:govuk-heading-l="{lg}"
+	class:govuk-heading-xl="{xl}">
+	<slot />
+</svelte:element>
