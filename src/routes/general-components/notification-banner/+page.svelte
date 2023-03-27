@@ -3,6 +3,7 @@
 	import Caption from '$govuk/Caption.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import InsetText from '$govuk/InsetText.svelte'
+	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
 	import NotificationBanner from '$govuk/NotificationBanner.svelte'
@@ -54,10 +55,17 @@
 		<Restyle bold>Authors note:</Restyle> I'm not happy with the use of sub components
 		but I've yet to come up with a better solution. Notification banners should be
 		short and to the point. I'd like a component design that mirrors that. The pain
-		lies in the requirement for special modifier classes such as
+		lies in the requirement for special element classes such as
 		<code>govuk-notification-banner__heading</code>
 		and <code>govuk-notification-banner__link</code>.
 	</InsetText>
+
+	<Paragraph>
+		Official documentation on <Link
+			href="https://design-system.service.gov.uk/components/notification-banner/"
+			>GDS Design System 'Notification banner' components</Link
+		>.
+	</Paragraph>
 
 	<Section add_top_margin id="examples">
 		<Heading h2 lg>Examples</Heading>

@@ -14,4 +14,5 @@
 		aria-hidden="true"
 		focusable="false">
 		<path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-	</svg></a>
+	</svg>
+</a>

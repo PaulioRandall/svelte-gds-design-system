@@ -2,7 +2,7 @@
 	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Heading from '$govuk/Heading.svelte'
-	import InsetText from '$govuk/InsetText.svelte'
+	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
 	import NotificationBanner from '$govuk/NotificationBanner.svelte'
@@ -12,12 +12,19 @@
 	import Restyle from '$govuk/Restyle.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
 	import Table from '$govuk/Table.svelte'
+	import WarningText from '$govuk/WarningText.svelte'
 
 	import Button from '$govuk/forms/Button.svelte'
 
 	import CodeBlock from '$shared/CodeBlock.svelte'
 	import StandardPage from '$shared/StandardPage.svelte'
 	import Section from '$shared/Section.svelte'
+
+	let counter = 0
+	const incrementCount = (event) => counter++
+
+	let warningText = 'Think carefully before pressing me!'
+	const changeWarning = (event) => (warningText = 'I said think carefully!!')
 </script>
 
 <StandardPage sticky_menu title="Button">
@@ -37,8 +44,6 @@
 			<MenuItem href="#example-secondary">Secondary</MenuItem>
 			<MenuItem href="#example-warning">Warning</MenuItem>
 			<MenuItem href="#example-disabled">Disabled</MenuItem>
-			<MenuItem href="#example-prevent-double-clicks"
-				>Prevent double clicks</MenuItem>
 		</List>
 		<MenuItem bold href="#interface">Interface</MenuItem>
 		<List sub_list spaced>
@@ -52,55 +57,77 @@
 		Button
 	</Heading>
 
-	<!--
-	<InsetText>
-		<Restyle bold>Authors note:</Restyle> I'm not happy with the use of sub components
-		but I've yet to come up with a better solution. Notification banners should be
-		short and to the point. I'd like a component design that mirrors that. The pain
-		lies in the requirement for special modifier classes such as
-		<code>govuk-notification-banner__heading</code>
-		and <code>govuk-notification-banner__link</code>.
-	</InsetText>
--->
+	<Paragraph>
+		Official documentation on <Link
+			href="https://design-system.service.gov.uk/components/button/"
+			>GDS Design System 'Button' components</Link
+		>.
+	</Paragraph>
 
 	<Section add_top_margin id="examples">
 		<Heading h2 lg>Examples</Heading>
 
+		<noscript>
+			<WarningText>
+				Pssst... these examples won't work without JavaScript enabled.
+			</WarningText>
+		</noscript>
+
 		<Heading id="example-default" h3 md>Default</Heading>
-		<Button>Press me</Button>
+		<Button onclick="{incrementCount}">Counter: {counter}</Button>
 		<CodeBlock
 			lines="{[
 				`<script>`,
 				`	import Button from '$govuk/forms/Button.svelte'`,
+				``,
+				`	let counter = 0`,
+				`	const incrementCount = (event) => counter++`,
 				`</script>`,
 				``,
-				`<Button>Press me</Button>`,
+				`<Button onclick={incrementCount}>`,
+				`	Counter: {counter}`,
+				`</Button>`,
 			]}" />
 
 		<SectionBreak md />
 
 		<Heading id="example-secondary" h3 md>Secondary</Heading>
-		<Button secondary>Press me</Button>
+		<Button secondary onclick="{incrementCount}">Counter: {counter}</Button>
 		<CodeBlock
 			lines="{[
 				`<script>`,
 				`	import Button from '$govuk/forms/Button.svelte'`,
+				``,
+				`	let counter = 0`,
+				`	const incrementCount = (event) => counter++`,
 				`</script>`,
 				``,
-				`<Button secondary>Press me</Button>`,
+				`<Button secondary onclick={incrementCount}>`,
+				`	Counter: {counter}`,
+				`</Button>`,
 			]}" />
 
 		<SectionBreak md />
 
 		<Heading id="example-warning" h3 md>Warning</Heading>
-		<Button warning>Think carfully before pressing me!</Button>
+		<Button warning prevent_double_clicks onclick="{changeWarning}">
+			{warningText}
+		</Button>
 		<CodeBlock
 			lines="{[
 				`<script>`,
 				`	import Button from '$govuk/forms/Button.svelte'`,
+				``,
+				`	let warningText = "Think carfully before pressing me!"`,
+				`	const changeWarning = (event) => warningText = "I said think carefully!!"`,
 				`</script>`,
 				``,
-				`<Button warning>Press me!</Button>`,
+				`<Button`,
+				`	warning`,
+				`	prevent_double_clicks`,
+				`	onclick={changeWarning}>`,
+				`	{warningText}`,
+				`</Button>`,
 			]}" />
 
 		<SectionBreak md />
@@ -114,21 +141,6 @@
 				`</script>`,
 				``,
 				`<Button disabled>Can't touch this</Button>`,
-			]}" />
-
-		<SectionBreak md />
-
-		<Heading id="example-prevent-double-clicks" h3 md>
-			Prevent double clicks
-		</Heading>
-		<Button prevent_double_clicks>Double click protected</Button>
-		<CodeBlock
-			lines="{[
-				`<script>`,
-				`	import Button from '$govuk/forms/Button.svelte'`,
-				`</script>`,
-				``,
-				`<Button prevent_double_clicks>Press me!</Button>`,
 			]}" />
 	</Section>
 
@@ -163,6 +175,11 @@
 					name: '<code>prevent_double_clicks</code>',
 					type: 'bool',
 					summary: 'True to enable double click protection',
+				},
+				{
+					name: '<code>onclick</code>',
+					type: 'function(event)',
+					summary: 'Function called each time the button is clicked',
 				},
 			]}" />
 
