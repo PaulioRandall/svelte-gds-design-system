@@ -1,6 +1,8 @@
 <script>
 	import { countTruthy, findTruthy } from '$govuk/util.js'
 
+	export let id = undefined // ""
+
 	export let caption_sm = ''
 	export let caption_md = ''
 	export let caption_lg = ''
@@ -42,7 +44,7 @@
 	const caption = findTruthy(caption_sm, caption_md, caption_lg, caption_xl)
 </script>
 
-<table class="govuk-table">
+<table id="{id}" class="govuk-table">
 	{#if caption}
 		<caption
 			class="govuk-table__caption"

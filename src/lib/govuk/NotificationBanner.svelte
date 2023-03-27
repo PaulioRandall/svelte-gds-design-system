@@ -3,7 +3,7 @@
 
 	export let title // = ""
 	export let success = false
-	export let disableAutoFocus = false
+	export let disable_auto_focus = false
 
 	let elem = null
 	let govukComponent = null
@@ -13,7 +13,10 @@
 	}
 
 	onMount(async () => {
-		const config = { disableAutoFocus }
+		const config = {
+			disableAutoFocus: disable_auto_focus,
+		}
+
 		govukComponent = new window.GOVUKFrontend.NotificationBanner(elem, config)
 		govukComponent.init()
 	})
@@ -30,7 +33,7 @@
 		<h2
 			class="govuk-notification-banner__title"
 			id="govuk-notification-banner-title">
-			{title}
+			{@html title}
 		</h2>
 	</div>
 	<div class="govuk-notification-banner__content">

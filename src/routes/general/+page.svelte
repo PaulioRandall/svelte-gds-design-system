@@ -10,9 +10,6 @@
 	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
-	import NotificationBanner from '$govuk/NotificationBanner.svelte'
-	import NotificationBannerHeading from '$govuk/NotificationBannerHeading.svelte'
-	import NotificationBannerLink from '$govuk/NotificationBannerLink.svelte'
 	import Panel from '$govuk/Panel.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Table from '$govuk/Table.svelte'
@@ -43,7 +40,8 @@
 
 	<List slot="side-menu" spaced>
 		<MenuItem href="#page-title">Page title</MenuItem>
-		<MenuItem href="#banner">Banner</MenuItem>
+		<MenuItem href="/general/notification-banner">Notification banner</MenuItem>
+		<MenuItem href="#error-summary">Error summary</MenuItem>
 		<MenuItem href="#panel">Panel</MenuItem>
 		<MenuItem bold href="#text">Text</MenuItem>
 		<List spaced sub_list>
@@ -67,26 +65,10 @@
 		The page title
 	</Heading>
 
-	<Section id="banner">
-		<Heading h2 lg>Banner</Heading>
-		<NotificationBanner title="Excuse me">
-			<NotificationBannerHeading>
-				This is a notification banner content heading.
-			</NotificationBannerHeading>
-			<Paragraph>
-				And here is a notification banner link <NotificationBannerLink
-					href="/general/xyz"
-					>Xyz
-				</NotificationBannerLink>.
-			</Paragraph>
-		</NotificationBanner>
-
-		<NotificationBanner success title="Success">
-			<Paragraph>Well done.</Paragraph>
-		</NotificationBanner>
-
+	<Section id="error-summary">
+		<Heading h2 lg>Error summary</Heading>
 		<ErrorSummary heading="You screwed up somewhere!">
-			<li>This component takes &lt;li&gt; elements.</li>
+			<li>This component takes {'<li>'} elements.</li>
 			<li>
 				<a href="#main-content">A link to a none existent error.</a>
 			</li>

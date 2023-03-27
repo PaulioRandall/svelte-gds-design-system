@@ -15,6 +15,7 @@ const routes = [
 	{ path: '/home', status: 200 },
 	{ path: '/general', status: 200 },
 	{ path: '/general/xyz', status: 200 },
+	{ path: '/general/notification-banner', status: 200 },
 	{ path: '/forms', status: 200 },
 	{ path: '/forms/search-form', status: 200 },
 	{ path: '/feedback', status: 200 },

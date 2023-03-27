@@ -34,13 +34,13 @@ In SvelteKit, the page layout is organised hierarchically as folders reflecting 
 
 The real difference is in what concerns each separates and how they separate them:
 
-- _Organisation by layer_ groups logically by type, e.g. separate folders for holding pages, models, controllers, utility components, etc. This aligns well with layered architectural patterns (MVC etc) and is more optimal for code reuse.
+- _Organisation by layer_ groups logically by type, e.g. separate folders for holding pages, models, controllers, utility components, etc. This aligns well with layered architectural theory (MVC etc) and is more optimal for code reuse.
   - `/models`
   - `/controllers`
   - `/page-templates`
-- _Organisation by feature_ groups based on usage, e.g. a single folder holding a page along with its specific models, controller, etc. This aligns well with top down user driven design methods, keeps related stuff together, and makes changing specific components easier.
-  - `/home` containing `/home/model.js`, `/home/controller.js`, `/home/page-template.html`
-  - `/products` containing `/products/model.js`, `/products/controller.js`, `/products/page-template.html`
+- _Organisation by feature_ groups based on usage or relation, e.g. a single folder holding a page along with its specific models, controller, etc. This aligns well with top down user driven design methods, keeps related stuff together, and makes changing specific components easier.
+  - `/home/model.js`, `/home/controller.js`, `/home/page-template.html`
+  - `/products/model.js`, `/products/controller.js`, `/products/page-template.html`
 
 _Organisation by feature_ is favoured throughout. Of course you're free to move everything around to suite your preferences.
 
