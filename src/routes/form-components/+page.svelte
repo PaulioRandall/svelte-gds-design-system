@@ -13,7 +13,6 @@
 			+ Cookie banner
 			+ Forms
 				+ Error message
-			  + Button
 			  + Character count
 			  + Checkboxes
 			  + Data input
@@ -28,5 +27,6 @@
 	<List slot="side-menu" spaced>
 		<MenuItem href="/form-components/search-form">Search form</MenuItem>
 		<MenuItem href="/form-components/button">Button</MenuItem>
+		<MenuItem href="/form-components/start-button">Start button</MenuItem>
 	</List>
 </StandardPage>

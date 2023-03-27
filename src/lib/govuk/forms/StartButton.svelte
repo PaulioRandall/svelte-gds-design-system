@@ -1,10 +1,18 @@
+<script>
+	export let href // = ""
+
+	if (!href) {
+		throw new Error('A start button must have a href value')
+	}
+</script>
+
 <a
-	href="#"
+	href="{href}"
 	role="button"
 	draggable="false"
 	class="govuk-button govuk-button--start"
 	data-module="govuk-button">
-	Start now
+	<slot>Start now</slot>
 	<svg
 		class="govuk-button__start-icon"
 		xmlns="http://www.w3.org/2000/svg"

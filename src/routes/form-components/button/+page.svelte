@@ -2,6 +2,7 @@
 	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Heading from '$govuk/Heading.svelte'
+	import InsetText from '$govuk/InsetText.svelte'
 	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
@@ -56,6 +57,11 @@
 		<Caption xl>Forms</Caption>
 		Button
 	</Heading>
+
+	<InsetText>
+		<Restyle bold>TODO:</Restyle> More props are probably going to be needed, paricularly
+		a button types.
+	</InsetText>
 
 	<Paragraph>
 		Official documentation on <Link
