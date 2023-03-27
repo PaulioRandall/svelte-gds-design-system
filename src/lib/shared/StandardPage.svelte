@@ -4,12 +4,13 @@
 
 	import Page from '$shared/Page.svelte'
 
+	export let title = null
 	export let sticky_menu = false
 
 	const stickyMenuClass = sticky_menu ? 'info-page-sticky-menu' : ''
 </script>
 
-<Page title="General components">
+<Page title="{title}">
 	<svelte:fragment slot="breadcrumbs">
 		<slot name="breadcrumbs" />
 	</svelte:fragment>

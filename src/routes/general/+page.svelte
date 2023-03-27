@@ -67,7 +67,7 @@
 		The page title
 	</Heading>
 
-	<Section section_break_id="banner">
+	<Section id="banner">
 		<Heading h2 lg>Banner</Heading>
 		<NotificationBanner title="Excuse me">
 			<NotificationBannerHeading>
@@ -93,16 +93,16 @@
 		</ErrorSummary>
 	</Section>
 
-	<Section section_break_id="panel">
+	<Section id="panel">
 		<Heading h2 lg>Panel</Heading>
 		<Panel heading="A panel">The panel content</Panel>
 	</Section>
 
-	<Section section_break_id="text">
+	<Section add_top_margin id="text">
 		<Heading h2 lg>Text</Heading>
 	</Section>
 
-	<Section no_break row_id="paragraph">
+	<Section no_top_pad id="paragraph">
 		<Heading h3 md>Paragraph</Heading>
 		<Paragraph lead>Leading paragraph.</Paragraph>
 		<Paragraph small>Small paragraph.</Paragraph>
@@ -112,7 +112,7 @@
 		<Paragraph override_font_36>Font size overriden paragraph.</Paragraph>
 	</Section>
 
-	<Section section_break_id="special-text">
+	<Section id="special-text">
 		<Heading h3 md>Special text</Heading>
 		<InsetText>This is inset text.</InsetText>
 		<WarningText>This is a warning!</WarningText>
@@ -120,7 +120,7 @@
 		<Details summary="Here are some details">These are the details.</Details>
 	</Section>
 
-	<Section section_break_id="tag">
+	<Section id="tag">
 		<Heading h3 md>Tag</Heading>
 		<List>
 			<li><Tag>Completed</Tag></li>
@@ -136,11 +136,11 @@
 		</List>
 	</Section>
 
-	<Section section_break_id="structured-information">
+	<Section add_top_margin id="structured-information">
 		<Heading h2 lg>Structured information</Heading>
 	</Section>
 
-	<Section no_break row_id="list">
+	<Section no_top_pad id="list">
 		<Heading h3 md>List</Heading>
 		<List bullets spaced>
 			<li>
@@ -167,7 +167,7 @@
 		</List>
 	</Section>
 
-	<Section section_break_id="table">
+	<Section id="table">
 		<Heading h3 md>Table</Heading>
 		<Table
 			caption_md="Monthly costs"
@@ -192,12 +192,12 @@
 			]}" />
 	</Section>
 
-	<Section section_break_id="tabs">
+	<Section id="tabs">
 		<Heading h3 md>Tabs</Heading>
 		<Tabs />
 	</Section>
 
-	<Section section_break_id="accordion">
+	<Section id="accordion">
 		<Heading h3 md>Accordion</Heading>
 		<Accordion id="accordion-example">
 			<AccordionSection heading="Abc" summary="Abc summary">
@@ -212,7 +212,7 @@
 		</Accordion>
 	</Section>
 
-	<Section section_break_id="summary">
+	<Section id="summary">
 		<Heading h3 md>Summary</Heading>
 		<SummaryCard name="Alice" age="21" />
 		<SummaryCard name="Bob" age="69" />

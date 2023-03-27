@@ -9,6 +9,7 @@ export default {
 			$routes: path.resolve('./src/routes'),
 			$govuk: path.resolve('./src/lib/govuk'),
 			$shared: path.resolve('./src/lib/shared'),
+			$data: path.resolve('./src/lib/data'),
 		},
 	},
 	preprocess: [importAssets()],

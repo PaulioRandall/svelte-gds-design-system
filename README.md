@@ -1,16 +1,84 @@
-# Sveltekit Template
+# Sveltekit Template for GDS Design System projects
 
-A [Sveltekit](https://kit.svelte.dev/) project template with [Prettier](https://prettier.io/), [Jest](https://jestjs.io/), and [Cypress](https://www.cypress.io/) setup and ready to go.
+A [Sveltekit](https://kit.svelte.dev/) project template for building GOVUK services that use GDS Desgin System.
 
-I've also added [svelte-preprocess-import-assets](https://www.npmjs.com/package/svelte-preprocess-import-assets). I found this helps allows me to keep coupled files (_'those that change together'_) in the same directory. For example, some data files and images, like screenshots, are used only in on a specific page. It's nice to keep those files with the `+page.svelte` that uses it. Yes, _organisation by feature, not by layer_.
+> **Authors note:** The name of the project and repository will be definitely be changing once I figure out what I'm actually creating here.
 
-## To start a new project
+## EXPERIMENTAL
+
+This project is currently very experimental. Component interfaces and implementations are constantly being rewritten as new ideas are tried out. Over time a stable set of components and a standard interface pattern should emerge. But this seems far off at the moment because there is soo much to explore.
+
+> **Authors note:** I really hope to try out [Deno](https://deno.land/) as an alternative to Node. Historically, Sveltekit required [Vite](https://vitejs.dev/) and [Node Package Manager (npm)](https://www.npmjs.com/) which Deno did not support. This seems to no longer be the case. Deno aligns better with the values and principles of this project, particularly in terms of security and development ease.
+
+## Ready to go tools
+
+The template comes with some pre-setup tools and is intentially minimal. This means keeping as close to pure HTML, CSS, and JS as feasible.
+
+Most frontends don't need SASS, SCSS, TypeScript, YARN and other supportive tooling but you can add these and swap existing tools in and out to suite your needs and preferences:
+
+> **Authors note:** The list below will likely change as ideas and options are explored. However, removals will be favoured over additions.
+
+- [svelte-preprocess-import-assets](https://www.npmjs.com/package/svelte-preprocess-import-assets) for embedding static content when files are specific to only one page
+- [Prettier](https://prettier.io/) for code formatting
+- [jsonlint-dir](https://www.npmjs.com/package/jsonlint-dir) for validating and debugging JSON data files
+- [Jest](https://jestjs.io/) for code testing
+- [Cypress](https://www.cypress.io/) for service testing (uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test/v/1.11.7))
+
+## GOVUK Frontend
+
+This project copies distribution files from [govuk-frontend](https://github.com/alphagov/govuk-frontend). This is done by cloning a specific release tag from [govuk-frontend](https://github.com/alphagov/govuk-frontend) via Git and copying the required files to specific folder locations. The script for this is [/scripts/govuk-frontend-init.sh](/scripts/govuk-frontend-init.sh).
+
+## Organisation by feature
+
+In SvelteKit, the page layout is organised hierarchically as folders reflecting the URL paths. This is an example of _organisation by feature (or by slice)_. This is an alternative to _organisation by layer_ which has historically been favoured in Web development and Web API code bases.
+
+The real difference is in what concerns each separates and how they separate them:
+
+- _Organisation by layer_ groups logically by type, e.g. separate folders for holding pages, models, controllers, utility components, etc. This aligns well with layered architectural patterns (MVC etc) and is more optimal for code reuse.
+  - `/models`
+  - `/controllers`
+  - `/page-templates`
+- _Organisation by feature_ groups based on usage, e.g. a single folder holding a page along with its specific models, controller, etc. This aligns well with top down user driven design methods, keeps related stuff together, and makees changing specific components easier.
+  - `/home` containing `/home/model.js`, `/home/controller.js`, `/home/page-template.html`
+  - `/products` containing `/products/model.js`, `/products/controller.js`, `/products/page-template.html`
+
+_Organisation by feature_ is favoured throughout. Of course you're free to move everything around to suite your preferences.
+
+## Shared stuff
+
+Shared and importable data, content, styling, scripts, and Svelte components goes in `/static` or `/libs`:
+
+- [./static](/static)`for statically served content akin to`/public` in other tools
+- [./src/libs/govuk](./src/libs/govuk) for generic Svelte components that represent GOVUK GDS design system components along with supporting CSS and JS; these may or may not end up in a Svelte component library
+- [./src/libs/shared](./src/libs/shared) for project specific shared components; this is where you put all your shared importable stuff like Svelte components, JS, and CSS
+- [./src/libs/data](./src/libs/data) for data that is shared project wide (if any)
+
+## Import aliases
+
+[Import aliases](/svelte.config.js) have been setup to make crafting pages simpler and inject some readability and meaning into imports. Preference is to avoid relative referencing except for importing from the same folder or sub-folders:
+
+> **Authors note:** Still needs a bit more experimentation but I think we're close on this one.
+
+```html
+<script>
+	import GovukCaption from '$govuk/Caption.svelte'
+	import GovukPanel from '$govuk/Panel.svelte'
+	import GovukSearchForm from '$govuk/forms/SearchForm.svelte'
+
+	import Section from '$shared/Section.svelte'
+	import util from '$shared/util.js'
+
+	import defaultBarChartConfig from '$data/default-bar-chart-config.json'
+</script>
+```
+
+## Checking out
 
 1. Clone the repo and delete the lock file (if present). You can fork the repository in Github first if you want:
 
 ```bash
-git clone https://github.com/PaulioRandall/sveltekit-template.git
-cd sveltekit-template
+git clone https://github.com/PaulioRandall/svelte-gds-design-system.git
+cd svelte-gds-design-system
 rm -f package-lock.json
 ```
 
@@ -22,6 +90,7 @@ rm -f package-lock.json
 
 ```bash
 npm i
+npm run govuk-init
 npm run build
 npm run dev
 ```
@@ -34,7 +103,7 @@ npm run dev
 npm run commit
 ```
 
-You'll know if everything is good because you'll get a curated ASCII scene which can be changed by modifying `${project_root}/scripts/well-done.txt`:
+You'll know if everything is good because you'll get someones lovely curated ASCII scene which can be changed by modifying `${project_root}/scripts/well-done.txt`:
 
 ```bash
                                    .''.
@@ -68,6 +137,13 @@ npm run fmt
 
 Modify `.prettierrc.json` to customise styling.
 
+#### Reimport govuk-frontend files?
+
+```bash
+npm run govuk-clean
+npm run govuk-init
+```
+
 #### Delete build directory?
 
 ```bash
@@ -75,6 +151,8 @@ npm run clean
 ```
 
 #### Environment variables?
+
+> **Authors note:** I feel like this isn't needed so it will likely be removed soon.
 
 All environment variables must be prefixed with `VITE_` or they won't be accessible by Sveltekit.
 
@@ -103,11 +181,11 @@ If you're on Windows you'll have to figure that out your self. Sorry.
 #### Production build warning
 
 ```bash
-	Could not detect a supported production environment...
+Could not detect a supported production environment...
 ```
 
 Don't worry if you get a build warning like the one above.
 
 When the time comes to deploy to development and production environments you'll want to research [SvelteKit adapters](https://kit.svelte.dev/docs/adapters).
 
-Since I use Vercel to host my personal website I use [@sveltejs/adapter-vercel](https://www.npmjs.com/package/@sveltejs/adapter-vercel). There are many others and you can write your own. I've written a custom Express adapter before and it's not difficult. Just a little tedious due to extra work needed to test it.
+> **Authors note:** Use Vercel to host my personal website so I use [@sveltejs/adapter-vercel](https://www.npmjs.com/package/@sveltejs/adapter-vercel). There are many others and you can write your own. I've written a custom Express adapter before and it's not too difficult. Just a little tedious due to extra work needed to test it.

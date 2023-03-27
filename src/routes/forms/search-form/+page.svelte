@@ -8,7 +8,7 @@
 </script>
 
 <StandardPage title="Form components">
-	<Section no_break>
+	<Section>
 		<SearchForm GET="/forms/search-form">
 			<Fieldset>
 				<Legend slot="legend" h1 xl>A legend</Legend>
