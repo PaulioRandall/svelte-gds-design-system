@@ -1,15 +1,12 @@
 <script>
-	import Col from '$govuk/Col.svelte'
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
-	import Paragraph from '$govuk/Paragraph.svelte'
-	import Row from '$govuk/Row.svelte'
+	//import Paragraph from '$govuk/Paragraph.svelte'
 
-	import Page from '$shared/Page.svelte'
-	import PageMenuCol from '$shared/PageMenuCol.svelte'
+	import StandardPage from '$shared/StandardPage.svelte'
 </script>
 
-<Page title="Form components">
+<StandardPage title="Form components">
 	<!--
 			TODO:
 			+ Pagination
@@ -28,13 +25,7 @@
 			  + Textarea
 		-->
 
-	<Row>
-		<PageMenuCol>
-			<List spaced>
-				<MenuItem href="/forms/search-form">Search form</MenuItem>
-			</List>
-		</PageMenuCol>
-
-		<Col two_thirds />
-	</Row>
-</Page>
+	<List slot="side-menu" spaced>
+		<MenuItem href="/forms/search-form">Search form</MenuItem>
+	</List>
+</StandardPage>
