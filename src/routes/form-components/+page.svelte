@@ -26,6 +26,6 @@
 		-->
 
 	<List slot="side-menu" spaced>
-		<MenuItem href="/forms/search-form">Search form</MenuItem>
+		<MenuItem href="/form-components/search-form">Search form</MenuItem>
 	</List>
 </StandardPage>

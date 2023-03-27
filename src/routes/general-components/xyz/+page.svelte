@@ -12,8 +12,8 @@
 		collapsable
 		crumbs="{[
 			['/home', 'Home'],
-			['/general', 'General'],
-			['/general/xyz', 'Xyz'],
+			['/general-components', 'General components'],
+			['/general-components/xyz', 'Xyz'],
 		]}" />
 
 	<Heading h1 xl>Xyz</Heading>

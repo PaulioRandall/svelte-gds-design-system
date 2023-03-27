@@ -9,7 +9,7 @@
 
 <StandardPage title="Form components">
 	<Section>
-		<SearchForm GET="/forms/search-form">
+		<SearchForm GET="/form-components/search-form">
 			<Fieldset>
 				<Legend slot="legend" h1 xl>A legend</Legend>
 			</Fieldset>

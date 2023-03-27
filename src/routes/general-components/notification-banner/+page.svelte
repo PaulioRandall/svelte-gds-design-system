@@ -24,8 +24,8 @@
 		collapsable
 		crumbs="{[
 			['/home', 'Home'],
-			['/general', 'General components'],
-			['/general/notification-banner', 'Notification banner'],
+			['/general-components', 'General components'],
+			['/general-components/notification-banner', 'Notification banner'],
 		]}" />
 
 	<List slot="side-menu" spaced>
@@ -192,7 +192,7 @@
 		<NotificationBanner disable_auto_focus title="Links in banners">
 			<Paragraph>
 				For some reason there is a special CSS class for banner links. Here is a
-				<NotificationBannerLink href="/general">
+				<NotificationBannerLink href="/general-components">
 					notification banner link
 				</NotificationBannerLink> that takes you back to the general components page.
 			</Paragraph>
@@ -202,7 +202,7 @@
 				`<NotificationBanner disable_auto_focus title="Links in banners">`,
 				`	<Paragraph>`,
 				`		For some reason there is a special CSS class for banner links.`,
-				`		Here is a <NotificationBannerLink href="/general"> notification`,
+				`		Here is a <NotificationBannerLink href="/general-components"> notification`,
 				`		banner link </NotificationBannerLink> that takes you back to`,
 				`		the general components page.`,
 				`	</Paragraph>`,

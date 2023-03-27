@@ -13,8 +13,8 @@
 
 <StandardPage title="Home">
 	<List slot="side-menu" spaced>
-		<MenuItem href="/general">General</MenuItem>
-		<MenuItem href="/forms">Forms</MenuItem>
+		<MenuItem href="/general-components">General components</MenuItem>
+		<MenuItem href="/form-components">Form components</MenuItem>
 	</List>
 
 	<InsetText>

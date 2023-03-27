@@ -29,7 +29,7 @@
 		collapsable
 		crumbs="{[
 			['/home', 'Home'],
-			['/general', 'General'],
+			['/general-components', 'General components'],
 		]}" />
 
 	<!--
@@ -40,7 +40,8 @@
 
 	<List slot="side-menu" spaced>
 		<MenuItem href="#page-title">Page title</MenuItem>
-		<MenuItem href="/general/notification-banner">Notification banner</MenuItem>
+		<MenuItem href="/general-components/notification-banner"
+			>Notification banner</MenuItem>
 		<MenuItem href="#error-summary">Error summary</MenuItem>
 		<MenuItem href="#panel">Panel</MenuItem>
 		<MenuItem bold href="#text">Text</MenuItem>
@@ -126,26 +127,28 @@
 		<Heading h3 md>List</Heading>
 		<List bullets spaced>
 			<li>
-				Link <Link href="/general/xyz">Xyz</Link>.
+				Link <Link href="/general-components/xyz">Xyz</Link>.
 			</li>
 			<li>
 				Invert link color <span
 					style="background: var(--color-blue); padding: 5px;">
-					<Link invert_color href="/general/xyz">Xyz.</Link>
+					<Link invert_color href="/general-components/xyz">Xyz.</Link>
 				</span>
 			</li>
 			<li>
-				No undlerline link <Link no_underline href="/general/xyz">Xyz</Link>.
+				No undlerline link <Link no_underline href="/general-components/xyz"
+					>Xyz</Link
+				>.
 			</li>
 			<li>
 				Link to frequently changing content
-				<Link dynamic_page href="/general/xyz">Xyz</Link>.
+				<Link dynamic_page href="/general-components/xyz">Xyz</Link>.
 			</li>
 			<li>
 				Link that opens in a new tab
-				<Link as_new_tab href="/general/xyz">Xyz</Link>.
+				<Link as_new_tab href="/general-components/xyz">Xyz</Link>.
 			</li>
-			<MenuItem href="/general/xyz">A menu item component</MenuItem>
+			<MenuItem href="/general-components/xyz">A menu item component</MenuItem>
 		</List>
 	</Section>
 
