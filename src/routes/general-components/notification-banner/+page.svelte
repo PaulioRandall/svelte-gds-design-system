@@ -29,18 +29,19 @@
 		]}" />
 
 	<List slot="side-menu" spaced>
-		<MenuItem bold href="#usage">Usage</MenuItem>
-		<List sub_list spaced>
-			<MenuItem href="#props">Props</MenuItem>
-			<MenuItem href="#slots">Slots</MenuItem>
-			<MenuItem href="#sub-components">Sub components</MenuItem>
-		</List>
 		<MenuItem bold href="#examples">Examples</MenuItem>
 		<List sub_list spaced>
-			<MenuItem href="#auto-focus-example">Auto focus</MenuItem>
-			<MenuItem href="#disabled-auto-focus">Disabling auto focus</MenuItem>
-			<MenuItem href="#success-banners">Success banners</MenuItem>
-			<MenuItem href="#links">Links</MenuItem>
+			<MenuItem href="#example-auto-focus">Auto focus</MenuItem>
+			<MenuItem href="#example-disabled-auto-focus"
+				>Disabling auto focus</MenuItem>
+			<MenuItem href="#example-success-banners">Success banners</MenuItem>
+			<MenuItem href="#example-links">Links</MenuItem>
+		</List>
+		<MenuItem bold href="#interface">Interface</MenuItem>
+		<List sub_list spaced>
+			<MenuItem href="#interface-props">Props</MenuItem>
+			<MenuItem href="#interface-slots">Slots</MenuItem>
+			<MenuItem href="#interface-sub-components">Sub components</MenuItem>
 		</List>
 	</List>
 
@@ -58,76 +59,10 @@
 		and <code>govuk-notification-banner__link</code>.
 	</InsetText>
 
-	<Section add_top_margin id="usage">
-		<Heading h2 lg>Usage</Heading>
-
-		<Table
-			id="props"
-			caption_md="Props"
-			headers="{[
-				{ key: 'name', label: 'Name' },
-				{ key: 'type', label: 'Type' },
-				{ key: 'summary', label: 'Summary' },
-			]}"
-			records="{[
-				{
-					name: '<code>title<code>',
-					type: 'string',
-					summary: 'Specifies the title that runs along the top of the banner',
-				},
-				{
-					name: '<code>disable_auto_focus</code>',
-					type: 'bool',
-					summary: 'Disables auto focus when the page loads',
-				},
-				{
-					name: '<code>success</code>',
-					type: 'bool',
-					summary: 'The banner is a success message',
-				},
-			]}" />
-
-		<SectionBreak md />
-
-		<Table
-			id="slots"
-			caption_md="Slots"
-			headers="{[
-				{ key: 'name', label: 'Name' },
-				{ key: 'summary', label: 'Summary' },
-			]}"
-			records="{[
-				{
-					name: '<code>default<code>',
-					summary: 'The banner content',
-				},
-			]}" />
-
-		<SectionBreak md />
-
-		<Table
-			id="sub-components"
-			caption_md="Sub components"
-			headers="{[
-				{ key: 'name', label: 'Name' },
-				{ key: 'summary', label: 'Summary' },
-			]}"
-			records="{[
-				{
-					name: '<code>NotificationBannerHeading<code>',
-					summary: 'A heading within the banner content',
-				},
-				{
-					name: '<code>NotificationBannerLink<code>',
-					summary: 'A link within the banner content',
-				},
-			]}" />
-	</Section>
-
 	<Section add_top_margin id="examples">
 		<Heading h2 lg>Examples</Heading>
 
-		<Heading id="auto-focus-example" h3 md>Auto focus</Heading>
+		<Heading id="example-auto-focus" h3 md>Auto focus</Heading>
 		<NotificationBanner disable_auto_focus title="Excuse me">
 			<NotificationBannerHeading>Auto focus</NotificationBannerHeading>
 			<Paragraph>
@@ -158,7 +93,8 @@
 
 		<SectionBreak md />
 
-		<Heading id="disabled-auto-focus" h3 md>Disabled auto focus</Heading>
+		<Heading id="example-disabled-auto-focus" h3 md
+			>Disabled auto focus</Heading>
 		<NotificationBanner disable_auto_focus title="Disabled auto focus">
 			<Paragraph>Auto focus? Not for this notification banner.</Paragraph>
 		</NotificationBanner>
@@ -173,7 +109,7 @@
 
 		<SectionBreak md />
 
-		<Heading id="success-banners" h3 md>Success banners</Heading>
+		<Heading id="example-success-banners" h3 md>Success banners</Heading>
 		<NotificationBanner disable_auto_focus success title="Success">
 			<Paragraph>Well done. You did something.</Paragraph>
 		</NotificationBanner>
@@ -188,7 +124,7 @@
 
 		<SectionBreak md />
 
-		<Heading id="links" h3 md>Links in banner</Heading>
+		<Heading id="example-links" h3 md>Links in banner</Heading>
 		<NotificationBanner disable_auto_focus title="Links in banners">
 			<Paragraph>
 				For some reason there is a special CSS class for banner links. Here is a
@@ -207,6 +143,77 @@
 				`		the general components page.`,
 				`	</Paragraph>`,
 				`</NotificationBanner>`,
+			]}" />
+	</Section>
+
+	<Section add_top_margin id="interface">
+		<Heading h2 lg>Interface</Heading>
+
+		<Table
+			id="interface-props"
+			caption_md="Props"
+			headers="{[
+				{ key: 'name', label: 'Name' },
+				{ key: 'type', label: 'Type' },
+				{ key: 'summary', label: 'Summary' },
+			]}"
+			records="{[
+				{
+					name: '<code>title<code>',
+					type: 'string',
+					summary: 'Specifies the title that runs along the top of the banner',
+				},
+				{
+					name: '<code>disable_auto_focus</code>',
+					type: 'bool',
+					summary: 'Disables auto focus when the page loads',
+				},
+				{
+					name: '<code>success</code>',
+					type: 'bool',
+					summary: 'The banner is a success message',
+				},
+			]}" />
+
+		<SectionBreak md />
+
+		<Table
+			id="interface-slots"
+			caption_md="Slots"
+			headers="{[
+				{ key: 'name', label: 'Name' },
+				{ key: 'summary', label: 'Summary' },
+			]}"
+			records="{[
+				{
+					name: '<code>&lt;default&gt;<code>',
+					summary: 'Banner content',
+				},
+			]}" />
+
+		<SectionBreak md />
+
+		<InsetText>
+			<Restyle bold>TODO:</Restyle> I need to write up documentation for these. They
+			may have to have a page of their own :(
+		</InsetText>
+
+		<Table
+			id="interface-sub-components"
+			caption_md="Sub components"
+			headers="{[
+				{ key: 'name', label: 'Name' },
+				{ key: 'summary', label: 'Summary' },
+			]}"
+			records="{[
+				{
+					name: '<code>NotificationBannerHeading<code>',
+					summary: 'A heading within the banner content',
+				},
+				{
+					name: '<code>NotificationBannerLink<code>',
+					summary: 'A link within the banner content',
+				},
 			]}" />
 	</Section>
 </StandardPage>
