@@ -51,7 +51,7 @@
 	</List>
 
 	<Heading id="page-title" h1 xl>
-		<Caption xl>Forms</Caption>
+		<Caption xl>Form components</Caption>
 		Button
 	</Heading>
 

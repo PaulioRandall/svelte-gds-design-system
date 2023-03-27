@@ -2,13 +2,16 @@
 	import { onMount } from 'svelte'
 
 	export let heading = null // = ""
-	export let disableAutoFocus = false
+	export let disable_auto_focus = false
 
 	let elem = null
 	let govukComponent = null
 
 	onMount(() => {
-		const config = { disableAutoFocus }
+		const config = {
+			disableAutoFocus: disable_auto_focus,
+		}
+
 		govukComponent = new window.GOVUKFrontend.ErrorSummary(elem, config)
 		govukComponent.init()
 	})

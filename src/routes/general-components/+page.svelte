@@ -4,7 +4,6 @@
 	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Details from '$govuk/Details.svelte'
-	import ErrorSummary from '$govuk/ErrorSummary.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import InsetText from '$govuk/InsetText.svelte'
 	import Link from '$govuk/Link.svelte'
@@ -42,7 +41,6 @@
 		<MenuItem href="#page-title">Page title</MenuItem>
 		<MenuItem href="/general-components/notification-banner"
 			>Notification banner</MenuItem>
-		<MenuItem href="#error-summary">Error summary</MenuItem>
 		<MenuItem href="#panel">Panel</MenuItem>
 		<MenuItem bold href="#text">Text</MenuItem>
 		<List spaced sub_list>
@@ -65,16 +63,6 @@
 		<Caption xl>A page title caption</Caption>
 		The page title
 	</Heading>
-
-	<Section id="error-summary">
-		<Heading h2 lg>Error summary</Heading>
-		<ErrorSummary heading="You screwed up somewhere!">
-			<li>This component takes {'<li>'} elements.</li>
-			<li>
-				<a href="#main-content">A link to a none existent error.</a>
-			</li>
-		</ErrorSummary>
-	</Section>
 
 	<Section id="panel">
 		<Heading h2 lg>Panel</Heading>

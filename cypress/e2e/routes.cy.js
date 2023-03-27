@@ -18,6 +18,9 @@ const routes = [
 	{ path: '/general-components/notification-banner', status: 200 },
 	{ path: '/form-components', status: 200 },
 	{ path: '/form-components/search-form', status: 200 },
+	{ path: '/form-components/button', status: 200 },
+	{ path: '/form-components/start-button', status: 200 },
+	{ path: '/form-components/error-summary', status: 200 },
 	{ path: '/feedback', status: 200 },
 	{ path: '/error', status: 404 },
 ]

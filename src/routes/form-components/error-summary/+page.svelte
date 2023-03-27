@@ -11,28 +11,27 @@
 	import SectionBreak from '$govuk/SectionBreak.svelte'
 	import Table from '$govuk/Table.svelte'
 
-	import StartButton from '$govuk/forms/StartButton.svelte'
+	import ErrorSummary from '$govuk/forms/ErrorSummary.svelte'
 
 	import CodeBlock from '$shared/CodeBlock.svelte'
 	import StandardPage from '$shared/StandardPage.svelte'
 	import Section from '$shared/Section.svelte'
 </script>
 
-<StandardPage sticky_menu title="Start button">
+<StandardPage sticky_menu title="Error summary">
 	<BreadCrumbs
 		slot="breadcrumbs"
 		collapsable
 		crumbs="{[
 			['/home', 'Home'],
 			['/form-components', 'Form components'],
-			['/form-components/start-button', 'Start button'],
+			['/form-components/error-summary', 'Error summary'],
 		]}" />
 
 	<List slot="side-menu" spaced>
 		<MenuItem bold href="#examples">Examples</MenuItem>
 		<List sub_list spaced>
-			<MenuItem href="#example-default">Default</MenuItem>
-			<MenuItem href="#example-custom-text">Custom text</MenuItem>
+			<MenuItem href="#example-list-items">List items</MenuItem>
 		</List>
 		<MenuItem bold href="#interface">Interface</MenuItem>
 		<List sub_list spaced>
@@ -43,48 +42,42 @@
 
 	<Heading id="page-title" h1 xl>
 		<Caption xl>Form components</Caption>
-		Start button
+		Error summary
 	</Heading>
 
-	<InsetText>
-		<Restyle bold>TODO:</Restyle> More props are probably going to be needed including
-		an option to prevent default and click handling.
-	</InsetText>
-
 	<Paragraph>
-		Official documentation on <Link
-			href="https://design-system.service.gov.uk/components/button/"
-			>GDS Design System 'Button' components</Link
+		Official documentation on the <Link
+			href="https://design-system.service.gov.uk/components/error-summary/"
+			>GDS Design System 'Error summary' component</Link
 		>.
 	</Paragraph>
 
 	<Section add_top_margin id="examples">
 		<Heading h2 lg>Examples</Heading>
 
-		<Heading id="example-default" h3 md>Default</Heading>
-		<StartButton href="/form-components/start-button" />
+		<Heading id="example-list-items" h3 md>List items</Heading>
+		<ErrorSummary heading="You screwed up somewhere!">
+			<li>
+				<a href="#example-list-items">First error.</a>
+			</li>
+			<li>
+				<a href="#example-list-items">Second error.</a>
+			</li>
+		</ErrorSummary>
 		<CodeBlock
 			lines="{[
 				`<script>`,
-				`	import StartButton from '$govuk/forms/StartButton.svelte'`,
+				`	import ErrorSummary from '$govuk/forms/ErrorSummary.svelte'`,
 				`</script>`,
 				``,
-				`<StartButton href="/form-components/start-button" />`,
-			]}" />
-
-		<SectionBreak md />
-
-		<Heading id="example-custom-text" h3 md>Custom text</Heading>
-		<StartButton href="/form-components/start-button">Go</StartButton>
-		<CodeBlock
-			lines="{[
-				`<script>`,
-				`	import StartButton from '$govuk/forms/StartButton.svelte'`,
-				`</script>`,
-				``,
-				`<StartButton href="/form-components/start-button">`,
-				`	Go`,
-				`</StartButton>`,
+				`<ErrorSummary heading="You screwed up somewhere!">`,
+				`	<li>`,
+				`		<a href="#example-list-items">First error.</a>`,
+				`	</li>`,
+				`	<li>`,
+				`		<a href="#example-list-items">Second error.</a>`,
+				`	</li>`,
+				`</ErrorSummary>`,
 			]}" />
 	</Section>
 
@@ -97,13 +90,20 @@
 			headers="{[
 				{ key: 'name', label: 'Name' },
 				{ key: 'type', label: 'Type' },
+				{ key: 'defaultValue', label: 'Default' },
 				{ key: 'summary', label: 'Summary' },
 			]}"
 			records="{[
 				{
-					name: '<code>href<code>',
+					name: '<code>heading<code>',
 					type: 'string',
-					summary: 'Destination URL',
+					summary: 'Heading text',
+				},
+				{
+					name: '<code>disable_auto_focus<code>',
+					type: 'bool',
+					defaultValue: 'false',
+					summary: 'Disables auto focusing on page load',
 				},
 			]}" />
 
@@ -119,7 +119,8 @@
 			records="{[
 				{
 					name: '<code>&lt;default&gt;<code>',
-					summary: 'Button text',
+					summary:
+						'List items (&lt;li&gt; elements) usually each linking to the form field in error',
 				},
 			]}" />
 	</Section>
