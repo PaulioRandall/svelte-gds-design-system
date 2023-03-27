@@ -4,9 +4,9 @@
 
 	import Page from '$shared/Page.svelte'
 
-	export let non_sticky_menu = false
+	export let sticky_menu = false
 
-	const colClass = non_sticky_menu ? '' : 'info-page-one-third'
+	const stickyMenuClass = sticky_menu ? 'info-page-sticky-menu' : ''
 </script>
 
 <Page title="General components">
@@ -15,7 +15,7 @@
 	</svelte:fragment>
 
 	<Row>
-		<Col one_third c="info-page-side-menu {colClass}">
+		<Col one_third c="info-page-side-menu {stickyMenuClass}">
 			<slot name="side-menu" />
 		</Col>
 
@@ -35,7 +35,7 @@
 	}
 
 	@media (min-width: 641px) {
-		:global(.info-page-one-third) {
+		:global(.info-page-sticky-menu) {
 			position: sticky;
 			top: var(--spacing-static-4);
 		}

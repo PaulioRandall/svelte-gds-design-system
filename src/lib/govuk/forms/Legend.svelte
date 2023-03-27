@@ -1,8 +1,6 @@
 <script>
 	import { countTruthy, getHeadingElemName } from '$govuk/util.js'
 
-	export let name = undefined // = ""
-
 	export let h1 = false
 	export let h2 = false
 	export let h3 = false

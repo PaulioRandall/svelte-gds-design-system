@@ -30,7 +30,7 @@
 	<SectionBreak id="{section_break_id}" md show_line="{show_break_line}" />
 {/if}
 
-<Row id="{row_id}">
+<Row type="section" id="{row_id}">
 	<Col full>
 		<slot />
 	</Col>

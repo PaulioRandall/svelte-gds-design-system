@@ -26,7 +26,7 @@
 	import Tabs from './Tabs.svelte'
 </script>
 
-<StandardPage title="General components">
+<StandardPage sticky_menu title="General components">
 	<BreadCrumbs
 		slot="breadcrumbs"
 		collapsable
