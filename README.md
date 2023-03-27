@@ -38,7 +38,7 @@ The real difference is in what concerns each separates and how they separate the
   - `/models`
   - `/controllers`
   - `/page-templates`
-- _Organisation by feature_ groups based on usage, e.g. a single folder holding a page along with its specific models, controller, etc. This aligns well with top down user driven design methods, keeps related stuff together, and makees changing specific components easier.
+- _Organisation by feature_ groups based on usage, e.g. a single folder holding a page along with its specific models, controller, etc. This aligns well with top down user driven design methods, keeps related stuff together, and makes changing specific components easier.
   - `/home` containing `/home/model.js`, `/home/controller.js`, `/home/page-template.html`
   - `/products` containing `/products/model.js`, `/products/controller.js`, `/products/page-template.html`
 
@@ -48,7 +48,7 @@ _Organisation by feature_ is favoured throughout. Of course you're free to move 
 
 Shared and importable data, content, styling, scripts, and Svelte components goes in `/static` or `/libs`:
 
-- [./static](/static)`for statically served content akin to`/public` in other tools
+- [./static](/static) for statically served content akin to `/public` in other tools
 - [./src/libs/govuk](./src/libs/govuk) for generic Svelte components that represent GOVUK GDS design system components along with supporting CSS and JS; these may or may not end up in a Svelte component library
 - [./src/libs/shared](./src/libs/shared) for project specific shared components; this is where you put all your shared importable stuff like Svelte components, JS, and CSS
 - [./src/libs/data](./src/libs/data) for data that is shared project wide (if any)
@@ -188,4 +188,4 @@ Don't worry if you get a build warning like the one above.
 
 When the time comes to deploy to development and production environments you'll want to research [SvelteKit adapters](https://kit.svelte.dev/docs/adapters).
 
-> **Authors note:** Use Vercel to host my personal website so I use [@sveltejs/adapter-vercel](https://www.npmjs.com/package/@sveltejs/adapter-vercel). There are many others and you can write your own. I've written a custom Express adapter before and it's not too difficult. Just a little tedious due to extra work needed to test it.
+> **Authors note:** I use Vercel to host my personal website so I use [@sveltejs/adapter-vercel](https://www.npmjs.com/package/@sveltejs/adapter-vercel). There are many others and you can write your own. I've written a custom Express adapter before and it's not too difficult. Just a little tedious due to extra work needed to test it.
