@@ -2,15 +2,10 @@
 	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Heading from '$govuk/Heading.svelte'
-	import InsetText from '$govuk/InsetText.svelte'
 	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
-	import NotificationBanner from '$govuk/NotificationBanner.svelte'
-	import NotificationBannerHeading from '$govuk/NotificationBannerHeading.svelte'
-	import NotificationBannerLink from '$govuk/NotificationBannerLink.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
-	import Restyle from '$govuk/Restyle.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
 	import Table from '$govuk/Table.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
@@ -22,10 +17,12 @@
 	import Section from '$shared/Section.svelte'
 
 	let counter = 0
-	const incrementCount = (event) => counter++
+	const incCounter = (event) => counter++
 
-	let warningText = 'Think carefully before pressing me!'
-	const changeWarning = (event) => (warningText = 'I said think carefully!!')
+	let warningText = 'Think carefully before pressing me'
+	const changeWarning = (event) => {
+		warningText = "I bet you didn't!"
+	}
 </script>
 
 <StandardPage sticky_menu title="Button">
@@ -58,11 +55,6 @@
 		Button
 	</Heading>
 
-	<InsetText>
-		<Restyle bold>TODO:</Restyle> More props are probably going to be needed, paricularly
-		a button types.
-	</InsetText>
-
 	<Paragraph>
 		Official documentation on <Link
 			href="https://design-system.service.gov.uk/components/button/"
@@ -80,17 +72,17 @@
 		</noscript>
 
 		<Heading id="example-default" h3 md>Default</Heading>
-		<Button onclick="{incrementCount}">Counter: {counter}</Button>
+		<Button onclick="{incCounter}">Counter: {counter}</Button>
 		<CodeBlock
 			lines="{[
 				`<script>`,
 				`	import Button from '$govuk/forms/Button.svelte'`,
 				``,
 				`	let counter = 0`,
-				`	const incrementCount = (event) => counter++`,
+				`	const incCounter = (event) => counter++`,
 				`</script>`,
 				``,
-				`<Button onclick={incrementCount}>`,
+				`<Button onclick={incCounter}>`,
 				`	Counter: {counter}`,
 				`</Button>`,
 			]}" />
@@ -98,17 +90,17 @@
 		<SectionBreak md />
 
 		<Heading id="example-secondary" h3 md>Secondary</Heading>
-		<Button secondary onclick="{incrementCount}">Counter: {counter}</Button>
+		<Button secondary onclick="{incCounter}">Counter: {counter}</Button>
 		<CodeBlock
 			lines="{[
 				`<script>`,
 				`	import Button from '$govuk/forms/Button.svelte'`,
 				``,
 				`	let counter = 0`,
-				`	const incrementCount = (event) => counter++`,
+				`	const incCounter = (event) => counter++`,
 				`</script>`,
 				``,
-				`<Button secondary onclick={incrementCount}>`,
+				`<Button secondary onclick={incCounter}>`,
 				`	Counter: {counter}`,
 				`</Button>`,
 			]}" />
@@ -125,7 +117,9 @@
 				`	import Button from '$govuk/forms/Button.svelte'`,
 				``,
 				`	let warningText = "Think carfully before pressing me!"`,
-				`	const changeWarning = (event) => warningText = "I said think carefully!!"`,
+				`	const changeWarning = (event) => {`,
+				`		warningText = "I bet you didn't!"`,
+				`	}`,
 				`</script>`,
 				``,
 				`<Button`,
@@ -159,27 +153,48 @@
 			headers="{[
 				{ key: 'name', label: 'Name' },
 				{ key: 'type', label: 'Type' },
+				{ key: 'defaultValue', label: 'Default' },
 				{ key: 'summary', label: 'Summary' },
 			]}"
 			records="{[
 				{
+					name: '<code>name<code>',
+					type: 'string',
+					summary: 'Name of the button',
+				},
+				{
+					name: '<code>type<code>',
+					type: 'string',
+					defaultValue: '"button"',
+					summary: 'Type of the button. Either "button", "reset", or "submit"',
+				},
+				{
+					name: '<code>value<code>',
+					type: 'string',
+					summary: 'Sets the value attribute',
+				},
+				{
 					name: '<code>secondary<code>',
 					type: 'bool',
+					defaultValue: 'false',
 					summary: 'True if it is a secondary button',
 				},
 				{
 					name: '<code>warning</code>',
 					type: 'bool',
+					defaultValue: 'false',
 					summary: 'True if pressing the button can have serious consequences',
 				},
 				{
 					name: '<code>disabled</code>',
 					type: 'bool',
+					defaultValue: 'false',
 					summary: 'Ture if the button is disabled',
 				},
 				{
 					name: '<code>prevent_double_clicks</code>',
 					type: 'bool',
+					defaultValue: 'false',
 					summary: 'True to enable double click protection',
 				},
 				{

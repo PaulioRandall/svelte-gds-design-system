@@ -1,10 +1,24 @@
+<script context="module">
+	export const validTypes = ['button', 'reset', 'submit']
+
+	const isValidType = (t) => validTypes.includes(t)
+</script>
+
 <script>
+	export let name = undefined // ""
+	export let type = 'button'
+	export let value = undefined // ""
+
 	export let secondary = false
 	export let warning = false
 	export let disabled = false
 	export let prevent_double_clicks = false
 
 	export let onclick = (event) => {}
+
+	if (!isValidType(type)) {
+		throw new Error(`The button type '${type}' is not valid`)
+	}
 
 	if (secondary && warning) {
 		throw new Error('A button cannot be both secondary and a warning')
@@ -13,6 +27,9 @@
 
 <button
 	on:click="{onclick}"
+	name="{name}"
+	type="{type}"
+	value="{value}"
 	class="govuk-button"
 	class:govuk-button--secondary="{secondary}"
 	class:govuk-button--warning="{warning}"
