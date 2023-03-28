@@ -7,7 +7,9 @@
 	}
 </script>
 
-<label class="govuk-label" for="{name}">
-	<slot />
-</label>
-<input class="govuk-input" id="{id}" name="{name}" type="text" />
+<div class="govuk-form-group">
+	<label class="govuk-label" for="{name}">
+		<slot />
+	</label>
+	<input class="govuk-input" id="{id}" name="{name}" type="text" />
+</div>

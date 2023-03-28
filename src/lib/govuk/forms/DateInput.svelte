@@ -6,6 +6,8 @@
 	}
 </script>
 
-<div id="{id}" class="govuk-date-input">
-	<slot />
+<div class="govuk-form-group">
+	<div id="{id}" class="govuk-date-input">
+		<slot />
+	</div>
 </div>

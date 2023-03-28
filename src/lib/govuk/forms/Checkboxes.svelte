@@ -17,8 +17,10 @@
 	}
 </script>
 
-<div id="{id}" class="govuk-checkboxes" data-module="govuk-checkboxes">
-	{#each options as [value, label, optId]}
-		<Checkbox name="{name}" value="{value}" label="{label}" id="{optId}" />
-	{/each}
+<div class="govuk-form-group">
+	<div id="{id}" class="govuk-checkboxes" data-module="govuk-checkboxes">
+		{#each options as [value, label, optId]}
+			<Checkbox name="{name}" value="{value}" label="{label}" id="{optId}" />
+		{/each}
+	</div>
 </div>

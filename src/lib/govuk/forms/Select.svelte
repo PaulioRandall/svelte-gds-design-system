@@ -15,11 +15,13 @@
 	}
 </script>
 
-<label class="govuk-label" for="{name}">
-	<slot />
-</label>
-<select id="{id}" class="govuk-select" name="{name}">
-	{#each options as [value, label]}
-		<option value="{value}">{label}</option>
-	{/each}
-</select>
+<div class="govuk-form-group">
+	<label class="govuk-label" for="{name}">
+		<slot />
+	</label>
+	<select id="{id}" class="govuk-select" name="{name}">
+		{#each options as [value, label]}
+			<option value="{value}">{label}</option>
+		{/each}
+	</select>
+</div>

@@ -76,7 +76,10 @@
 		<SectionBreak md />
 
 		<Heading id="example-rows" h3 md>Rows</Heading>
-		<TextArea name="more-details" label="Any more details?" rows="3" />
+		<TextArea
+			name="less-rows-opinion"
+			label="Your opinion on less rows?"
+			rows="3" />
 		<CodeBlock
 			lines="{[
 				`<script>`,
@@ -84,8 +87,8 @@
 				`</script>`,
 				``,
 				`<TextArea`,
-				`	name="more-details"`,
-				`	label="Any more details?"`,
+				`	name="less-rows-opinion"`,
+				`	label="Your opinion on less rows?"`,
 				`	rows="3"/>`,
 			]}" />
 	</Section>
@@ -98,29 +101,24 @@
 			caption_md="Props"
 			headers="{[
 				{ key: 'name', label: 'Name' },
-				{ key: 'type', label: 'Type' },
 				{ key: 'summary', label: 'Summary' },
 			]}"
 			records="{[
 				{
-					name: '<code>id<code>',
-					type: 'string',
+					name: '<code>id=""<code>',
 					summary: 'Input element ID',
 				},
 				{
-					name: '<code>name<code>',
-					type: 'string',
+					name: '<code>name=""<code>',
 					summary: 'Form field name',
 				},
 				{
-					name: '<code>label<code>',
-					type: 'string',
+					name: '<code>label=""<code>',
 					summary: 'Label text',
 				},
 				{
-					name: '<code>rows<code>',
-					type: 'integer',
-					summary: 'Number of rows to show by default',
+					name: '<code>rows="5"<code>',
+					summary: 'Initial number of rows to show',
 				},
 			]}" />
 	</Section>

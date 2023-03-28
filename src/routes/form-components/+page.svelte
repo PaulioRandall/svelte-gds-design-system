@@ -25,7 +25,6 @@
 		<MenuItem href="/form-components/checkboxes">Checkboxes</MenuItem>
 		<MenuItem href="/form-components/date-input">Date input</MenuItem>
 		<!--
-						<MenuItem href="/form-components/form-group">Form group</MenuItem>
 			<MenuItem href="/form-components/character-count">Character count</MenuItem>
 			<MenuItem href="/form-components/fieldset">Fieldset</MenuItem>
 			<MenuItem href="/form-components/file-upload">File upload</MenuItem>

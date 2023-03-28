@@ -13,8 +13,10 @@
 	}
 </script>
 
-<label class="govuk-label" for="{name}">
-	{label}
-</label>
-<textarea id="{id}" class="govuk-textarea" name="{name}" rows="{rows}"
-></textarea>
+<div class="govuk-form-group">
+	<label class="govuk-label" for="{name}">
+		{label}
+	</label>
+	<textarea id="{id}" class="govuk-textarea" name="{name}" rows="{rows}"
+	></textarea>
+</div>

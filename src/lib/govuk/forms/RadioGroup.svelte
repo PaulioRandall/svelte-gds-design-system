@@ -17,8 +17,10 @@
 	}
 </script>
 
-<div id="{id}" class="govuk-radios" data-module="govuk-radios">
-	{#each options as [value, label, optId]}
-		<RadioButton id="{optId}" name="{name}" value="{value}" label="{label}" />
-	{/each}
+<div class="govuk-form-group">
+	<div id="{id}" class="govuk-radios" data-module="govuk-radios">
+		{#each options as [value, label, optId]}
+			<RadioButton id="{optId}" name="{name}" value="{value}" label="{label}" />
+		{/each}
+	</div>
 </div>
