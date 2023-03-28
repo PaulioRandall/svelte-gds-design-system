@@ -11,8 +11,11 @@
 	import DocsSlot from '$shared/DocsSlot.svelte'
 	import DocsExample from '$shared/DocsExample.svelte'
 
-	import exampleMinimalistCode from './example-minimalist.txt?raw'
-	import exampleLinksCode from './example-links.txt?raw'
+	import ExampleMinimalist from './ExampleMinimalist.svelte'
+	import exampleMinimalistCode from './ExampleMinimalist.svelte?raw'
+
+	import ExampleLinks from './ExampleLinks.svelte'
+	import exampleLinksCode from './ExampleLinks.svelte?raw'
 </script>
 
 <DocsPage
@@ -39,19 +42,13 @@
 			id="example-minimalist"
 			heading="Minimalist"
 			src="{exampleMinimalistCode}">
-			<ButtonGroup>
-				<Button>Tweedle-dee</Button>
-				<Button>Tweedle-dum</Button>
-			</ButtonGroup>
+			<ExampleMinimalist />
 		</DocsExample>
 
 		<SectionBreak md />
 
 		<DocsExample id="example-links" heading="Links" src="{exampleLinksCode}">
-			<ButtonGroup>
-				<Button>Tweedle-dee</Button>
-				<Link href="#example-links">Tweedle-dum</Link>
-			</ButtonGroup>
+			<ExampleLinks />
 		</DocsExample>
 	</svelte:fragment>
 
