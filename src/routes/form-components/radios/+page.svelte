@@ -10,21 +10,21 @@
 	import Table from '$govuk/Table.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
-	import Select from '$govuk/forms/Select.svelte'
+	import Radios from '$govuk/forms/Radios.svelte'
 
 	import CodeBlock from '$shared/CodeBlock.svelte'
 	import StandardPage from '$shared/StandardPage.svelte'
 	import Section from '$shared/Section.svelte'
 </script>
 
-<StandardPage sticky_menu title="Select">
+<StandardPage sticky_menu title="Radios">
 	<BreadCrumbs
 		slot="breadcrumbs"
 		collapsable
 		crumbs="{[
 			['/home', 'Home'],
 			['/form-components', 'Form components'],
-			['/form-components/select', 'Select'],
+			['/form-components/radios', 'Radios'],
 		]}" />
 
 	<List slot="side-menu" spaced>
@@ -35,19 +35,18 @@
 		<MenuItem bold href="#interface">Interface</MenuItem>
 		<List sub_list spaced>
 			<MenuItem href="#interface-props">Props</MenuItem>
-			<MenuItem href="#interface-slots">Slots</MenuItem>
 		</List>
 	</List>
 
 	<Heading id="page-title" h1 xl>
 		<Caption xl>Form components</Caption>
-		Select
+		Radios
 	</Heading>
 
 	<Paragraph>
 		Official documentation on the <Link
-			href="https://design-system.service.gov.uk/components/select/"
-			>GDS Design System 'Select' component</Link
+			href="https://design-system.service.gov.uk/components/radios/"
+			>GDS Design System 'Radios' component</Link
 		>.
 	</Paragraph>
 
@@ -61,34 +60,30 @@
 		</noscript>
 
 		<Heading id="example-default" h3 md>Default</Heading>
-		<Select
+		<Radios
 			id="city-field"
 			name="city"
 			options="{[
-				['london', 'London'],
-				['paris', 'Paris'],
-				['madrid', 'Madrid'],
-				['berlin', 'Berlin'],
-			]}">
-			City
-		</Select>
+				['london', 'London', 'city-london-id'],
+				['paris', 'Paris', 'city-paris-id'],
+				['madrid', 'Madrid', 'city-madrid-id'],
+				['berlin', 'Berlin', 'city-berlin-id'],
+			]}" />
 		<CodeBlock
 			lines="{[
 				`<script>`,
-				`	import Select from '$govuk/forms/Select.svelte'`,
+				`	import Radios from '$govuk/forms/Radios.svelte'`,
 				`</script>`,
 				``,
-				`<Select`,
+				`<Radios`,
 				`	id="city-field"`,
 				`	name="city"`,
-				`	options={[`,
-				`		["london", "London"],`,
-				`		["paris", "Paris"],`,
-				`		["madrid", "Madrid"],`,
-				`		["berlin", "Berlin"],`,
-				`	]}>`,
-				`	City`,
-				`</Select>`,
+				`	options="{[`,
+				`		['london', 'London', 'city-london-id'],`,
+				`		['paris',  'Paris',  'city-paris-id'],`,
+				`		['madrid', 'Madrid', 'city-madrid-id'],`,
+				`		['berlin', 'Berlin', 'city-berlin-id'],`,
+				`	]}" />`,
 			]}" />
 	</Section>
 
@@ -107,7 +102,7 @@
 				{
 					name: '<code>id<code>',
 					type: 'string',
-					summary: 'Input element ID',
+					summary: 'Radio group ID',
 				},
 				{
 					name: '<code>name<code>',
@@ -116,24 +111,8 @@
 				},
 				{
 					name: '<code>options<code>',
-					type: '[["value", "label"]...]',
-					summary: 'Select options',
-				},
-			]}" />
-
-		<SectionBreak md />
-
-		<Table
-			id="interface-slots"
-			caption_md="Slots"
-			headers="{[
-				{ key: 'name', label: 'Name' },
-				{ key: 'summary', label: 'Summary' },
-			]}"
-			records="{[
-				{
-					name: '<code>&lt;default&gt;<code>',
-					summary: 'Label text',
+					type: '[["value", "label", "id"]...]',
+					summary: 'Radio options',
 				},
 			]}" />
 	</Section>

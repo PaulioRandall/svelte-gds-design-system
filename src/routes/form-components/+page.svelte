@@ -31,5 +31,6 @@
 		<MenuItem href="/form-components/error-summary">Error summary</MenuItem>
 		<MenuItem href="/form-components/text-input">Text input</MenuItem>
 		<MenuItem href="/form-components/select">Select</MenuItem>
+		<MenuItem href="/form-components/radios">Radios</MenuItem>
 	</List>
 </StandardPage>
