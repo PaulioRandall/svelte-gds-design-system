@@ -15,6 +15,7 @@
 
 	<List slot="side-menu" spaced>
 		<MenuItem href="/form-components/search-form">Search form</MenuItem>
+		<!--<MenuItem href="/form-components/fieldset">Fieldset</MenuItem>-->
 		<MenuItem href="/form-components/button-group">Button group</MenuItem>
 		<MenuItem href="/form-components/button">Button</MenuItem>
 		<MenuItem href="/form-components/start-button">Start button</MenuItem>
@@ -25,10 +26,6 @@
 		<MenuItem href="/form-components/textarea">Textarea</MenuItem>
 		<MenuItem href="/form-components/checkboxes">Checkboxes</MenuItem>
 		<MenuItem href="/form-components/date-input">Date input</MenuItem>
-		<!--
-			<MenuItem href="/form-components/character-count">Character count</MenuItem>
-			<MenuItem href="/form-components/fieldset">Fieldset</MenuItem>
-			<MenuItem href="/form-components/file-upload">File upload</MenuItem>
-		-->
+		<!--<MenuItem href="/form-components/file-upload">File upload</MenuItem>-->
 	</List>
 </StandardPage>

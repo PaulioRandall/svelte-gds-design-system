@@ -103,7 +103,7 @@
 		<SectionBreak md />
 
 		<Heading id="example-warning" h3 md>Warning</Heading>
-		<Button warning prevent_double_clicks onclick="{changeWarning}">
+		<Button warning prevent_double_click onclick="{changeWarning}">
 			{warningText}
 		</Button>
 		<CodeBlock
@@ -119,7 +119,7 @@
 				``,
 				`<Button`,
 				`	warning`,
-				`	prevent_double_clicks`,
+				`	prevent_double_click`,
 				`	onclick={changeWarning}>`,
 				`	{warningText}`,
 				`</Button>`,
@@ -180,7 +180,7 @@
 					summary: 'Disables the button',
 				},
 				{
-					name: '<code>prevent_double_clicks=false</code>',
+					name: '<code>prevent_double_click=false</code>',
 					summary: 'Enables double click protection',
 				},
 				{

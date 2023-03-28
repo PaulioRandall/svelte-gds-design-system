@@ -4,7 +4,7 @@
 	export let name = undefined // = ""
 
 	if (!$$slots.legend) {
-		throw new Error('A fieldset must have a legend (slot="legend")')
+		throw new Error('A Fieldset must have a legend (slot="legend")')
 	}
 </script>
 

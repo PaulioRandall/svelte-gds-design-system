@@ -4,7 +4,7 @@
 
 <div class="govuk-summary-card">
 	<div class="govuk-summary-card__title-wrapper">
-		<h2 class="govuk-summary-card__title">{heading}</h2>
+		<h2 class="govuk-summary-card__title">{@html heading}</h2>
 		<slot name="actions" />
 	</div>
 	<div class="govuk-summary-card__content">
