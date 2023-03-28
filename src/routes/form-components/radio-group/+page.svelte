@@ -10,21 +10,21 @@
 	import Table from '$govuk/Table.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
-	import Radios from '$govuk/forms/Radios.svelte'
+	import RadioGroup from '$govuk/forms/RadioGroup.svelte'
 
 	import CodeBlock from '$shared/CodeBlock.svelte'
 	import StandardPage from '$shared/StandardPage.svelte'
 	import Section from '$shared/Section.svelte'
 </script>
 
-<StandardPage sticky_menu title="Radios">
+<StandardPage sticky_menu title="Radio group">
 	<BreadCrumbs
 		slot="breadcrumbs"
 		collapsable
 		crumbs="{[
 			['/home', 'Home'],
 			['/form-components', 'Form components'],
-			['/form-components/radios', 'Radios'],
+			['/form-components/radio-group', 'Radio group'],
 		]}" />
 
 	<List slot="side-menu" spaced>
@@ -40,7 +40,7 @@
 
 	<Heading id="page-title" h1 xl>
 		<Caption xl>Form components</Caption>
-		Radios
+		Radio group
 	</Heading>
 
 	<Paragraph>
@@ -60,7 +60,7 @@
 		</noscript>
 
 		<Heading id="example-default" h3 md>Default</Heading>
-		<Radios
+		<RadioGroup
 			id="city-field"
 			name="city"
 			options="{[
@@ -72,10 +72,10 @@
 		<CodeBlock
 			lines="{[
 				`<script>`,
-				`	import Radios from '$govuk/forms/Radios.svelte'`,
+				`	import RadioGroup from '$govuk/forms/RadioGroup.svelte'`,
 				`</script>`,
 				``,
-				`<Radios`,
+				`<RadioGroup`,
 				`	id="city-field"`,
 				`	name="city"`,
 				`	options="{[`,
@@ -102,7 +102,7 @@
 				{
 					name: '<code>id<code>',
 					type: 'string',
-					summary: 'Radio group ID',
+					summary: 'Group ID',
 				},
 				{
 					name: '<code>name<code>',
@@ -112,7 +112,7 @@
 				{
 					name: '<code>options<code>',
 					type: '[["value", "label", "id"]...]',
-					summary: 'Radio options',
+					summary: 'List of options',
 				},
 			]}" />
 	</Section>

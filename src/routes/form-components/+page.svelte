@@ -18,9 +18,6 @@
 			  + Data input
 			  + Fieldset
 			  + File upload
-			  + Radios
-			  + Select
-			  + Text input
 			  + Textarea
 		-->
 
@@ -31,6 +28,6 @@
 		<MenuItem href="/form-components/error-summary">Error summary</MenuItem>
 		<MenuItem href="/form-components/text-input">Text input</MenuItem>
 		<MenuItem href="/form-components/select">Select</MenuItem>
-		<MenuItem href="/form-components/radios">Radios</MenuItem>
+		<MenuItem href="/form-components/radio-group">Radio group</MenuItem>
 	</List>
 </StandardPage>

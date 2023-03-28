@@ -7,11 +7,11 @@
   ] */
 
 	if (!name) {
-		throw new Error('A radio group (Radios) must have a name')
+		throw new Error('A radio group must have a name')
 	}
 
 	if (!options) {
-		throw new Error('A radio group (Radios) must have some options')
+		throw new Error('A radio group must have some options')
 	}
 
 	// TODO: Might be worth creating a Radio component
