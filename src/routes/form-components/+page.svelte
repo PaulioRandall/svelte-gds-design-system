@@ -11,14 +11,6 @@
 			TODO:
 			+ Pagination
 			+ Cookie banner
-			+ Forms
-				+ Error message
-			  + Character count
-			  + Checkboxes
-			  + Data input
-			  + Fieldset
-			  + File upload
-			  + Textarea
 		-->
 
 	<List slot="side-menu" spaced>
@@ -29,5 +21,13 @@
 		<MenuItem href="/form-components/text-input">Text input</MenuItem>
 		<MenuItem href="/form-components/select">Select</MenuItem>
 		<MenuItem href="/form-components/radio-group">Radio group</MenuItem>
+		<MenuItem href="/form-components/textarea">Textarea</MenuItem>
+		<!--
+			<MenuItem href="/form-components/character-count">Character count</MenuItem>
+			<MenuItem href="/form-components/checkboxes">Checkboxes</MenuItem>
+			<MenuItem href="/form-components/date-input">Date input</MenuItem>
+			<MenuItem href="/form-components/fieldset">Fieldset</MenuItem>
+			<MenuItem href="/form-components/file-upload">File upload</MenuItem>
+		-->
 	</List>
 </StandardPage>
