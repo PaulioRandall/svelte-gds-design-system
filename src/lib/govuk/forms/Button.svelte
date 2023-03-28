@@ -5,6 +5,7 @@
 </script>
 
 <script>
+	export let id = undefined // ""
 	export let name = undefined // ""
 	export let type = 'button'
 	export let value = undefined // ""
@@ -27,6 +28,7 @@
 
 <button
 	on:click="{onclick}"
+	id="{id}"
 	name="{name}"
 	type="{type}"
 	value="{value}"

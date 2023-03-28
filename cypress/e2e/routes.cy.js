@@ -19,6 +19,7 @@ const routes = [
 	{ path: '/form-components', status: 200 },
 	{ path: '/form-components/search-form', status: 200 },
 	{ path: '/form-components/button', status: 200 },
+	{ path: '/form-components/button-group', status: 200 },
 	{ path: '/form-components/start-button', status: 200 },
 	{ path: '/form-components/error-summary', status: 200 },
 	{ path: '/form-components/text-input', status: 200 },

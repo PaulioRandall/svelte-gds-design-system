@@ -38,7 +38,7 @@
 	<List slot="side-menu" spaced>
 		<MenuItem bold href="#examples">Examples</MenuItem>
 		<List sub_list spaced>
-			<MenuItem href="#example-default">Default</MenuItem>
+			<MenuItem href="#example-minimalist">Minimalist</MenuItem>
 			<MenuItem href="#example-secondary">Secondary</MenuItem>
 			<MenuItem href="#example-warning">Warning</MenuItem>
 			<MenuItem href="#example-disabled">Disabled</MenuItem>
@@ -67,11 +67,11 @@
 
 		<noscript>
 			<WarningText>
-				Pssst... these examples won't work without JavaScript enabled.
+				Pssst... some examples won't work without JavaScript enabled.
 			</WarningText>
 		</noscript>
 
-		<Heading id="example-default" h3 md>Default</Heading>
+		<Heading id="example-minimalist" h3 md>Minimalist</Heading>
 		<Button onclick="{incCounter}">Counter: {counter}</Button>
 		<CodeBlock
 			lines="{[
@@ -90,19 +90,14 @@
 		<SectionBreak md />
 
 		<Heading id="example-secondary" h3 md>Secondary</Heading>
-		<Button secondary onclick="{incCounter}">Counter: {counter}</Button>
+		<Button secondary>Secondary</Button>
 		<CodeBlock
 			lines="{[
 				`<script>`,
 				`	import Button from '$govuk/forms/Button.svelte'`,
-				``,
-				`	let counter = 0`,
-				`	const incCounter = (event) => counter++`,
 				`</script>`,
 				``,
-				`<Button secondary onclick={incCounter}>`,
-				`	Counter: {counter}`,
-				`</Button>`,
+				`<Button secondary>Secondary</Button>`,
 			]}" />
 
 		<SectionBreak md />
@@ -152,54 +147,44 @@
 			caption_md="Props"
 			headers="{[
 				{ key: 'name', label: 'Name' },
-				{ key: 'type', label: 'Type' },
-				{ key: 'defaultValue', label: 'Default' },
 				{ key: 'summary', label: 'Summary' },
 			]}"
 			records="{[
 				{
-					name: '<code>name<code>',
-					type: 'string',
-					summary: 'Name of the button',
+					name: '<code>id=""<code>',
+					summary: 'Button ID',
 				},
 				{
-					name: '<code>type<code>',
-					type: 'string',
+					name: '<code>name=""<code>',
+					summary: 'Form field name',
+				},
+				{
+					name: '<code>type=""<code>',
 					defaultValue: '"button"',
-					summary: 'Type of the button. Either "button", "reset", or "submit"',
+					summary: 'Sets the button type ["button", "reset", "submit"]',
 				},
 				{
-					name: '<code>value<code>',
-					type: 'string',
+					name: '<code>value=""<code>',
 					summary: 'Sets the value attribute',
 				},
 				{
-					name: '<code>secondary<code>',
-					type: 'bool',
-					defaultValue: 'false',
-					summary: 'True if it is a secondary button',
+					name: '<code>secondary=false<code>',
+					summary: 'Sets the button as secondary',
 				},
 				{
-					name: '<code>warning</code>',
-					type: 'bool',
-					defaultValue: 'false',
-					summary: 'True if pressing the button can have serious consequences',
+					name: '<code>warning=false</code>',
+					summary: 'Adds warning colours to the button',
 				},
 				{
-					name: '<code>disabled</code>',
-					type: 'bool',
-					defaultValue: 'false',
-					summary: 'Ture if the button is disabled',
+					name: '<code>disabled=false</code>',
+					summary: 'Disables the button',
 				},
 				{
-					name: '<code>prevent_double_clicks</code>',
-					type: 'bool',
-					defaultValue: 'false',
-					summary: 'True to enable double click protection',
+					name: '<code>prevent_double_clicks=false</code>',
+					summary: 'Enables double click protection',
 				},
 				{
-					name: '<code>onclick</code>',
-					type: 'function(event)',
+					name: '<code>onclick=function(event)</code>',
 					summary: 'Function called each time the button is clicked',
 				},
 			]}" />
