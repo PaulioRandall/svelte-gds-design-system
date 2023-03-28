@@ -10,6 +10,9 @@
 	import DocsProp from '$shared/DocsProp.svelte'
 	import DocsSlot from '$shared/DocsSlot.svelte'
 	import DocsExample from '$shared/DocsExample.svelte'
+
+	import exampleMinimalistCode from './example-minimalist.txt?raw'
+	import exampleLinksCode from './example-links.txt?raw'
 </script>
 
 <DocsPage
@@ -35,17 +38,7 @@
 		<DocsExample
 			id="example-minimalist"
 			heading="Minimalist"
-			code_lines="{[
-				`<script>`,
-				`	import ButtonGroup from '$govuk/forms/ButtonGroup.svelte'`,
-				`	import Button from '$govuk/forms/Button.svelte'`,
-				`</script>`,
-				``,
-				`<ButtonGroup>`,
-				`	<Button>Tweedle-dee</Button>`,
-				`	<Button>Tweedle-dum</Button>`,
-				`</ButtonGroup>`,
-			]}">
+			src="{exampleMinimalistCode}">
 			<ButtonGroup>
 				<Button>Tweedle-dee</Button>
 				<Button>Tweedle-dum</Button>
@@ -54,21 +47,7 @@
 
 		<SectionBreak md />
 
-		<DocsExample
-			id="example-links"
-			heading="Links"
-			code_lines="{[
-				`<script>`,
-				`	import ButtonGroup from '$govuk/forms/ButtonGroup.svelte'`,
-				`	import Button from '$govuk/forms/Button.svelte'`,
-				`	import Link from '$govuk/Link.svelte'`,
-				`</script>`,
-				``,
-				`<ButtonGroup>`,
-				`	<Button>Tweedle-dee</Button>`,
-				`	<Link href="#example-links">Tweedle-dum</Link>`,
-				`</ButtonGroup>`,
-			]}">
+		<DocsExample id="example-links" heading="Links" src="{exampleLinksCode}">
 			<ButtonGroup>
 				<Button>Tweedle-dee</Button>
 				<Link href="#example-links">Tweedle-dum</Link>

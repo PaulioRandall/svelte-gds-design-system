@@ -7,9 +7,9 @@
 
 	export let id // = ""
 	export let heading // = ""
-	export let code_lines // = [""]
+	export let src // = "<url>"
 </script>
 
 <Heading id="{id}" h3 md>{heading}</Heading>
 <slot />
-<CodeBlock lines="{code_lines}" />
+<CodeBlock>{src}</CodeBlock>
