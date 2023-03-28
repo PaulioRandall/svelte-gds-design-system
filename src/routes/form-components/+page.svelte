@@ -29,5 +29,6 @@
 		<MenuItem href="/form-components/button">Button</MenuItem>
 		<MenuItem href="/form-components/start-button">Start button</MenuItem>
 		<MenuItem href="/form-components/error-summary">Error summary</MenuItem>
+		<MenuItem href="/form-components/text-input">Text input</MenuItem>
 	</List>
 </StandardPage>
