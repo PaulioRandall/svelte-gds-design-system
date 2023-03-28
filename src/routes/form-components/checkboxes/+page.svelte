@@ -10,27 +10,27 @@
 	import Table from '$govuk/Table.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
-	import RadioGroup from '$govuk/forms/RadioGroup.svelte'
+	import Checkboxes from '$govuk/forms/Checkboxes.svelte'
 
 	import CodeBlock from '$shared/CodeBlock.svelte'
 	import StandardPage from '$shared/StandardPage.svelte'
 	import Section from '$shared/Section.svelte'
 </script>
 
-<StandardPage sticky_menu title="Radio group">
+<StandardPage sticky_menu title="Checkboxes">
 	<BreadCrumbs
 		slot="breadcrumbs"
 		collapsable
 		crumbs="{[
 			['/home', 'Home'],
 			['/form-components', 'Form components'],
-			['/form-components/radio-group', 'Radio group'],
+			['/form-components/checkboxes', 'Checkboxes'],
 		]}" />
 
 	<List slot="side-menu" spaced>
 		<MenuItem bold href="#examples">Examples</MenuItem>
 		<List sub_list spaced>
-			<MenuItem href="#example-default">Default</MenuItem>
+			<MenuItem href="#example-minimalist">Minimalist</MenuItem>
 		</List>
 		<MenuItem bold href="#interface">Interface</MenuItem>
 		<List sub_list spaced>
@@ -40,13 +40,13 @@
 
 	<Heading id="page-title" h1 xl>
 		<Caption xl>Form components</Caption>
-		Radio group
+		Checkboxes
 	</Heading>
 
 	<Paragraph>
 		Official documentation on the <Link
-			href="https://design-system.service.gov.uk/components/radios/"
-			>GDS Design System 'Radios' component</Link
+			href="https://design-system.service.gov.uk/components/checkboxes/"
+			>GDS Design System 'Checkboxes' component</Link
 		>.
 	</Paragraph>
 
@@ -59,30 +59,26 @@
 			</WarningText>
 		</noscript>
 
-		<Heading id="example-default" h3 md>Default</Heading>
-		<RadioGroup
-			id="city-field"
-			name="city"
+		<Heading id="example-minimalist" h3 md>Minimalist</Heading>
+		<Checkboxes
+			name="more-details"
 			options="{[
-				['london', 'London', 'city-london-id'],
-				['paris', 'Paris', 'city-paris-id'],
-				['madrid', 'Madrid', 'city-madrid-id'],
-				['berlin', 'Berlin', 'city-berlin-id'],
+				['bacon', 'Bacon'],
+				['lettuce', 'Lettuce'],
+				['tomato', 'Tomato'],
 			]}" />
 		<CodeBlock
 			lines="{[
 				`<script>`,
-				`	import RadioGroup from '$govuk/forms/RadioGroup.svelte'`,
+				`	import Checkboxes from '$govuk/forms/Checkboxes.svelte'`,
 				`</script>`,
 				``,
-				`<RadioGroup`,
-				`	id="city-field"`,
-				`	name="city"`,
+				`<Checkboxes`,
+				`	name="more-details"`,
 				`	options="{[`,
-				`		['london', 'London', 'city-london-id'],`,
-				`		['paris',  'Paris',  'city-paris-id'],`,
-				`		['madrid', 'Madrid', 'city-madrid-id'],`,
-				`		['berlin', 'Berlin', 'city-berlin-id'],`,
+				`		['bacon', 'Bacon'],`,
+				`		['lettuce', 'Lettuce'],`,
+				`		['tomato', 'Tomato'],`,
 				`	]}" />`,
 			]}" />
 	</Section>
@@ -108,6 +104,11 @@
 					name: '<code>name<code>',
 					type: 'string',
 					summary: 'Form field name',
+				},
+				{
+					name: '<code>label<code>',
+					type: 'string',
+					summary: 'Label text',
 				},
 				{
 					name: '<code>options<code>',

@@ -10,43 +10,45 @@
 	import Table from '$govuk/Table.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
-	import RadioGroup from '$govuk/forms/RadioGroup.svelte'
+	import DateInput from '$govuk/forms/DateInput.svelte'
+	import DateUnit from '$govuk/forms/DateUnit.svelte'
 
 	import CodeBlock from '$shared/CodeBlock.svelte'
 	import StandardPage from '$shared/StandardPage.svelte'
 	import Section from '$shared/Section.svelte'
 </script>
 
-<StandardPage sticky_menu title="Radio group">
+<StandardPage sticky_menu title="Date input">
 	<BreadCrumbs
 		slot="breadcrumbs"
 		collapsable
 		crumbs="{[
 			['/home', 'Home'],
 			['/form-components', 'Form components'],
-			['/form-components/radio-group', 'Radio group'],
+			['/form-components/date-input', 'Date input'],
 		]}" />
 
 	<List slot="side-menu" spaced>
 		<MenuItem bold href="#examples">Examples</MenuItem>
 		<List sub_list spaced>
-			<MenuItem href="#example-default">Default</MenuItem>
+			<MenuItem href="#example-minimalist">Minimalist</MenuItem>
 		</List>
 		<MenuItem bold href="#interface">Interface</MenuItem>
 		<List sub_list spaced>
 			<MenuItem href="#interface-props">Props</MenuItem>
+			<MenuItem href="#interface-slots">Slots</MenuItem>
 		</List>
 	</List>
 
 	<Heading id="page-title" h1 xl>
 		<Caption xl>Form components</Caption>
-		Radio group
+		Date input
 	</Heading>
 
 	<Paragraph>
 		Official documentation on the <Link
-			href="https://design-system.service.gov.uk/components/radios/"
-			>GDS Design System 'Radios' component</Link
+			href="https://design-system.service.gov.uk/components/date-input/"
+			>GDS Design System 'Date input' component</Link
 		>.
 	</Paragraph>
 
@@ -59,31 +61,24 @@
 			</WarningText>
 		</noscript>
 
-		<Heading id="example-default" h3 md>Default</Heading>
-		<RadioGroup
-			id="city-field"
-			name="city"
-			options="{[
-				['london', 'London', 'city-london-id'],
-				['paris', 'Paris', 'city-paris-id'],
-				['madrid', 'Madrid', 'city-madrid-id'],
-				['berlin', 'Berlin', 'city-berlin-id'],
-			]}" />
+		<Heading id="example-minimalist" h3 md>Minimalist</Heading>
+		<DateInput>
+			<DateUnit name="birth-day" label="Day" />
+			<DateUnit name="birth-month" label="Month" />
+			<DateUnit name="birth-year" label="Year" />
+		</DateInput>
 		<CodeBlock
 			lines="{[
 				`<script>`,
-				`	import RadioGroup from '$govuk/forms/RadioGroup.svelte'`,
+				`	import DateInput from '$govuk/forms/DateInput.svelte'`,
+				`	import DateUnit from '$govuk/forms/DateUnit.svelte'`,
 				`</script>`,
 				``,
-				`<RadioGroup`,
-				`	id="city-field"`,
-				`	name="city"`,
-				`	options="{[`,
-				`		['london', 'London', 'city-london-id'],`,
-				`		['paris',  'Paris',  'city-paris-id'],`,
-				`		['madrid', 'Madrid', 'city-madrid-id'],`,
-				`		['berlin', 'Berlin', 'city-berlin-id'],`,
-				`	]}" />`,
+				`<DateInput>`,
+				`	<DateUnit name="birth-day" label="Day" />`,
+				`	<DateUnit name="birth-month" label="Month" />`,
+				`	<DateUnit name="birth-year" label="Year" />`,
+				`</DateInput>`,
 			]}" />
 	</Section>
 
@@ -104,15 +99,21 @@
 					type: 'string',
 					summary: 'Group element ID',
 				},
+			]}" />
+
+		<SectionBreak md />
+
+		<Table
+			id="interface-slots"
+			caption_md="Slots"
+			headers="{[
+				{ key: 'name', label: 'Name' },
+				{ key: 'summary', label: 'Summary' },
+			]}"
+			records="{[
 				{
-					name: '<code>name<code>',
-					type: 'string',
-					summary: 'Form field name',
-				},
-				{
-					name: '<code>options<code>',
-					type: '[["value", "label", "id"]...]',
-					summary: 'List of options',
+					name: '<code>&lt;default&gt;<code>',
+					summary: "DateUnit's in the order they are to be presented",
 				},
 			]}" />
 	</Section>

@@ -25,6 +25,8 @@ const routes = [
 	{ path: '/form-components/textarea', status: 200 },
 	{ path: '/form-components/select', status: 200 },
 	{ path: '/form-components/radio-group', status: 200 },
+	{ path: '/form-components/checkboxes', status: 200 },
+	{ path: '/form-components/date-input', status: 200 },
 	{ path: '/feedback', status: 200 },
 	{ path: '/error', status: 404 },
 ]
