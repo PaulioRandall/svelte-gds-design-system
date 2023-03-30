@@ -1,5 +1,5 @@
 <script>
-	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
+	import Breadcrumbs from '$govuk/Breadcrumbs.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 
@@ -7,7 +7,7 @@
 </script>
 
 <StandardPage title="Xyz">
-	<BreadCrumbs
+	<Breadcrumbs
 		slot="breadcrumbs"
 		collapsable
 		crumbs="{[

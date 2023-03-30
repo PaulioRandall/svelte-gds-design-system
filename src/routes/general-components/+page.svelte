@@ -1,7 +1,7 @@
 <script>
 	import Accordion from '$govuk/Accordion.svelte'
 	import AccordionSection from '$govuk/AccordionSection.svelte'
-	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
+	import Breadcrumbs from '$govuk/Breadcrumbs.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Details from '$govuk/Details.svelte'
 	import Heading from '$govuk/Heading.svelte'
@@ -22,7 +22,7 @@
 </script>
 
 <StandardPage sticky_menu title="General components">
-	<BreadCrumbs
+	<Breadcrumbs
 		slot="breadcrumbs"
 		collapsable
 		crumbs="{[
@@ -38,6 +38,7 @@
 
 	<List slot="side-menu" spaced>
 		<MenuItem href="#page-title">Page title</MenuItem>
+		<MenuItem href="/general-components/breadcrumbs">Breadcrumbs</MenuItem>
 		<MenuItem href="/general-components/heading">Heading</MenuItem>
 		<MenuItem href="/general-components/notification-banner"
 			>Notification banner</MenuItem>
