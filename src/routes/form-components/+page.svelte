@@ -18,6 +18,7 @@
 		<MenuItem href="/form-components/button-group">Button group</MenuItem>
 		<MenuItem href="/form-components/checkboxes">Checkboxes</MenuItem>
 		<MenuItem href="/form-components/date-input">Date input</MenuItem>
+		<MenuItem href="/form-components/date-unit">Date unit</MenuItem>
 		<MenuItem href="/form-components/error-summary">Error summary</MenuItem>
 		<!--<MenuItem href="/form-components/fieldset">Fieldset</MenuItem>-->
 		<!--<MenuItem href="/form-components/file-upload">File upload</MenuItem>-->

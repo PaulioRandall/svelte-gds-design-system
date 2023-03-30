@@ -1,10 +1,7 @@
 <script>
-	import SectionBreak from '$govuk/SectionBreak.svelte'
-
+	import DocsExample from '$shared/DocsExample.svelte'
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsProp from '$shared/DocsProp.svelte'
-	import DocsSlot from '$shared/DocsSlot.svelte'
-	import DocsExample from '$shared/DocsExample.svelte'
 
 	import ExampleMinimalist from './ExampleMinimalist.svelte'
 	import exampleCodeMinimalist from './ExampleMinimalist.svelte?raw'
@@ -12,13 +9,13 @@
 
 <DocsPage
 	group="Form components"
-	title="Checkboxes"
-	gds_name="Checkboxes"
-	gds_link="https://design-system.service.gov.uk/components/checkboxes/"
+	title="Date unit"
+	gds_name="Date input"
+	gds_link="https://design-system.service.gov.uk/components/date-input/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/form-components', 'Form components'],
-		['/form-components/checkboxes', 'Checkboxes'],
+		['/form-components/date-unit', 'Date unit'],
 	]}"
 	examples="{[['example-minimalist', 'Minimalist']]}">
 	<svelte:fragment slot="examples">
@@ -34,9 +31,5 @@
 		<DocsProp name="id" type="string" summary="Wrapper element ID" />
 		<DocsProp name="name" type="string" summary="Form field name" />
 		<DocsProp name="label" type="string" summary="Label text" />
-		<DocsProp
-			name="options"
-			type="[['value', 'label', 'id']...]"
-			summary="List of options" />
 	</svelte:fragment>
 </DocsPage>
