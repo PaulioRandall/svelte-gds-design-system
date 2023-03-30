@@ -20,12 +20,6 @@
 	export let override_font_16 = false
 	export let override_font_14 = false
 
-	if (lead && small) {
-		throw new Error(
-			'A paragraph cannot be both leading (lead) and small at the same time'
-		)
-	}
-
 	if (regular && bold) {
 		throw new Error(
 			'A paragraph cannot be both regular and bold at the same time'
@@ -35,12 +29,12 @@
 	const numOfAlignments = countTruthy(left, centre, right)
 
 	if (numOfAlignments > 1) {
-		throw new Error(
-			'A paragraph cannot have more than one alignment (left, centre, or right)'
-		)
+		throw new Error('A paragraph cannot have more than one text alignment')
 	}
 
 	const numOfOverrides = countTruthy(
+		lead,
+		small,
 		override_font_80,
 		override_font_48,
 		override_font_36,
@@ -52,7 +46,9 @@
 	)
 
 	if (numOfOverrides > 1) {
-		throw new Error('A paragraph cannot have more than one font size override')
+		throw new Error(
+			'A paragraph cannot be have more than one font size override'
+		)
 	}
 </script>
 

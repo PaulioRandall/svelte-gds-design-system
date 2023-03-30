@@ -21,7 +21,7 @@
 					<li class="prop">
 						<span class="quoted">{name}</span>
 						{#if summary}
-							<span>({summary})</span>
+							&nbsp;<span>({summary})</span>
 						{/if}
 					</li>
 				{/each}
