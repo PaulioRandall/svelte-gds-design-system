@@ -1,120 +1,48 @@
 <script>
-	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
-	import Caption from '$govuk/Caption.svelte'
-	import Heading from '$govuk/Heading.svelte'
 	import Link from '$govuk/Link.svelte'
-	import List from '$govuk/List.svelte'
-	import MenuItem from '$govuk/MenuItem.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
-	import SectionBreak from '$govuk/SectionBreak.svelte'
-	import Table from '$govuk/Table.svelte'
-	import WarningText from '$govuk/WarningText.svelte'
 
-	import DateInput from '$govuk/forms/DateInput.svelte'
-	import DateUnit from '$govuk/forms/DateUnit.svelte'
+	import DocsPage from '$shared/DocsPage.svelte'
+	import DocsProp from '$shared/DocsProp.svelte'
+	import DocsSlot from '$shared/DocsSlot.svelte'
+	import DocsExample from '$shared/DocsExample.svelte'
 
-	import CodeBlock from '$shared/CodeBlock.svelte'
-	import StandardPage from '$shared/StandardPage.svelte'
-	import Section from '$shared/Section.svelte'
+	import ExampleMinimalist from './ExampleMinimalist.svelte'
+	import exampleMinimalistCode from './ExampleMinimalist.svelte?raw'
 </script>
 
-<StandardPage sticky_menu title="Date input">
-	<BreadCrumbs
-		slot="breadcrumbs"
-		collapsable
-		crumbs="{[
-			['/home', 'Home'],
-			['/form-components', 'Form components'],
-			['/form-components/date-input', 'Date input'],
-		]}" />
-
-	<List slot="side-menu" spaced>
-		<MenuItem bold href="#examples">Examples</MenuItem>
-		<List sub_list spaced>
-			<MenuItem href="#example-minimalist">Minimalist</MenuItem>
-		</List>
-		<MenuItem bold href="#interface">Interface</MenuItem>
-		<List sub_list spaced>
-			<MenuItem href="#interface-props">Props</MenuItem>
-			<MenuItem href="#interface-slots">Slots</MenuItem>
-		</List>
-	</List>
-
-	<Heading id="page-title" h1 xl>
-		<Caption xl>Form components</Caption>
-		Date input
-	</Heading>
-
-	<Paragraph>
-		Official documentation on the <Link
+<DocsPage
+	title="Date input"
+	group="Form components"
+	crumbs="{[
+		['/home', 'Home'],
+		['/form-components', 'Form components'],
+		['/form-components/date-input', 'Date input'],
+	]}"
+	examples="{[['example-minimalist', 'Minimalist']]}">
+	<Paragraph lead slot="intro">
+		Official documentation: <Link
 			href="https://design-system.service.gov.uk/components/date-input/"
 			>GDS Design System 'Date input' component</Link
 		>.
 	</Paragraph>
 
-	<Section add_top_margin id="examples">
-		<Heading h2 lg>Examples</Heading>
+	<svelte:fragment slot="examples">
+		<DocsExample
+			id="example-minimalist"
+			heading="Minimalist"
+			src="{exampleMinimalistCode}">
+			<ExampleMinimalist />
+		</DocsExample>
+	</svelte:fragment>
 
-		<noscript>
-			<WarningText>
-				Pssst... some examples won't work without JavaScript enabled.
-			</WarningText>
-		</noscript>
+	<svelte:fragment slot="props">
+		<DocsProp name="id" type="string" summary="Wrapper element ID" />
+	</svelte:fragment>
 
-		<Heading id="example-minimalist" h3 md>Minimalist</Heading>
-		<DateInput>
-			<DateUnit name="birth-day" label="Day" />
-			<DateUnit name="birth-month" label="Month" />
-			<DateUnit name="birth-year" label="Year" />
-		</DateInput>
-		<CodeBlock
-			lines="{[
-				`<script>`,
-				`	import DateInput from '$govuk/forms/DateInput.svelte'`,
-				`	import DateUnit from '$govuk/forms/DateUnit.svelte'`,
-				`</script>`,
-				``,
-				`<DateInput>`,
-				`	<DateUnit name="birth-day" label="Day" />`,
-				`	<DateUnit name="birth-month" label="Month" />`,
-				`	<DateUnit name="birth-year" label="Year" />`,
-				`</DateInput>`,
-			]}" />
-	</Section>
-
-	<Section add_top_margin id="interface">
-		<Heading h2 lg>Interface</Heading>
-
-		<Table
-			id="interface-props"
-			caption_md="Props"
-			headers="{[
-				{ key: 'name', label: 'Name' },
-				{ key: 'type', label: 'Type' },
-				{ key: 'summary', label: 'Summary' },
-			]}"
-			records="{[
-				{
-					name: '<code>id<code>',
-					type: 'string',
-					summary: 'Group element ID',
-				},
-			]}" />
-
-		<SectionBreak md />
-
-		<Table
-			id="interface-slots"
-			caption_md="Slots"
-			headers="{[
-				{ key: 'name', label: 'Name' },
-				{ key: 'summary', label: 'Summary' },
-			]}"
-			records="{[
-				{
-					name: '<code>&lt;default&gt;<code>',
-					summary: "DateUnit's in the order they are to be presented",
-				},
-			]}" />
-	</Section>
-</StandardPage>
+	<svelte:fragment slot="slots">
+		<DocsSlot
+			default_slot
+			summary="DateUnit's in the order they are to be presented" />
+	</svelte:fragment>
+</DocsPage>
