@@ -10,30 +10,54 @@ const testForStatus = (path, status) =>
 			expect(res.status).equal(status)
 		})
 
-const routes = [
-	{ path: '/', status: 200 },
-	{ path: '/home', status: 200 },
-	{ path: '/general-components', status: 200 },
-	{ path: '/general-components/xyz', status: 200 },
-	{ path: '/general-components/notification-banner', status: 200 },
-	{ path: '/form-components', status: 200 },
-	{ path: '/form-components/button', status: 200 },
-	{ path: '/form-components/button-group', status: 200 },
-	{ path: '/form-components/checkboxes', status: 200 },
-	{ path: '/form-components/date-input', status: 200 },
-	{ path: '/form-components/date-unit', status: 200 },
-	{ path: '/form-components/error-summary', status: 200 },
-	{ path: '/form-components/radio-group', status: 200 },
-	{ path: '/form-components/select', status: 200 },
-	{ path: '/form-components/start-button', status: 200 },
-	{ path: '/form-components/text-input', status: 200 },
-	{ path: '/form-components/textarea', status: 200 },
-	{ path: '/feedback', status: 200 },
-	{ path: '/error', status: 404 },
+const topLevelPages = [
+	 '/',
+	 '/home', 
+	 '/general-components',
+	 '/form-components',
+	 '/feedback',
 ]
 
-describe('Hitting all routes returns correct status', () => {
-	for (const r of routes) {
-		it(r.path, () => testForStatus(r.path, r.status))
+const generalComponentPages = [
+	'xyz',
+	'notification-banner',
+]
+
+const formComponentPages = [
+	'button',
+	'button-group',
+	'checkboxes',
+	'date-input',
+	'date-unit',
+	'error-summary',
+	'radio-group',
+	'select',
+	'start-button',
+	'text-input',
+	'textarea',
+]
+
+describe('200 status returned when visiting top level pages', () => {
+	for (const path of topLevelPages) {
+		it(path, () => testForStatus(path, 200))
 	}
+})
+
+describe('200 status returned when visiting general component documentation pages', () => {
+	for (const pageName of generalComponentPages) {
+		const url = `/general-components/${pageName}`
+		it(url, () => testForStatus(url, 200))
+	}
+})
+
+describe('200 status returned when visiting form component documentation pages', () => {
+	for (const pageName of formComponentPages) {
+		const url = `/form-components/${pageName}`
+		it(url, () => testForStatus(url, 200))
+	}
+})
+
+describe('404 (and not 500) status returned when visiting an unknown page', () => {
+	const path = '/error'
+	it(path, () => testForStatus(path, 404))
 })
