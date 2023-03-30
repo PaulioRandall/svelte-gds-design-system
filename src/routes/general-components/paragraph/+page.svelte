@@ -5,6 +5,7 @@
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsProp from '$shared/DocsProp.svelte'
 	import DocsPropExclusive from '$shared/DocsPropExclusive.svelte'
+	import DocsSlot from '$shared/DocsSlot.svelte'
 
 	import ExampleMinimalist from './ExampleMinimalist.svelte'
 	import exampleCodeMinimalist from './ExampleMinimalist.svelte?raw'
@@ -91,5 +92,9 @@
 				['override_font_14', '12-14px'],
 			]}"
 			summary="Override the font size" />
+	</svelte:fragment>
+
+	<svelte:fragment slot="slots">
+		<DocsSlot default_slot summary="Paragraph content" />
 	</svelte:fragment>
 </DocsPage>

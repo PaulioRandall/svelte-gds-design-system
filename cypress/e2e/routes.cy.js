@@ -21,6 +21,7 @@ const topLevelPages = [
 const generalDocsPages = [
 	'breadcrumbs',
 	'heading',
+	'inset-text',
 	'notification-banner',
 	'panel',
 	'paragraph',

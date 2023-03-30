@@ -44,9 +44,9 @@
 			>Notification banner</MenuItem>
 		<MenuItem href="/general-components/panel">Panel</MenuItem>
 		<MenuItem href="/general-components/paragraph">Paragraph</MenuItem>
+		<MenuItem href="/general-components/inset-text">Inset text</MenuItem>
 		<MenuItem bold href="#text">Text</MenuItem>
 		<List spaced sub_list>
-			<MenuItem href="#paragraph">Paragraph</MenuItem>
 			<MenuItem href="#special-text">Special text</MenuItem>
 			<MenuItem href="#tag">Tag</MenuItem>
 		</List>
