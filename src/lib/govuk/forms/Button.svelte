@@ -24,6 +24,10 @@
 	if (secondary && warning) {
 		throw new Error('A button cannot be both secondary and a warning')
 	}
+
+	if (!$$slots.default) {
+		throw new Error('A button must have a slotted label text')
+	}
 </script>
 
 <button

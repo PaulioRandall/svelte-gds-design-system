@@ -1,208 +1,120 @@
 <script>
-	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
-	import Caption from '$govuk/Caption.svelte'
-	import Heading from '$govuk/Heading.svelte'
 	import Link from '$govuk/Link.svelte'
-	import List from '$govuk/List.svelte'
-	import MenuItem from '$govuk/MenuItem.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
-	import Table from '$govuk/Table.svelte'
-	import WarningText from '$govuk/WarningText.svelte'
 
-	import Button from '$govuk/forms/Button.svelte'
+	import DocsPage from '$shared/DocsPage.svelte'
+	import DocsProp from '$shared/DocsProp.svelte'
+	import DocsSlot from '$shared/DocsSlot.svelte'
+	import DocsExample from '$shared/DocsExample.svelte'
 
-	import CodeBlock from '$shared/CodeBlock.svelte'
-	import StandardPage from '$shared/StandardPage.svelte'
-	import Section from '$shared/Section.svelte'
+	import ExampleMinimalist from './ExampleMinimalist.svelte'
+	import exampleMinimalistCode from './ExampleMinimalist.svelte?raw'
 
-	let counter = 0
-	const incCounter = (event) => counter++
+	import ExampleSecondary from './ExampleSecondary.svelte'
+	import exampleSecondaryCode from './ExampleSecondary.svelte?raw'
 
-	let warningText = 'Think carefully before pressing me'
-	const changeWarning = (event) => {
-		warningText = "I bet you didn't!"
-	}
+	import ExampleWarning from './ExampleWarning.svelte'
+	import exampleWarningCode from './ExampleWarning.svelte?raw'
+
+	import ExampleDisabled from './ExampleDisabled.svelte'
+	import exampleDisabledCode from './ExampleDisabled.svelte?raw'
 </script>
 
-<StandardPage sticky_menu title="Button">
-	<BreadCrumbs
-		slot="breadcrumbs"
-		collapsable
-		crumbs="{[
-			['/home', 'Home'],
-			['/form-components', 'Form components'],
-			['/form-components/button', 'Button'],
-		]}" />
-
-	<List slot="side-menu" spaced>
-		<MenuItem bold href="#examples">Examples</MenuItem>
-		<List sub_list spaced>
-			<MenuItem href="#example-minimalist">Minimalist</MenuItem>
-			<MenuItem href="#example-secondary">Secondary</MenuItem>
-			<MenuItem href="#example-warning">Warning</MenuItem>
-			<MenuItem href="#example-disabled">Disabled</MenuItem>
-		</List>
-		<MenuItem bold href="#interface">Interface</MenuItem>
-		<List sub_list spaced>
-			<MenuItem href="#interface-props">Props</MenuItem>
-			<MenuItem href="#interface-slots">Slots</MenuItem>
-		</List>
-	</List>
-
-	<Heading id="page-title" h1 xl>
-		<Caption xl>Form components</Caption>
-		Button
-	</Heading>
-
-	<Paragraph>
-		Official documentation on <Link
+<DocsPage
+	title="Button"
+	group="Form components"
+	crumbs="{[
+		['/home', 'Home'],
+		['/form-components', 'Form components'],
+		['/form-components/button', 'Button'],
+	]}"
+	examples="{[
+		['example-minimalist', 'Minimalist'],
+		['example-secondary', 'Secondary'],
+		['example-warning', 'Warning'],
+		['example-disabled', 'Disabled'],
+	]}">
+	<Paragraph lead slot="intro">
+		Official documentation: <Link
 			href="https://design-system.service.gov.uk/components/button/"
-			>GDS Design System 'Button' components</Link
+			>GDS Design System 'Button' component</Link
 		>.
 	</Paragraph>
 
-	<Section add_top_margin id="examples">
-		<Heading h2 lg>Examples</Heading>
-
-		<noscript>
-			<WarningText>
-				Pssst... some examples won't work without JavaScript enabled.
-			</WarningText>
-		</noscript>
-
-		<Heading id="example-minimalist" h3 md>Minimalist</Heading>
-		<Button onclick="{incCounter}">Counter: {counter}</Button>
-		<CodeBlock
-			lines="{[
-				`<script>`,
-				`	import Button from '$govuk/forms/Button.svelte'`,
-				``,
-				`	let counter = 0`,
-				`	const incCounter = (event) => counter++`,
-				`</script>`,
-				``,
-				`<Button onclick={incCounter}>`,
-				`	Counter: {counter}`,
-				`</Button>`,
-			]}" />
+	<svelte:fragment slot="examples">
+		<DocsExample
+			id="example-minimalist"
+			heading="Minimalist"
+			src="{exampleMinimalistCode}">
+			<ExampleMinimalist />
+		</DocsExample>
 
 		<SectionBreak md />
 
-		<Heading id="example-secondary" h3 md>Secondary</Heading>
-		<Button secondary>Secondary</Button>
-		<CodeBlock
-			lines="{[
-				`<script>`,
-				`	import Button from '$govuk/forms/Button.svelte'`,
-				`</script>`,
-				``,
-				`<Button secondary>Secondary</Button>`,
-			]}" />
+		<DocsExample
+			id="example-secondary"
+			heading="Secondary"
+			src="{exampleSecondaryCode}">
+			<ExampleSecondary />
+		</DocsExample>
 
 		<SectionBreak md />
 
-		<Heading id="example-warning" h3 md>Warning</Heading>
-		<Button warning prevent_double_click onclick="{changeWarning}">
-			{warningText}
-		</Button>
-		<CodeBlock
-			lines="{[
-				`<script>`,
-				`	import Button from '$govuk/forms/Button.svelte'`,
-				``,
-				`	let warningText = "Think carfully before pressing me!"`,
-				`	const changeWarning = (event) => {`,
-				`		warningText = "I bet you didn't!"`,
-				`	}`,
-				`</script>`,
-				``,
-				`<Button`,
-				`	warning`,
-				`	prevent_double_click`,
-				`	onclick={changeWarning}>`,
-				`	{warningText}`,
-				`</Button>`,
-			]}" />
+		<DocsExample
+			id="example-warning"
+			heading="Warning"
+			src="{exampleWarningCode}">
+			<ExampleWarning />
+		</DocsExample>
 
 		<SectionBreak md />
 
-		<Heading id="example-disabled" h3 md>Disabled</Heading>
-		<Button disabled>Can't touch this</Button>
-		<CodeBlock
-			lines="{[
-				`<script>`,
-				`	import Button from '$govuk/forms/Button.svelte'`,
-				`</script>`,
-				``,
-				`<Button disabled>Can't touch this</Button>`,
-			]}" />
-	</Section>
+		<DocsExample
+			id="example-disabled"
+			heading="Disabled"
+			src="{exampleDisabledCode}">
+			<ExampleDisabled />
+		</DocsExample>
+	</svelte:fragment>
 
-	<Section add_top_margin id="interface">
-		<Heading h2 lg>Interface</Heading>
+	<svelte:fragment slot="props">
+		<DocsProp name="id" type="string" summary="Button element ID" />
+		<DocsProp name="name" type="string" summary="Form field name" />
+		<DocsProp
+			name="type"
+			type="string"
+			default_value="button"
+			allows="{['button', 'reset', 'submit']}"
+			summary="Button type" />
+		<DocsProp name="value" type="string" summary="Value (attribute)" />
+		<DocsProp
+			name="secondary"
+			type="bool"
+			default_value="false"
+			summary="Flags as secondary button (grey). Mutually exclusive with the 'warning' prop" />
+		<DocsProp
+			name="warning"
+			type="bool"
+			default_value="false"
+			summary="Flags as button with serious consequences. Mutually exclusive with the 'secondary' prop" />
+		<DocsProp
+			name="disabled"
+			type="bool"
+			default_value="false"
+			summary="Disables button" />
+		<DocsProp
+			name="prevent_double_click"
+			type="bool"
+			default_value="false"
+			summary="Adds double click prevention when used with forms" />
+		<DocsProp
+			name="onclick"
+			type="function(event)"
+			summary="Function invoked when the button is clicked prior to any form submission" />
+	</svelte:fragment>
 
-		<Table
-			id="interface-props"
-			caption_md="Props"
-			headers="{[
-				{ key: 'name', label: 'Name' },
-				{ key: 'summary', label: 'Summary' },
-			]}"
-			records="{[
-				{
-					name: '<code>id=""<code>',
-					summary: 'Button ID',
-				},
-				{
-					name: '<code>name=""<code>',
-					summary: 'Form field name',
-				},
-				{
-					name: '<code>type=""<code>',
-					defaultValue: '"button"',
-					summary: 'Sets the button type ["button", "reset", "submit"]',
-				},
-				{
-					name: '<code>value=""<code>',
-					summary: 'Sets the value attribute',
-				},
-				{
-					name: '<code>secondary=false<code>',
-					summary: 'Sets the button as secondary',
-				},
-				{
-					name: '<code>warning=false</code>',
-					summary: 'Adds warning colours to the button',
-				},
-				{
-					name: '<code>disabled=false</code>',
-					summary: 'Disables the button',
-				},
-				{
-					name: '<code>prevent_double_click=false</code>',
-					summary: 'Enables double click protection',
-				},
-				{
-					name: '<code>onclick=function(event)</code>',
-					summary: 'Function called each time the button is clicked',
-				},
-			]}" />
-
-		<SectionBreak md />
-
-		<Table
-			id="interface-slots"
-			caption_md="Slots"
-			headers="{[
-				{ key: 'name', label: 'Name' },
-				{ key: 'summary', label: 'Summary' },
-			]}"
-			records="{[
-				{
-					name: '<code>&lt;default&gt;<code>',
-					summary: 'Button text',
-				},
-			]}" />
-	</Section>
-</StandardPage>
+	<svelte:fragment slot="slots">
+		<DocsSlot default_slot summary="Button text" />
+	</svelte:fragment>
+</DocsPage>

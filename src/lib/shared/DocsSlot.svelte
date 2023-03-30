@@ -17,7 +17,7 @@
 	<Summary>
 		{#if default_value}
 			<SummaryItem name="Default">
-				{default_value}
+				<span class="quoted">{default_value}</span>
 			</SummaryItem>
 		{/if}
 		<SummaryItem name="Summary">
@@ -25,3 +25,10 @@
 		</SummaryItem>
 	</Summary>
 </SummaryCard>
+
+<style>
+	.quoted::before,
+	.quoted::after {
+		content: "'";
+	}
+</style>

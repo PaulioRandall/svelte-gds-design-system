@@ -18,14 +18,14 @@
 		</SummaryItem>
 		{#if default_value}
 			<SummaryItem name="Default">
-				{default_value}
+				<span class="quoted">{default_value}</span>
 			</SummaryItem>
 		{/if}
 		{#if allows}
 			<SummaryItem name="Allows">
 				<List bullets>
 					{#each allows as item}
-						<li>{item}</li>
+						<li class="quoted">{item}</li>
 					{/each}
 				</List>
 			</SummaryItem>
@@ -35,3 +35,10 @@
 		</SummaryItem>
 	</Summary>
 </SummaryCard>
+
+<style>
+	.quoted::before,
+	.quoted::after {
+		content: "'";
+	}
+</style>

@@ -3,9 +3,6 @@
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
 
-	import ButtonGroup from '$govuk/forms/ButtonGroup.svelte'
-	import Button from '$govuk/forms/Button.svelte'
-
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsProp from '$shared/DocsProp.svelte'
 	import DocsSlot from '$shared/DocsSlot.svelte'
@@ -30,8 +27,8 @@
 		['example-minimalist', 'Minimalist'],
 		['example-links', 'Links'],
 	]}">
-	<Paragraph slot="intro">
-		Official documentation on the <Link
+	<Paragraph lead slot="intro">
+		Official documentation: <Link
 			href="https://design-system.service.gov.uk/components/button/"
 			>GDS Design System 'Button group' wrapper</Link
 		>.
