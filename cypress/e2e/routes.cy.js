@@ -26,6 +26,7 @@ const generalDocsPages = [
 	'notification-banner',
 	'panel',
 	'paragraph',
+	'tag',
 	'warning-text',
 ]
 

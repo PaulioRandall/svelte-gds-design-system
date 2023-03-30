@@ -3,16 +3,12 @@
 	import AccordionSection from '$govuk/AccordionSection.svelte'
 	import Breadcrumbs from '$govuk/Breadcrumbs.svelte'
 	import Caption from '$govuk/Caption.svelte'
-	import Details from '$govuk/Details.svelte'
 	import Heading from '$govuk/Heading.svelte'
-	import InsetText from '$govuk/InsetText.svelte'
 	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Table from '$govuk/Table.svelte'
-	import Tag from '$govuk/Tag.svelte'
-	import WarningText from '$govuk/WarningText.svelte'
 
 	import StandardPage from '$shared/StandardPage.svelte'
 	import Section from '$shared/Section.svelte'
@@ -47,11 +43,6 @@
 		</MenuItem>
 		<MenuItem href="/general-components/panel">Panel</MenuItem>
 		<MenuItem href="/general-components/paragraph">Paragraph</MenuItem>
-		<MenuItem bold href="#text">Text</MenuItem>
-		<List spaced sub_list>
-			<MenuItem href="#special-text">Special text</MenuItem>
-			<MenuItem href="#tag">Tag</MenuItem>
-		</List>
 		<MenuItem bold href="#structured-information"
 			>Structured information</MenuItem>
 		<List spaced sub_list>
@@ -61,6 +52,7 @@
 			<MenuItem href="#accordion">Accordion</MenuItem>
 			<MenuItem href="#summary">Summary</MenuItem>
 		</List>
+		<MenuItem href="/general-components/tag">Tag</MenuItem>
 		<MenuItem href="/general-components/warning-text">Warning text</MenuItem>
 	</List>
 
@@ -68,44 +60,6 @@
 		<Caption xl>A page title caption</Caption>
 		The page title
 	</Heading>
-
-	<Section add_top_margin id="text">
-		<Heading h2 lg>Text</Heading>
-	</Section>
-
-	<Section no_top_pad id="paragraph">
-		<Heading h3 md>Paragraph</Heading>
-		<Paragraph lead>Leading paragraph.</Paragraph>
-		<Paragraph small>Small paragraph.</Paragraph>
-		<Paragraph centre>Centred aligned paragraph.</Paragraph>
-		<Paragraph right>Right aligned paragraph.</Paragraph>
-		<Paragraph bold>Bold paragraph.</Paragraph>
-		<Paragraph override_font_36>Font size overriden paragraph.</Paragraph>
-	</Section>
-
-	<Section id="special-text">
-		<Heading h3 md>Special text</Heading>
-		<InsetText>This is inset text.</InsetText>
-		<WarningText>This is a warning!</WarningText>
-
-		<Details summary="Here are some details">These are the details.</Details>
-	</Section>
-
-	<Section id="tag">
-		<Heading h3 md>Tag</Heading>
-		<List>
-			<li><Tag>Completed</Tag></li>
-			<li><Tag inactive>Inactive</Tag></li>
-			<li><Tag fresh>New (fresh)</Tag></li>
-			<li><Tag active>Active</Tag></li>
-			<li><Tag pending>Pending</Tag></li>
-			<li><Tag received>Received</Tag></li>
-			<li><Tag sent>Sent</Tag></li>
-			<li><Tag rejected>Rejected</Tag></li>
-			<li><Tag declined>Declined</Tag></li>
-			<li><Tag delayed>Delayed</Tag></li>
-		</List>
-	</Section>
 
 	<Section add_top_margin id="structured-information">
 		<Heading h2 lg>Structured information</Heading>
