@@ -11,5 +11,6 @@
 </script>
 
 <Heading id="{id}" h3 md>{heading}</Heading>
+<slot name="description" />
 <slot />
 <CodeBlock>{src}</CodeBlock>

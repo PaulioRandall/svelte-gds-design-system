@@ -38,6 +38,7 @@
 
 	<List slot="side-menu" spaced>
 		<MenuItem href="#page-title">Page title</MenuItem>
+		<MenuItem href="/general-components/heading">Heading</MenuItem>
 		<MenuItem href="/general-components/notification-banner"
 			>Notification banner</MenuItem>
 		<MenuItem href="/general-components/panel">Panel</MenuItem>

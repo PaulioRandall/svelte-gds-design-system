@@ -18,7 +18,7 @@ const topLevelPages = [
 	'/form-components',
 ]
 
-const generalDocsPages = ['panel', 'notification-banner', 'xyz']
+const generalDocsPages = ['heading', 'notification-banner', 'panel', 'xyz']
 
 const formDocsPages = [
 	'button',
