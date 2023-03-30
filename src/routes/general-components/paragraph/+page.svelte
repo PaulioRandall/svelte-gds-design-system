@@ -18,7 +18,7 @@
 	group="General components"
 	title="Paragraph"
 	gds_name="Typography"
-	gds_link="https://design-system.service.gov.uk/styles/typography/"
+	gds_link="https://design-system.service.gov.uk/styles/typography/#paragraphs"
 	crumbs="{[
 		['/home', 'Home'],
 		['/general-components', 'General components'],

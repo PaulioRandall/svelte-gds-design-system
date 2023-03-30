@@ -39,12 +39,14 @@
 	<List slot="side-menu" spaced>
 		<MenuItem href="#page-title">Page title</MenuItem>
 		<MenuItem href="/general-components/breadcrumbs">Breadcrumbs</MenuItem>
+		<MenuItem href="/general-components/details">Details</MenuItem>
 		<MenuItem href="/general-components/heading">Heading</MenuItem>
-		<MenuItem href="/general-components/notification-banner"
-			>Notification banner</MenuItem>
+		<MenuItem href="/general-components/inset-text">Inset text</MenuItem>
+		<MenuItem href="/general-components/notification-banner">
+			Notification banner
+		</MenuItem>
 		<MenuItem href="/general-components/panel">Panel</MenuItem>
 		<MenuItem href="/general-components/paragraph">Paragraph</MenuItem>
-		<MenuItem href="/general-components/inset-text">Inset text</MenuItem>
 		<MenuItem bold href="#text">Text</MenuItem>
 		<List spaced sub_list>
 			<MenuItem href="#special-text">Special text</MenuItem>
@@ -59,6 +61,7 @@
 			<MenuItem href="#accordion">Accordion</MenuItem>
 			<MenuItem href="#summary">Summary</MenuItem>
 		</List>
+		<MenuItem href="/general-components/warning-text">Warning text</MenuItem>
 	</List>
 
 	<Heading id="page-title" h1 xl>

@@ -20,12 +20,13 @@ const topLevelPages = [
 
 const generalDocsPages = [
 	'breadcrumbs',
+	'details',
 	'heading',
 	'inset-text',
 	'notification-banner',
 	'panel',
 	'paragraph',
-	'xyz',
+	'warning-text',
 ]
 
 const formDocsPages = [
