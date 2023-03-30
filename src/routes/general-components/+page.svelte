@@ -38,15 +38,13 @@
 		<MenuItem href="/general-components/details">Details</MenuItem>
 		<MenuItem href="/general-components/heading">Heading</MenuItem>
 		<MenuItem href="/general-components/inset-text">Inset text</MenuItem>
+		<MenuItem href="/general-components/list">List</MenuItem>
 		<MenuItem href="/general-components/notification-banner">
 			Notification banner
 		</MenuItem>
 		<MenuItem href="/general-components/panel">Panel</MenuItem>
 		<MenuItem href="/general-components/paragraph">Paragraph</MenuItem>
-		<MenuItem bold href="#structured-information"
-			>Structured information</MenuItem>
 		<List spaced sub_list>
-			<MenuItem href="#list">List</MenuItem>
 			<MenuItem href="#table">Table</MenuItem>
 			<MenuItem href="#tabs">Tabs</MenuItem>
 			<MenuItem href="#accordion">Accordion</MenuItem>
@@ -60,39 +58,6 @@
 		<Caption xl>A page title caption</Caption>
 		The page title
 	</Heading>
-
-	<Section add_top_margin id="structured-information">
-		<Heading h2 lg>Structured information</Heading>
-	</Section>
-
-	<Section no_top_pad id="list">
-		<Heading h3 md>List</Heading>
-		<List bullets spaced>
-			<li>
-				Link <Link href="/general-components/xyz">Xyz</Link>.
-			</li>
-			<li>
-				Invert link color <span
-					style="background: var(--color-blue); padding: 5px;">
-					<Link invert_color href="/general-components/xyz">Xyz.</Link>
-				</span>
-			</li>
-			<li>
-				No undlerline link <Link no_underline href="/general-components/xyz"
-					>Xyz</Link
-				>.
-			</li>
-			<li>
-				Link to frequently changing content
-				<Link dynamic_page href="/general-components/xyz">Xyz</Link>.
-			</li>
-			<li>
-				Link that opens in a new tab
-				<Link as_new_tab href="/general-components/xyz">Xyz</Link>.
-			</li>
-			<MenuItem href="/general-components/xyz">A menu item component</MenuItem>
-		</List>
-	</Section>
 
 	<Section id="table">
 		<Heading h3 md>Table</Heading>

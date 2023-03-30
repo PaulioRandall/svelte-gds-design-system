@@ -4,6 +4,7 @@
 	import SummaryCard from '$govuk/SummaryCard.svelte'
 	import SummaryItem from '$govuk/SummaryItem.svelte'
 
+	export let required = false
 	export let name // = ""
 	export let type // = ""
 	export let default_value = undefined // = ""
@@ -13,6 +14,11 @@
 
 <SummaryCard heading="<code>{name}</code>">
 	<Summary>
+		{#if required}
+			<SummaryItem name="Required" />
+		{:else}
+			<SummaryItem name="Optional" />
+		{/if}
 		<SummaryItem name="Type">
 			{type}
 		</SummaryItem>

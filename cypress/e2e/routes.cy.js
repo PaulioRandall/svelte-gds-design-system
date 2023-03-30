@@ -23,6 +23,7 @@ const generalDocsPages = [
 	'details',
 	'heading',
 	'inset-text',
+	'list',
 	'notification-banner',
 	'panel',
 	'paragraph',

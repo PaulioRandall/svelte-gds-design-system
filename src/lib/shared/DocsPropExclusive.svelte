@@ -4,6 +4,7 @@
 	import SummaryCard from '$govuk/SummaryCard.svelte'
 	import SummaryItem from '$govuk/SummaryItem.svelte'
 
+	export let required = false
 	export let group_name // = ""
 	export let props /* = [
 		["prop-name", "summary"]
@@ -12,9 +13,13 @@
 	export let summary // = ""
 </script>
 
-<SummaryCard
-	heading="<i>{'&lt;' + group_name + '&gt;'}</i> &nbsp;&nbsp;(pick one)">
+<SummaryCard heading="(Mutually exclusive bool: {group_name})">
 	<Summary>
+		{#if required}
+			<SummaryItem name="Required" />
+		{:else}
+			<SummaryItem name="Optional" />
+		{/if}
 		<SummaryItem name="Props">
 			<List>
 				{#each props as [name, summary]}
