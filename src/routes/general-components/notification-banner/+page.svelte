@@ -1,227 +1,107 @@
 <script>
-	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
-	import Caption from '$govuk/Caption.svelte'
-	import Heading from '$govuk/Heading.svelte'
-	import InsetText from '$govuk/InsetText.svelte'
-	import Link from '$govuk/Link.svelte'
-	import List from '$govuk/List.svelte'
-	import MenuItem from '$govuk/MenuItem.svelte'
-	import NotificationBanner from '$govuk/NotificationBanner.svelte'
-	import NotificationBannerHeading from '$govuk/NotificationBannerHeading.svelte'
-	import NotificationBannerLink from '$govuk/NotificationBannerLink.svelte'
-	import Paragraph from '$govuk/Paragraph.svelte'
-	import Restyle from '$govuk/Restyle.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
-	import Table from '$govuk/Table.svelte'
 
-	import CodeBlock from '$shared/CodeBlock.svelte'
-	import StandardPage from '$shared/StandardPage.svelte'
-	import Section from '$shared/Section.svelte'
+	import DocsPage from '$shared/DocsPage.svelte'
+	import DocsProp from '$shared/DocsProp.svelte'
+	import DocsSlot from '$shared/DocsSlot.svelte'
+	import DocsExample from '$shared/DocsExample.svelte'
+
+	import ExampleMinimalist from './ExampleMinimalist.svelte'
+	import exampleCodeMinimalist from './ExampleMinimalist.svelte?raw'
+
+	import ExampleDisablingAutoFocus from './ExampleDisablingAutoFocus.svelte'
+	import exampleCodeDisablingAutoFocus from './ExampleDisablingAutoFocus.svelte?raw'
+
+	import ExampleContentHeading from './ExampleContentHeading.svelte'
+	import exampleCodeContentHeading from './ExampleContentHeading.svelte?raw'
+
+	import ExampleContentLink from './ExampleContentLink.svelte'
+	import exampleCodeContentLink from './ExampleContentLink.svelte?raw'
+
+	import ExampleSuccess from './ExampleSuccess.svelte'
+	import exampleCodeSuccess from './ExampleSuccess.svelte?raw'
 </script>
 
-<StandardPage sticky_menu title="Notification banner">
-	<BreadCrumbs
-		slot="breadcrumbs"
-		collapsable
-		crumbs="{[
-			['/home', 'Home'],
-			['/general-components', 'General components'],
-			['/general-components/notification-banner', 'Notification banner'],
-		]}" />
-
-	<List slot="side-menu" spaced>
-		<MenuItem bold href="#examples">Examples</MenuItem>
-		<List sub_list spaced>
-			<MenuItem href="#example-auto-focus">Auto focus</MenuItem>
-			<MenuItem href="#example-disabled-auto-focus"
-				>Disabling auto focus</MenuItem>
-			<MenuItem href="#example-success-banners">Success banners</MenuItem>
-			<MenuItem href="#example-links">Links</MenuItem>
-		</List>
-		<MenuItem bold href="#interface">Interface</MenuItem>
-		<List sub_list spaced>
-			<MenuItem href="#interface-props">Props</MenuItem>
-			<MenuItem href="#interface-slots">Slots</MenuItem>
-			<MenuItem href="#interface-sub-components">Sub components</MenuItem>
-		</List>
-	</List>
-
-	<Heading id="page-title" h1 xl>
-		<Caption xl>General components</Caption>
-		Notification banner
-	</Heading>
-
-	<InsetText>
-		<Restyle bold>Authors note:</Restyle> I'm not happy with the use of sub components
-		but I've yet to come up with a better solution. Notification banners should be
-		short and to the point. I'd like a component design that mirrors that. The pain
-		lies in the requirement for special element classes such as
-		<code>govuk-notification-banner__heading</code>
-		and <code>govuk-notification-banner__link</code>.
-	</InsetText>
-
-	<Paragraph>
-		Official documentation on <Link
-			href="https://design-system.service.gov.uk/components/notification-banner/"
-			>GDS Design System 'Notification banner' components</Link
-		>.
-	</Paragraph>
-
-	<Section add_top_margin id="examples">
-		<Heading h2 lg>Examples</Heading>
-
-		<Heading id="example-auto-focus" h3 md>Auto focus</Heading>
-		<NotificationBanner disable_auto_focus title="Excuse me">
-			<NotificationBannerHeading>Auto focus</NotificationBannerHeading>
-			<Paragraph>
-				Pages with notification banners will grab the page's focus so that users
-				will be taken to it and accessibility tools will begin reading its
-				message first.
-			</Paragraph>
-		</NotificationBanner>
-		<CodeBlock
-			lines="{[
-				`<script>`,
-				`	import NotificationBanner from '$govuk/NotificationBanner.svelte'`,
-				`	import NotificationBannerHeading from '$govuk/NotificationBannerHeading.svelte'`,
-				`	import Paragraph from '$govuk/Paragraph.svelte'`,
-				`</script>`,
-				``,
-				`<NotificationBanner title="Excuse me">`,
-				`	<NotificationBannerHeading>`,
-				`		Auto focus`,
-				`	</NotificationBannerHeading>`,
-				`	<Paragraph>`,
-				`		Pages with notification banners will grab the page's`,
-				`		focus so that users will be taken to it and accessibility`,
-				`		tools will begin reading its message first.`,
-				`	</Paragraph>`,
-				`</NotificationBanner>`,
-			]}" />
+<DocsPage
+	group="General components"
+	title="Notification banner"
+	gds_name="Notification banner"
+	gds_link="https://design-system.service.gov.uk/components/notification-banner/"
+	crumbs="{[
+		['/home', 'Home'],
+		['/general-components', 'General components'],
+		['/general-components/notification-banner', 'Notification banner'],
+	]}"
+	examples="{[
+		['example-minimalist', 'Minimalist'],
+		['example-disabling-auto-focus', 'Disabling auto focus'],
+		['example-content-heading', 'Content heading'],
+		['example-content-link', 'Content link'],
+		['example-success', 'Success'],
+	]}">
+	<svelte:fragment slot="examples">
+		<DocsExample
+			id="example-minimalist"
+			heading="Minimalist"
+			src="{exampleCodeMinimalist}">
+			<ExampleMinimalist />
+		</DocsExample>
 
 		<SectionBreak md />
 
-		<Heading id="example-disabled-auto-focus" h3 md
-			>Disabled auto focus</Heading>
-		<NotificationBanner disable_auto_focus title="Disabled auto focus">
-			<Paragraph>Auto focus? Not for this notification banner.</Paragraph>
-		</NotificationBanner>
-		<CodeBlock
-			lines="{[
-				`<NotificationBanner disable_auto_focus title="Disabled auto focus">`,
-				`	<Paragraph>`,
-				`		Auto focus? Not for this notification banner.`,
-				`	</Paragraph>`,
-				`</NotificationBanner>`,
-			]}" />
+		<DocsExample
+			id="example-disabling-auto-focus"
+			heading="Disabling auto focus"
+			src="{exampleCodeDisablingAutoFocus}">
+			<ExampleDisablingAutoFocus />
+		</DocsExample>
 
 		<SectionBreak md />
 
-		<Heading id="example-success-banners" h3 md>Success banners</Heading>
-		<NotificationBanner disable_auto_focus success title="Success">
-			<Paragraph>Well done. You did something.</Paragraph>
-		</NotificationBanner>
-		<CodeBlock
-			lines="{[
-				`<NotificationBanner success title="Success">`,
-				`	<Paragraph>`,
-				`		Well done. You did something.`,
-				`	</Paragraph>`,
-				`</NotificationBanner>`,
-			]}" />
+		<DocsExample
+			id="example-content-heading"
+			heading="Content heading"
+			src="{exampleCodeContentHeading}">
+			<ExampleContentHeading />
+		</DocsExample>
 
 		<SectionBreak md />
 
-		<Heading id="example-links" h3 md>Links in banner</Heading>
-		<NotificationBanner disable_auto_focus title="Links in banners">
-			<Paragraph>
-				For some reason there is a special CSS class for banner links. Here is a
-				<NotificationBannerLink href="/general-components">
-					notification banner link
-				</NotificationBannerLink> that takes you back to the general components page.
-			</Paragraph>
-		</NotificationBanner>
-		<CodeBlock
-			lines="{[
-				`<NotificationBanner disable_auto_focus title="Links in banners">`,
-				`	<Paragraph>`,
-				`		For some reason there is a special CSS class for banner links.`,
-				`		Here is a <NotificationBannerLink href="/general-components"> notification`,
-				`		banner link </NotificationBannerLink> that takes you back to`,
-				`		the general components page.`,
-				`	</Paragraph>`,
-				`</NotificationBanner>`,
-			]}" />
-	</Section>
-
-	<Section add_top_margin id="interface">
-		<Heading h2 lg>Interface</Heading>
-
-		<Table
-			id="interface-props"
-			caption_md="Props"
-			headers="{[
-				{ key: 'name', label: 'Name' },
-				{ key: 'type', label: 'Type' },
-				{ key: 'summary', label: 'Summary' },
-			]}"
-			records="{[
-				{
-					name: '<code>title<code>',
-					type: 'string',
-					summary: 'Specifies the title that runs along the top of the banner',
-				},
-				{
-					name: '<code>disable_auto_focus</code>',
-					type: 'bool',
-					summary: 'Disables auto focus when the page loads',
-				},
-				{
-					name: '<code>success</code>',
-					type: 'bool',
-					summary: 'The banner is a success message',
-				},
-			]}" />
+		<DocsExample
+			id="example-content-link"
+			heading="Content link"
+			src="{exampleCodeContentLink}">
+			<ExampleContentLink />
+		</DocsExample>
 
 		<SectionBreak md />
 
-		<Table
-			id="interface-slots"
-			caption_md="Slots"
-			headers="{[
-				{ key: 'name', label: 'Name' },
-				{ key: 'summary', label: 'Summary' },
-			]}"
-			records="{[
-				{
-					name: '<code>&lt;default&gt;<code>',
-					summary: 'Banner content',
-				},
-			]}" />
+		<DocsExample
+			id="example-success"
+			heading="Success"
+			src="{exampleCodeSuccess}">
+			<ExampleSuccess />
+		</DocsExample>
+	</svelte:fragment>
 
-		<SectionBreak md />
+	<svelte:fragment slot="props">
+		<DocsProp
+			name="title"
+			type="string"
+			summary="Specifies the title that runs along the top of the banner" />
+		<DocsProp
+			name="disable_auto_focus"
+			type="bool"
+			default_value="false"
+			summary="Disables auto focus when the page loads" />
+		<DocsProp
+			name="success"
+			type="bool"
+			default_value="false"
+			summary="Styles the banner as a success message" />
+	</svelte:fragment>
 
-		<InsetText>
-			<Restyle bold>TODO:</Restyle> I need to write up documentation for these. They
-			may have to have a page of their own :(
-		</InsetText>
-
-		<Table
-			id="interface-sub-components"
-			caption_md="Sub components"
-			headers="{[
-				{ key: 'name', label: 'Name' },
-				{ key: 'summary', label: 'Summary' },
-			]}"
-			records="{[
-				{
-					name: '<code>NotificationBannerHeading<code>',
-					summary: 'A heading within the banner content',
-				},
-				{
-					name: '<code>NotificationBannerLink<code>',
-					summary: 'A link within the banner content',
-				},
-			]}" />
-	</Section>
-</StandardPage>
+	<svelte:fragment slot="slots">
+		<DocsSlot default_slot summary="Banner content" />
+	</svelte:fragment>
+</DocsPage>

@@ -11,17 +11,14 @@ const testForStatus = (path, status) =>
 		})
 
 const topLevelPages = [
-	 '/',
-	 '/home', 
-	 '/general-components',
-	 '/form-components',
-	 '/feedback',
+	'/',
+	'/home',
+	'/general-components',
+	'/form-components',
+	'/feedback',
 ]
 
-const generalComponentPages = [
-	'xyz',
-	'notification-banner',
-]
+const generalComponentPages = ['xyz', 'notification-banner']
 
 const formComponentPages = [
 	'button',
