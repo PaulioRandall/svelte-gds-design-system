@@ -7,10 +7,10 @@
 	import DocsExample from '$shared/DocsExample.svelte'
 
 	import ExampleMinimalist from './ExampleMinimalist.svelte'
-	import exampleMinimalistCode from './ExampleMinimalist.svelte?raw'
+	import exampleCodeMinimalist from './ExampleMinimalist.svelte?raw'
 
 	import ExampleLinks from './ExampleLinks.svelte'
-	import exampleLinksCode from './ExampleLinks.svelte?raw'
+	import exampleCodeLinks from './ExampleLinks.svelte?raw'
 </script>
 
 <DocsPage
@@ -31,13 +31,13 @@
 		<DocsExample
 			id="example-minimalist"
 			heading="Minimalist"
-			src="{exampleMinimalistCode}">
+			src="{exampleCodeMinimalist}">
 			<ExampleMinimalist />
 		</DocsExample>
 
 		<SectionBreak md />
 
-		<DocsExample id="example-links" heading="Links" src="{exampleLinksCode}">
+		<DocsExample id="example-links" heading="Links" src="{exampleCodeLinks}">
 			<ExampleLinks />
 		</DocsExample>
 	</svelte:fragment>

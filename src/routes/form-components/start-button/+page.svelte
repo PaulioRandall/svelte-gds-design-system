@@ -7,10 +7,10 @@
 	import DocsSlot from '$shared/DocsSlot.svelte'
 
 	import ExampleMinimalist from './ExampleMinimalist.svelte'
-	import exampleMinimalistCode from './ExampleMinimalist.svelte?raw'
+	import exampleCodeMinimalist from './ExampleMinimalist.svelte?raw'
 
 	import ExampleCustomText from './ExampleCustomText.svelte'
-	import exampleCustomTextCode from './ExampleCustomText.svelte?raw'
+	import exampleCodeCustomText from './ExampleCustomText.svelte?raw'
 </script>
 
 <DocsPage
@@ -31,7 +31,7 @@
 		<DocsExample
 			id="example-minimalist"
 			heading="Minimalist"
-			src="{exampleMinimalistCode}">
+			src="{exampleCodeMinimalist}">
 			<ExampleMinimalist />
 		</DocsExample>
 
@@ -40,7 +40,7 @@
 		<DocsExample
 			id="example-custom-text"
 			heading="Custom text"
-			src="{exampleCustomTextCode}">
+			src="{exampleCodeCustomText}">
 			<ExampleCustomText />
 		</DocsExample>
 	</svelte:fragment>

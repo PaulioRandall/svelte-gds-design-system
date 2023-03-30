@@ -5,7 +5,7 @@
 	import DocsExample from '$shared/DocsExample.svelte'
 
 	import ExampleMinimalist from './ExampleMinimalist.svelte'
-	import exampleMinimalistCode from './ExampleMinimalist.svelte?raw'
+	import exampleCodeMinimalist from './ExampleMinimalist.svelte?raw'
 </script>
 
 <DocsPage
@@ -23,7 +23,7 @@
 		<DocsExample
 			id="example-minimalist"
 			heading="Minimalist"
-			src="{exampleMinimalistCode}">
+			src="{exampleCodeMinimalist}">
 			<ExampleMinimalist />
 		</DocsExample>
 	</svelte:fragment>

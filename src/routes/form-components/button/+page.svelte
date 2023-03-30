@@ -7,16 +7,16 @@
 	import DocsExample from '$shared/DocsExample.svelte'
 
 	import ExampleMinimalist from './ExampleMinimalist.svelte'
-	import exampleMinimalistCode from './ExampleMinimalist.svelte?raw'
+	import exampleCodeMinimalist from './ExampleMinimalist.svelte?raw'
 
 	import ExampleSecondary from './ExampleSecondary.svelte'
-	import exampleSecondaryCode from './ExampleSecondary.svelte?raw'
+	import exampleCodeSecondary from './ExampleSecondary.svelte?raw'
 
 	import ExampleWarning from './ExampleWarning.svelte'
-	import exampleWarningCode from './ExampleWarning.svelte?raw'
+	import exampleCodeWarning from './ExampleWarning.svelte?raw'
 
 	import ExampleDisabled from './ExampleDisabled.svelte'
-	import exampleDisabledCode from './ExampleDisabled.svelte?raw'
+	import exampleCodeDisabled from './ExampleDisabled.svelte?raw'
 </script>
 
 <DocsPage
@@ -39,7 +39,7 @@
 		<DocsExample
 			id="example-minimalist"
 			heading="Minimalist"
-			src="{exampleMinimalistCode}">
+			src="{exampleCodeMinimalist}">
 			<ExampleMinimalist />
 		</DocsExample>
 
@@ -48,7 +48,7 @@
 		<DocsExample
 			id="example-secondary"
 			heading="Secondary"
-			src="{exampleSecondaryCode}">
+			src="{exampleCodeSecondary}">
 			<ExampleSecondary />
 		</DocsExample>
 
@@ -57,7 +57,7 @@
 		<DocsExample
 			id="example-warning"
 			heading="Warning"
-			src="{exampleWarningCode}">
+			src="{exampleCodeWarning}">
 			<ExampleWarning />
 		</DocsExample>
 
@@ -66,7 +66,7 @@
 		<DocsExample
 			id="example-disabled"
 			heading="Disabled"
-			src="{exampleDisabledCode}">
+			src="{exampleCodeDisabled}">
 			<ExampleDisabled />
 		</DocsExample>
 	</svelte:fragment>
