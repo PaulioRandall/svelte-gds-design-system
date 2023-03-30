@@ -22,7 +22,6 @@
 		<!--<MenuItem href="/form-components/fieldset">Fieldset</MenuItem>-->
 		<!--<MenuItem href="/form-components/file-upload">File upload</MenuItem>-->
 		<MenuItem href="/form-components/radio-group">Radio group</MenuItem>
-		<MenuItem href="/form-components/search-form">Search form</MenuItem>
 		<MenuItem href="/form-components/select">Select</MenuItem>
 		<MenuItem href="/form-components/start-button">Start button</MenuItem>
 		<MenuItem href="/form-components/text-input">Text input</MenuItem>

@@ -1,7 +1,4 @@
 <script>
-	import Link from '$govuk/Link.svelte'
-	import Paragraph from '$govuk/Paragraph.svelte'
-
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsProp from '$shared/DocsProp.svelte'
 	import DocsSlot from '$shared/DocsSlot.svelte'
@@ -12,21 +9,16 @@
 </script>
 
 <DocsPage
-	title="Date input"
 	group="Form components"
+	title="Date input"
+	gds_name="Date input"
+	gds_link="https://design-system.service.gov.uk/components/date-input/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/form-components', 'Form components'],
 		['/form-components/date-input', 'Date input'],
 	]}"
 	examples="{[['example-minimalist', 'Minimalist']]}">
-	<Paragraph lead slot="intro">
-		Official documentation: <Link
-			href="https://design-system.service.gov.uk/components/date-input/"
-			>GDS Design System 'Date input' component</Link
-		>.
-	</Paragraph>
-
 	<svelte:fragment slot="examples">
 		<DocsExample
 			id="example-minimalist"

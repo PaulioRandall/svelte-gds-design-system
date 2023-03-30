@@ -1,7 +1,4 @@
 <script>
-	import Link from '$govuk/Link.svelte'
-	import Paragraph from '$govuk/Paragraph.svelte'
-
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsProp from '$shared/DocsProp.svelte'
 	import DocsExample from '$shared/DocsExample.svelte'
@@ -11,21 +8,16 @@
 </script>
 
 <DocsPage
-	title="Select"
 	group="Form components"
+	title="Select"
+	gds_name="Select"
+	gds_link="https://design-system.service.gov.uk/components/select/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/form-components', 'Form components'],
 		['/form-components/select', 'Select'],
 	]}"
 	examples="{[['example-minimalist', 'Minimalist']]}">
-	<Paragraph lead slot="intro">
-		Official documentation: <Link
-			href="https://design-system.service.gov.uk/components/select/"
-			>GDS Design System 'Select' component</Link
-		>.
-	</Paragraph>
-
 	<svelte:fragment slot="examples">
 		<DocsExample
 			id="example-minimalist"

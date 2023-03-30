@@ -1,6 +1,4 @@
 <script>
-	import Link from '$govuk/Link.svelte'
-	import Paragraph from '$govuk/Paragraph.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
 
 	import DocsPage from '$shared/DocsPage.svelte'
@@ -13,21 +11,16 @@
 </script>
 
 <DocsPage
-	title="Checkboxes"
 	group="Form components"
+	title="Checkboxes"
+	gds_name="Checkboxes"
+	gds_link="https://design-system.service.gov.uk/components/checkboxes/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/form-components', 'Form components'],
 		['/form-components/checkboxes', 'Checkboxes'],
 	]}"
 	examples="{[['example-minimalist', 'Minimalist']]}">
-	<Paragraph lead slot="intro">
-		Official documentation: <Link
-			href="https://design-system.service.gov.uk/components/checkboxes/"
-			>GDS Design System 'checkboxes' component</Link
-		>.
-	</Paragraph>
-
 	<svelte:fragment slot="examples">
 		<DocsExample
 			id="example-minimalist"

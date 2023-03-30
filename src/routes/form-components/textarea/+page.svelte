@@ -1,7 +1,4 @@
 <script>
-	import Link from '$govuk/Link.svelte'
-	import Paragraph from '$govuk/Paragraph.svelte'
-
 	import DocsExample from '$shared/DocsExample.svelte'
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsProp from '$shared/DocsProp.svelte'
@@ -12,21 +9,16 @@
 </script>
 
 <DocsPage
-	title="Textarea"
 	group="Form components"
+	title="Textarea"
+	gds_name="Textarea"
+	gds_link="https://design-system.service.gov.uk/components/textarea/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/form-components', 'Form components'],
 		['/form-components/textarea', 'Textarea'],
 	]}"
 	examples="{[['example-minimalist', 'Minimalist']]}">
-	<Paragraph lead slot="intro">
-		Official documentation: <Link
-			href="https://design-system.service.gov.uk/components/textarea/"
-			>GDS Design System 'Textarea' component</Link
-		>.
-	</Paragraph>
-
 	<svelte:fragment slot="examples">
 		<DocsExample
 			id="example-minimalist"

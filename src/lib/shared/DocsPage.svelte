@@ -2,19 +2,26 @@
 	import BreadCrumbs from '$govuk/BreadCrumbs.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Heading from '$govuk/Heading.svelte'
+	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
+	import Paragraph from '$govuk/Paragraph.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
 	import StandardPage from '$shared/StandardPage.svelte'
 	import Section from '$shared/Section.svelte'
 
-	export let title // = ""
 	export let group // = ""
+	export let title // = ""
+
+	export let gds_name = ''
+	export let gds_link = ''
+
 	export let crumbs /* = [
 		['href', 'label']
 	] */
+
 	export let examples /* = [
 		['id', 'label']
 	] */
@@ -50,6 +57,12 @@
 		<Caption xl>{group}</Caption>
 		{title}
 	</Heading>
+
+	{#if gds_name && gds_link}
+		<Paragraph lead>
+			<Link href="{gds_link}">GDS Design System '{gds_name}' component</Link>
+		</Paragraph>
+	{/if}
 
 	<slot name="intro" />
 

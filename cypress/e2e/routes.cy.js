@@ -17,7 +17,6 @@ const routes = [
 	{ path: '/general-components/xyz', status: 200 },
 	{ path: '/general-components/notification-banner', status: 200 },
 	{ path: '/form-components', status: 200 },
-	{ path: '/form-components/search-form', status: 200 },
 	{ path: '/form-components/button', status: 200 },
 	{ path: '/form-components/button-group', status: 200 },
 	{ path: '/form-components/start-button', status: 200 },

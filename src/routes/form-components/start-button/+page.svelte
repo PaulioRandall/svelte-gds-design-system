@@ -1,6 +1,4 @@
 <script>
-	import Link from '$govuk/Link.svelte'
-	import Paragraph from '$govuk/Paragraph.svelte'
 	import SectionBreak from '$govuk/SectionBreak.svelte'
 
 	import DocsExample from '$shared/DocsExample.svelte'
@@ -16,8 +14,10 @@
 </script>
 
 <DocsPage
-	title="Start button"
 	group="Form components"
+	title="Start button"
+	gds_name="Button"
+	gds_link="https://design-system.service.gov.uk/components/button/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/form-components', 'Form components'],
@@ -27,13 +27,6 @@
 		['example-minimalist', 'Minimalist'],
 		['example-custom-text', 'Custom text'],
 	]}">
-	<Paragraph lead slot="intro">
-		Official documentation: <Link
-			href="https://design-system.service.gov.uk/components/button/"
-			>GDS Design System 'Button' component</Link
-		>.
-	</Paragraph>
-
 	<svelte:fragment slot="examples">
 		<DocsExample
 			id="example-minimalist"
