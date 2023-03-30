@@ -9,7 +9,6 @@
 	import Link from '$govuk/Link.svelte'
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
-	import Panel from '$govuk/Panel.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Table from '$govuk/Table.svelte'
 	import Tag from '$govuk/Tag.svelte'
@@ -41,7 +40,7 @@
 		<MenuItem href="#page-title">Page title</MenuItem>
 		<MenuItem href="/general-components/notification-banner"
 			>Notification banner</MenuItem>
-		<MenuItem href="#panel">Panel</MenuItem>
+		<MenuItem href="/general-components/panel">Panel</MenuItem>
 		<MenuItem bold href="#text">Text</MenuItem>
 		<List spaced sub_list>
 			<MenuItem href="#paragraph">Paragraph</MenuItem>
@@ -63,11 +62,6 @@
 		<Caption xl>A page title caption</Caption>
 		The page title
 	</Heading>
-
-	<Section id="panel">
-		<Heading h2 lg>Panel</Heading>
-		<Panel heading="A panel">The panel content</Panel>
-	</Section>
 
 	<Section add_top_margin id="text">
 		<Heading h2 lg>Text</Heading>

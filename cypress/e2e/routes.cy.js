@@ -13,14 +13,14 @@ const testForStatus = (path, status) =>
 const topLevelPages = [
 	'/',
 	'/home',
+	'/feedback',
 	'/general-components',
 	'/form-components',
-	'/feedback',
 ]
 
-const generalComponentPages = ['xyz', 'notification-banner']
+const generalDocsPages = ['panel', 'notification-banner', 'xyz']
 
-const formComponentPages = [
+const formDocsPages = [
 	'button',
 	'button-group',
 	'checkboxes',
@@ -41,14 +41,14 @@ describe('200 status returned when visiting top level pages', () => {
 })
 
 describe('200 status returned when visiting general component documentation pages', () => {
-	for (const pageName of generalComponentPages) {
+	for (const pageName of generalDocsPages) {
 		const url = `/general-components/${pageName}`
 		it(url, () => testForStatus(url, 200))
 	}
 })
 
 describe('200 status returned when visiting form component documentation pages', () => {
-	for (const pageName of formComponentPages) {
+	for (const pageName of formDocsPages) {
 		const url = `/form-components/${pageName}`
 		it(url, () => testForStatus(url, 200))
 	}
