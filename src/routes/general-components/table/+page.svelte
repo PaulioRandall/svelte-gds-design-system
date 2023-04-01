@@ -13,7 +13,7 @@
 <DocsPage
 	group="General components"
 	title="Table"
-	gds_name="Lists"
+	gds_name="Table"
 	gds_link="https://design-system.service.gov.uk/components/table/"
 	crumbs="{[
 		['/home', 'Home'],

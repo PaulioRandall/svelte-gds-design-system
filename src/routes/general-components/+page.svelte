@@ -8,13 +8,11 @@
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
-	import Table from '$govuk/Table.svelte'
 
 	import StandardPage from '$shared/StandardPage.svelte'
 	import Section from '$shared/Section.svelte'
 
 	import SummaryCard from './SummaryCard.svelte'
-	import Tabs from './Tabs.svelte'
 </script>
 
 <StandardPage sticky_menu title="General components">
@@ -45,12 +43,11 @@
 		<MenuItem href="/general-components/panel">Panel</MenuItem>
 		<MenuItem href="/general-components/paragraph">Paragraph</MenuItem>
 		<List spaced sub_list>
-			<MenuItem href="#table">Table</MenuItem>
-			<MenuItem href="#tabs">Tabs</MenuItem>
 			<MenuItem href="#accordion">Accordion</MenuItem>
 			<MenuItem href="#summary">Summary</MenuItem>
 		</List>
 		<MenuItem href="/general-components/table">Table</MenuItem>
+		<MenuItem href="/general-components/tabs">Tabs</MenuItem>
 		<MenuItem href="/general-components/tag">Tag</MenuItem>
 		<MenuItem href="/general-components/warning-text">Warning text</MenuItem>
 	</List>
@@ -59,36 +56,6 @@
 		<Caption xl>A page title caption</Caption>
 		The page title
 	</Heading>
-
-	<Section id="table">
-		<Heading h3 md>Table</Heading>
-		<Table
-			caption_md="Monthly costs"
-			headers="{[
-				{ key: 'duration', label: 'Duration', rowHead: true },
-				{ key: 'notes', label: 'Notes' },
-				{ key: 'cost', label: 'Cost', numeric: true },
-			]}"
-			records="{[
-				{
-					duration: '1 Month',
-					notes: 'Shortest but least cost effective',
-					cost: '£3.50',
-				},
-				{ duration: '3 months', cost: '£10' },
-				{ duration: '6 months', cost: '£18' },
-				{
-					duration: '12 months',
-					notes: 'Most cost effective',
-					cost: '£32',
-				},
-			]}" />
-	</Section>
-
-	<Section id="tabs">
-		<Heading h3 md>Tabs</Heading>
-		<Tabs />
-	</Section>
 
 	<Section id="accordion">
 		<Heading h3 md>Accordion</Heading>

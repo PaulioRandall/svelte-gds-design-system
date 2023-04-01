@@ -13,7 +13,7 @@
 <div bind:this="{elem}" class="govuk-tabs" data-module="govuk-tabs">
 	<h2 class="govuk-tabs__title">Contents</h2>
 	<ul class="govuk-tabs__list">
-		<slot name="menu" />
+		<slot name="labels" />
 	</ul>
 	<slot name="panels" />
 </div>
