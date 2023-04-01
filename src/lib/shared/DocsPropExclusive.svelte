@@ -5,6 +5,7 @@
 	import SummaryItem from '$govuk/SummaryItem.svelte'
 
 	export let required = false
+	export let type = 'bool'
 	export let group_name // = ""
 	export let props /* = [
 		["prop-name", "summary"]
@@ -20,13 +21,16 @@
 		{:else}
 			<SummaryItem name="Optional" />
 		{/if}
+		<SummaryItem name="Type">
+			{@html type}
+		</SummaryItem>
 		<SummaryItem name="Props">
 			<List>
 				{#each props as [name, summary]}
 					<li class="prop">
 						<span class="quoted">{name}</span>
 						{#if summary}
-							&nbsp;<span>({summary})</span>
+							&nbsp;<span>({@html summary})</span>
 						{/if}
 					</li>
 				{/each}
@@ -34,11 +38,11 @@
 		</SummaryItem>
 		{#if default_value}
 			<SummaryItem name="Default">
-				<span class="quoted">{default_value}</span>
+				<span class="quoted">{@html default_value}</span>
 			</SummaryItem>
 		{/if}
 		<SummaryItem name="Summary">
-			{summary}
+			{@html summary}
 		</SummaryItem>
 	</Summary>
 </SummaryCard>

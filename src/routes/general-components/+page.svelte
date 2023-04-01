@@ -50,6 +50,7 @@
 			<MenuItem href="#accordion">Accordion</MenuItem>
 			<MenuItem href="#summary">Summary</MenuItem>
 		</List>
+		<MenuItem href="/general-components/table">Table</MenuItem>
 		<MenuItem href="/general-components/tag">Tag</MenuItem>
 		<MenuItem href="/general-components/warning-text">Warning text</MenuItem>
 	</List>

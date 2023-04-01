@@ -20,24 +20,24 @@
 			<SummaryItem name="Optional" />
 		{/if}
 		<SummaryItem name="Type">
-			{type}
+			{@html type}
 		</SummaryItem>
 		{#if default_value}
 			<SummaryItem name="Default">
-				<span class="quoted">{default_value}</span>
+				<span class="quoted">{@html default_value}</span>
 			</SummaryItem>
 		{/if}
 		{#if allows}
 			<SummaryItem name="Allows">
 				<List bullets>
 					{#each allows as item}
-						<li class="quoted">{item}</li>
+						<li class="quoted">{@html item}</li>
 					{/each}
 				</List>
 			</SummaryItem>
 		{/if}
 		<SummaryItem name="Summary">
-			{summary}
+			{@html summary}
 		</SummaryItem>
 	</Summary>
 </SummaryCard>
