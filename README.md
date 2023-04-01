@@ -2,19 +2,19 @@
 
 A [Sveltekit](https://kit.svelte.dev/) project template for building GOVUK services that use GDS Desgin System.
 
-> **Authors note:** The name of the project and repository will be definitely be changing once I figure out what I'm actually creating here.
+## Purpose (EXPERIMENTAL)
 
-## EXPERIMENTAL
+The purpose of this project is to explore the use of Svelte for crafting web content using GDS design system components.
 
 This project is currently very experimental. Component interfaces and implementations are constantly being rewritten as new ideas are tried out. Over time a stable set of components and a standard interface pattern should emerge. But this seems far off at the moment because there is soo much to explore.
 
-> **Authors note:** I really hope to try out [Deno](https://deno.land/) as an alternative to Node. Historically, Sveltekit required [Vite](https://vitejs.dev/) and [Node Package Manager (npm)](https://www.npmjs.com/) which Deno did not support. This seems to no longer be the case. Deno aligns better with the values and principles of this project, particularly in terms of security and development ease.
+> **Authors note:** I really hope to try out [Deno](https://deno.land/) as an alternative to Node. Historically, Sveltekit required [Vite](https://vitejs.dev/) and [Node Package Manager (npm)](https://www.npmjs.com/) which Deno did not support. This seems to no longer be the case. Deno aligns better with my values and principles, particularly in terms of security and ease of development.
 
 ## Ready to go tools
 
 The template comes with some pre-setup tools and is intentially minimal. This means keeping as close to pure HTML, CSS, and JS as feasible.
 
-Most frontends don't need SASS, SCSS, TypeScript, YARN and other supportive tooling but you can add these and swap existing tools in and out to suite your needs and preferences:
+Most frontends don't need SASS, SCSS, TypeScript, YARN, or other supportive tooling but you can add these and swap existing out tooling to suite your needs and preferences:
 
 > **Authors note:** The list below will likely change as ideas and options are explored. However, removals will be favoured over additions.
 
@@ -30,7 +30,7 @@ This project copies distribution files from [govuk-frontend](https://github.com/
 
 ## Organisation by feature
 
-In SvelteKit, the page layout is organised hierarchically as folders reflecting the URL paths. This is an example of _organisation by feature (or by slice)_. This is an alternative to _organisation by layer_ which has historically been favoured in Web development and Web API code bases.
+In SvelteKit, the page layout is organised hierarchically as folders reflecting the URL paths. This is an example of _organisation by feature (or by slice)_. _Organisation by layer_ has historically been favoured in Web development and Web API code bases.
 
 The real difference is in what concerns each separates and how they separate them:
 
@@ -42,20 +42,20 @@ The real difference is in what concerns each separates and how they separate the
   - `/home/model.js`, `/home/controller.js`, `/home/page-template.html`
   - `/products/model.js`, `/products/controller.js`, `/products/page-template.html`
 
-_Organisation by feature_ is favoured throughout. Of course you're free to move everything around to suite your preferences.
+_Organisation by feature_ is favoured in this project throughout. Of course you're free to move everything around to suite your preferences.
 
 ## Shared stuff
 
 Shared and importable data, content, styling, scripts, and Svelte components goes in `/static` or `/libs`:
 
 - [./static](/static) for statically served content akin to `/public` in other tools
-- [./src/libs/govuk](./src/libs/govuk) for generic Svelte components that represent GOVUK GDS design system components along with supporting CSS and JS; these may or may not end up in a Svelte component library
+- [./src/libs/govuk](./src/libs/govuk) for generic Svelte components that represent GOVUK GDS design system components along with supporting CSS and JS
 - [./src/libs/shared](./src/libs/shared) for project specific shared components; this is where you put all your shared importable stuff like Svelte components, JS, and CSS
-- [./src/libs/data](./src/libs/data) for data that is shared project wide (if any)
+- [./src/libs/data](./src/libs/data) for bundled data that is shared project wide
 
 ## Import aliases
 
-[Import aliases](/svelte.config.js) have been setup to make crafting pages simpler and inject some readability and meaning into imports. Preference is to avoid relative referencing except for importing from the same folder or sub-folders:
+[Import aliases](/svelte.config.js) have been setup to make crafting pages simpler and inject some readability and meaning. Preference is to avoid relative referencing except for importing from the same folder or sub-folders:
 
 > **Authors note:** Still needs a bit more experimentation but I think we're close on this one.
 
