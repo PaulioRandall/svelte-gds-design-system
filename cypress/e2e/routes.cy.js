@@ -19,6 +19,7 @@ const topLevelPages = [
 ]
 
 const generalDocsPages = [
+	'accordion',
 	'breadcrumbs',
 	'details',
 	'heading',

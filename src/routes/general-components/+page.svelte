@@ -1,6 +1,4 @@
 <script>
-	import Accordion from '$govuk/Accordion.svelte'
-	import AccordionSection from '$govuk/AccordionSection.svelte'
 	import Breadcrumbs from '$govuk/Breadcrumbs.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Heading from '$govuk/Heading.svelte'
@@ -32,6 +30,7 @@
 
 	<List slot="side-menu" spaced>
 		<MenuItem href="#page-title">Page title</MenuItem>
+		<MenuItem href="/general-components/accordion">Accordion</MenuItem>
 		<MenuItem href="/general-components/breadcrumbs">Breadcrumbs</MenuItem>
 		<MenuItem href="/general-components/details">Details</MenuItem>
 		<MenuItem href="/general-components/heading">Heading</MenuItem>
@@ -42,35 +41,18 @@
 		</MenuItem>
 		<MenuItem href="/general-components/panel">Panel</MenuItem>
 		<MenuItem href="/general-components/paragraph">Paragraph</MenuItem>
-		<List spaced sub_list>
-			<MenuItem href="#accordion">Accordion</MenuItem>
-			<MenuItem href="#summary">Summary</MenuItem>
-		</List>
 		<MenuItem href="/general-components/table">Table</MenuItem>
 		<MenuItem href="/general-components/tabs">Tabs</MenuItem>
 		<MenuItem href="/general-components/tag">Tag</MenuItem>
 		<MenuItem href="/general-components/warning-text">Warning text</MenuItem>
+
+		<MenuItem href="#summary">Summary</MenuItem>
 	</List>
 
 	<Heading id="page-title" h1 xl>
 		<Caption xl>A page title caption</Caption>
 		The page title
 	</Heading>
-
-	<Section id="accordion">
-		<Heading h3 md>Accordion</Heading>
-		<Accordion id="accordion-example">
-			<AccordionSection heading="Abc" summary="Abc summary">
-				Abc content.
-			</AccordionSection>
-			<AccordionSection heading="Efg" summary="Efg summary">
-				Efg content.
-			</AccordionSection>
-			<AccordionSection heading="Xyz" summary="Xyz summary">
-				Xyz content.
-			</AccordionSection>
-		</Accordion>
-	</Section>
 
 	<Section id="summary">
 		<Heading h3 md>Summary</Heading>
