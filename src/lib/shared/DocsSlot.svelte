@@ -3,6 +3,7 @@
 	import SummaryList from '$govuk/SummaryList.svelte'
 	import SummaryListItem from '$govuk/SummaryListItem.svelte'
 
+	export let required = false
 	export let default_slot = false
 	export let name = undefined // ""
 	export let default_value = undefined // = ""
@@ -17,6 +18,9 @@
 
 <SummaryCard h3 heading="<code>{name}</code>">
 	<SummaryList>
+		{#if required}
+			<SummaryListItem name="Required" />
+		{/if}
 		{#if default_value}
 			<SummaryListItem name="Default" use_all_space>
 				<span class="quoted">{default_value}</span>

@@ -1,5 +1,6 @@
 <script>
 	import Breadcrumbs from '$govuk/Breadcrumbs.svelte'
+	import Breadcrumb from '$govuk/Breadcrumb.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import Link from '$govuk/Link.svelte'
@@ -45,7 +46,11 @@
 </script>
 
 <StandardPage thick_content sticky_menu title="{title}">
-	<Breadcrumbs slot="breadcrumbs" collapsable crumbs="{crumbs}" />
+	<Breadcrumbs slot="breadcrumbs" collapsable>
+		{#each crumbs as [href, label]}
+			<Breadcrumb href="{href}">{label}</Breadcrumb>
+		{/each}
+	</Breadcrumbs>
 
 	<List slot="side-menu">
 		<MenuItem bold href="#examples">Examples</MenuItem>
@@ -119,7 +124,7 @@
 				<svelte:fragment slot="panels">
 					{#if $$props.parents}
 						<TabPanel id="parents">
-							<List spaced>
+							<List spaced="{$$props.parents.length > 1}">
 								{#each parents as [href, label]}
 									<MenuItem href="{href}">{label}</MenuItem>
 								{/each}
@@ -138,7 +143,7 @@
 					{/if}
 					{#if $$props.children}
 						<TabPanel id="children">
-							<List spaced>
+							<List spaced="{$$props.children.length > 1}">
 								{#each children as [href, label]}
 									<MenuItem href="{href}">{label}</MenuItem>
 								{/each}

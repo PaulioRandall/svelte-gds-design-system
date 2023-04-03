@@ -12,15 +12,15 @@
 
 <DocsPage
 	group="General components"
-	title="Breadcrumbs"
+	title="Breadcrumb"
 	gds_name="Breadcrumbs"
 	gds_link="https://design-system.service.gov.uk/components/breadcrumbs/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/general-components', 'General components'],
-		['/general-components/breadcrumbs', 'Breadcrumbs'],
+		['/general-components/breadcrumb', 'Breadcrumb'],
 	]}"
-	children="{[['/general-components/breadcrumb', 'Breadcrumb']]}"
+	parents="{[['/general-components/breadcrumbs', 'Breadcrumbs']]}"
 	examples="{[['example-minimalist', 'Minimalist']]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
@@ -33,18 +33,12 @@
 	</svelte:fragment>
 
 	<svelte:fragment slot="props">
-		<DocsProp name="collapsable" type="bool" default_value="false">
-			If set only shows the first and last crumbs when displaying on small
-			screens.
-		</DocsProp>
-		<DocsProp name="crumbs" type="[['href', 'label']...]">
-			List of breadcrumbs with the home page first and the current page last.
+		<DocsProp required name="href" type="string">
+			Link to the named page.
 		</DocsProp>
 	</svelte:fragment>
 
 	<svelte:fragment slot="slots">
-		<DocsSlot required default_slot>
-			Serise of <Link href="/general-components/breadcrumb">Breadcrumb</Link> components.
-		</DocsSlot>
+		<DocsSlot required default_slot>Label text.</DocsSlot>
 	</svelte:fragment>
 </DocsPage>

@@ -1,5 +1,6 @@
 <script>
 	import Breadcrumbs from '$govuk/Breadcrumbs.svelte'
+	import Breadcrumb from '$govuk/Breadcrumb.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import List from '$govuk/List.svelte'
@@ -10,13 +11,10 @@
 </script>
 
 <StandardPage sticky_menu title="General components">
-	<Breadcrumbs
-		slot="breadcrumbs"
-		collapsable
-		crumbs="{[
-			['/home', 'Home'],
-			['/general-components', 'General components'],
-		]}" />
+	<Breadcrumbs slot="breadcrumbs" collapsable>
+		<Breadcrumb href="/home">Home</Breadcrumb>
+		<Breadcrumb href="/general-components">General components</Breadcrumb>
+	</Breadcrumbs>
 
 	<!--
 		TODO:
@@ -36,6 +34,7 @@
 				>Accordion section</MenuItem>
 		</List>
 		<MenuItem href="/general-components/back-link">Back link</MenuItem>
+		<MenuItem href="/general-components/breadcrumb">Breadcrumb</MenuItem>
 		<MenuItem href="/general-components/breadcrumbs">Breadcrumbs</MenuItem>
 		<MenuItem href="/general-components/details">Details</MenuItem>
 		<MenuItem href="/general-components/heading">Heading</MenuItem>

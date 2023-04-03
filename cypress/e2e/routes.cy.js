@@ -20,6 +20,9 @@ const topLevelPages = [
 
 const generalDocsPages = [
 	'accordion',
+	'accordion-section',
+	'back-link',
+	'breadcrumb',
 	'breadcrumbs',
 	'details',
 	'heading',
