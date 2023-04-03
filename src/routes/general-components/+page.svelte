@@ -36,6 +36,7 @@
 		<MenuItem href="/general-components/back-link">Back link</MenuItem>
 		<MenuItem href="/general-components/breadcrumb">Breadcrumb</MenuItem>
 		<MenuItem href="/general-components/breadcrumbs">Breadcrumbs</MenuItem>
+		<MenuItem href="/general-components/caption">Caption</MenuItem>
 		<MenuItem href="/general-components/details">Details</MenuItem>
 		<MenuItem href="/general-components/heading">Heading</MenuItem>
 		<MenuItem href="/general-components/inset-text">Inset text</MenuItem>

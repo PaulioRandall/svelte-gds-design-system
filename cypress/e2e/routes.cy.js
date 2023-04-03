@@ -24,6 +24,7 @@ const generalDocsPages = [
 	'back-link',
 	'breadcrumb',
 	'breadcrumbs',
+	'caption',
 	'details',
 	'heading',
 	'inset-text',
