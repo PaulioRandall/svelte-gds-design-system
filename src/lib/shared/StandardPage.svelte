@@ -6,6 +6,7 @@
 
 	export let title = null
 	export let sticky_menu = false
+	export let thick_content = false
 
 	const stickyMenuClass = sticky_menu ? 'info-page-sticky-menu' : ''
 </script>
@@ -16,11 +17,14 @@
 	</svelte:fragment>
 
 	<Row>
-		<Col one_third c="info-page-side-menu {stickyMenuClass}">
+		<Col
+			one_third="{!thick_content}"
+			one_quarter="{thick_content}"
+			c="info-page-side-menu {stickyMenuClass}">
 			<slot name="side-menu" />
 		</Col>
 
-		<Col two_thirds>
+		<Col two_thirds="{!thick_content}" three_quarters="{thick_content}">
 			<slot />
 		</Col>
 	</Row>

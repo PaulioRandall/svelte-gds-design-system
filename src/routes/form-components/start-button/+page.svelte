@@ -29,13 +29,12 @@
 	]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
+			first_example
 			id="example-minimalist"
 			heading="Minimalist"
 			src="{exampleCodeMinimalist}">
 			<ExampleMinimalist />
 		</DocsExample>
-
-		<SectionBreak md />
 
 		<DocsExample
 			id="example-custom-text"

@@ -6,7 +6,6 @@
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
-	import SectionBreak from '$govuk/SectionBreak.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
 	import StandardPage from '$shared/StandardPage.svelte'
@@ -19,15 +18,22 @@
 	export let gds_link = ''
 
 	export let crumbs /* = [
-		['href', 'label']
+		['href', 'label'],
+		...
+	] */
+
+	export let sub_components = null /* = [
+		['href', 'label'],
+		...
 	] */
 
 	export let examples /* = [
-		['id', 'label']
+		['id', 'label'],
+		...
 	] */
 </script>
 
-<StandardPage sticky_menu title="{title}">
+<StandardPage thick_content sticky_menu title="{title}">
 	<Breadcrumbs slot="breadcrumbs" collapsable crumbs="{crumbs}" />
 
 	<List slot="side-menu" spaced>
@@ -37,17 +43,17 @@
 				<MenuItem href="#{id}">{label}</MenuItem>
 			{/each}
 		</List>
-		{#if $$slots.props || $$slots.slots || $$slots.sub_components}
+		{#if $$props.sub_components || $$slots.slots || $$slots.props}
 			<MenuItem bold href="#interface">Interface</MenuItem>
 			<List sub_list spaced>
-				{#if $$slots.props}
-					<MenuItem href="#interface-props">Props</MenuItem>
+				{#if $$props.sub_components}
+					<MenuItem href="#sub-components">Sub components</MenuItem>
 				{/if}
 				{#if $$slots.slots}
-					<MenuItem href="#interface-slots">Slots</MenuItem>
+					<MenuItem href="#slots">Slots</MenuItem>
 				{/if}
-				{#if $$slots.sub_components}
-					<MenuItem href="#interface-sub-components">Sub components</MenuItem>
+				{#if $$slots.props}
+					<MenuItem href="#props">Props</MenuItem>
 				{/if}
 			</List>
 		{/if}
@@ -78,32 +84,32 @@
 		<slot name="examples" />
 	</Section>
 
-	{#if $$slots.props || $$slots.slots || $$slots.sub_components}
-		<Section add_top_margin id="interface">
-			<Heading h2 lg>Interface</Heading>
+	{#if $$props.sub_components || $$slots.slots || $$slots.props}
+		<div id="interface"></div>
+	{/if}
 
-			{#if $$slots.props}
-				<Heading id="interface-props" h2 md>Props</Heading>
-				<slot name="props" />
-			{/if}
+	{#if $$props.sub_components}
+		<Section add_top_margin id="sub-components">
+			<Heading h2 lg>Sub components</Heading>
+			<List bullets spaced>
+				{#each sub_components as [href, label]}
+					<MenuItem href="{href}">{label}</MenuItem>
+				{/each}
+			</List>
+		</Section>
+	{/if}
 
-			{#if $$slots.props && $$slots.slots}
-				<SectionBreak md />
-			{/if}
+	{#if $$slots.slots}
+		<Section add_top_margin id="slots">
+			<Heading h2 lg>Slots</Heading>
+			<slot name="slots" />
+		</Section>
+	{/if}
 
-			{#if $$slots.slots}
-				<Heading id="interface-slots" h2 md>Slots</Heading>
-				<slot name="slots" />
-			{/if}
-
-			{#if ($$slots.props || $$slots.slots) && $$slots.sub_components}
-				<SectionBreak md />
-			{/if}
-
-			{#if $$slots.sub_components}
-				<Heading id="interface-sub-components" h2 md>Sub components</Heading>
-				<slot name="sub_components" />
-			{/if}
+	{#if $$slots.props}
+		<Section add_top_margin id="props">
+			<Heading h2 lg>Props</Heading>
+			<slot name="props" />
 		</Section>
 	{/if}
 </StandardPage>

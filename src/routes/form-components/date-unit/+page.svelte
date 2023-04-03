@@ -20,6 +20,7 @@
 	examples="{[['example-minimalist', 'Minimalist']]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
+			first_example
 			id="example-minimalist"
 			heading="Minimalist"
 			src="{exampleCodeMinimalist}">

@@ -1,6 +1,4 @@
 <script>
-	import SectionBreak from '$govuk/SectionBreak.svelte'
-
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsProp from '$shared/DocsProp.svelte'
 	import DocsSlot from '$shared/DocsSlot.svelte'
@@ -37,13 +35,12 @@
 	]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
+			first_example
 			id="example-minimalist"
 			heading="Minimalist"
 			src="{exampleCodeMinimalist}">
 			<ExampleMinimalist />
 		</DocsExample>
-
-		<SectionBreak md />
 
 		<DocsExample
 			id="example-secondary"
@@ -52,16 +49,12 @@
 			<ExampleSecondary />
 		</DocsExample>
 
-		<SectionBreak md />
-
 		<DocsExample
 			id="example-warning"
 			heading="Warning"
 			src="{exampleCodeWarning}">
 			<ExampleWarning />
 		</DocsExample>
-
-		<SectionBreak md />
 
 		<DocsExample
 			id="example-disabled"
