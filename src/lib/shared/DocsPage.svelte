@@ -22,7 +22,12 @@
 		...
 	] */
 
-	export let sub_components = null /* = [
+	export let parents = null /* = [
+		['href', 'label'],
+		...
+	] */
+
+	export let children = null /* = [
 		['href', 'label'],
 		...
 	] */
@@ -31,6 +36,9 @@
 		['id', 'label'],
 		...
 	] */
+
+	const hasConfig =
+		$$props.parents || $$props.children || $$slots.slots || $$slots.props
 </script>
 
 <StandardPage thick_content sticky_menu title="{title}">
@@ -43,11 +51,14 @@
 				<MenuItem href="#{id}">{label}</MenuItem>
 			{/each}
 		</List>
-		{#if $$props.sub_components || $$slots.slots || $$slots.props}
+		{#if hasConfig}
 			<MenuItem bold href="#interface">Interface</MenuItem>
 			<List sub_list spaced>
-				{#if $$props.sub_components}
-					<MenuItem href="#sub-components">Sub components</MenuItem>
+				{#if $$props.parents}
+					<MenuItem href="#parents">Parents</MenuItem>
+				{/if}
+				{#if $$props.children}
+					<MenuItem href="#children">Children</MenuItem>
 				{/if}
 				{#if $$slots.slots}
 					<MenuItem href="#slots">Slots</MenuItem>
@@ -84,15 +95,26 @@
 		<slot name="examples" />
 	</Section>
 
-	{#if $$props.sub_components || $$slots.slots || $$slots.props}
+	{#if hasConfig}
 		<div id="interface"></div>
 	{/if}
 
-	{#if $$props.sub_components}
-		<Section add_top_margin id="sub-components">
-			<Heading h2 lg>Sub components</Heading>
+	{#if $$props.parents}
+		<Section add_top_margin id="parents">
+			<Heading h2 lg>Parents</Heading>
 			<List bullets spaced>
-				{#each sub_components as [href, label]}
+				{#each parents as [href, label]}
+					<MenuItem href="{href}">{label}</MenuItem>
+				{/each}
+			</List>
+		</Section>
+	{/if}
+
+	{#if $$props.children}
+		<Section add_top_margin id="children">
+			<Heading h2 lg>Children</Heading>
+			<List bullets spaced>
+				{#each children as [href, label]}
 					<MenuItem href="{href}">{label}</MenuItem>
 				{/each}
 			</List>

@@ -21,7 +21,8 @@
 		['/general-components', 'General components'],
 		['/general-components/accordion-section', 'Accordion section'],
 	]}"
-	examples="{[['example-minimalist', 'Minimalist']]}">
+	examples="{[['example-minimalist', 'Minimalist']]}"
+	parents="{[['/general-components/accordion', 'Accordion']]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
 			first_example
