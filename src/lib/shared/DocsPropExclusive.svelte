@@ -1,8 +1,8 @@
 <script>
 	import List from '$govuk/List.svelte'
-	import Summary from '$govuk/Summary.svelte'
 	import SummaryCard from '$govuk/SummaryCard.svelte'
-	import SummaryItem from '$govuk/SummaryItem.svelte'
+	import SummaryList from '$govuk/SummaryList.svelte'
+	import SummaryListItem from '$govuk/SummaryListItem.svelte'
 
 	export let required = false
 	export let type = 'bool'
@@ -14,17 +14,17 @@
 	export let summary // = ""
 </script>
 
-<SummaryCard heading="(Mutually exclusive bool: {group_name})">
-	<Summary>
+<SummaryCard h3 heading="(Mutually exclusive bool: {group_name})">
+	<SummaryList>
 		{#if required}
-			<SummaryItem name="Required" />
+			<SummaryListItem name="Required" />
 		{:else}
-			<SummaryItem name="Optional" />
+			<SummaryListItem name="Optional" />
 		{/if}
-		<SummaryItem name="Type">
+		<SummaryListItem name="Type">
 			{@html type}
-		</SummaryItem>
-		<SummaryItem name="Props">
+		</SummaryListItem>
+		<SummaryListItem name="Props">
 			<List>
 				{#each props as [name, summary]}
 					<li class="prop">
@@ -35,16 +35,16 @@
 					</li>
 				{/each}
 			</List>
-		</SummaryItem>
+		</SummaryListItem>
 		{#if default_value}
-			<SummaryItem name="Default">
+			<SummaryListItem name="Default">
 				<span class="quoted">{@html default_value}</span>
-			</SummaryItem>
+			</SummaryListItem>
 		{/if}
-		<SummaryItem name="Summary">
+		<SummaryListItem name="Summary">
 			{@html summary}
-		</SummaryItem>
-	</Summary>
+		</SummaryListItem>
+	</SummaryList>
 </SummaryCard>
 
 <style>

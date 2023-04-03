@@ -10,13 +10,13 @@
 
 <DocsPage
 	group="General components"
-	title="Accordion"
-	gds_name="Accordion"
-	gds_link="https://design-system.service.gov.uk/components/accordion/"
+	title="Summary list"
+	gds_name="Summary list"
+	gds_link="https://design-system.service.gov.uk/components/summary-list/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/general-components', 'General components'],
-		['/general-components/accordion', 'Accordion'],
+		['/general-components/summary-list', 'Summary list'],
 	]}"
 	examples="{[['example-minimalist', 'Minimalist']]}">
 	<svelte:fragment slot="examples">
@@ -32,27 +32,13 @@
 	<svelte:fragment slot="props">
 		<DocsProp name="id" type="string" summary="Wrapper element ID" />
 		<DocsProp
-			name="forget_expanded"
+			name="no_border"
 			type="bool"
 			default_value="false"
-			summary="If set the accordion collapses when navigating away from the page" />
-		<DocsProp
-			name="custom_labels"
-			type="object"
-			summary="Custom interaction labels for showing and hiding content" />
+			summary="If set removes the borders" />
 	</svelte:fragment>
 
 	<svelte:fragment slot="slots">
-		<DocsSlot default_slot summary="Series of AccordionSection components" />
+		<DocsSlot default_slot summary="Series of SummaryListItem components" />
 	</svelte:fragment>
 </DocsPage>
-
-<style>
-	:global(.type-object-brace) {
-		margin-left: 2ch;
-	}
-
-	:global(.type-object-member) {
-		margin-left: 4ch;
-	}
-</style>

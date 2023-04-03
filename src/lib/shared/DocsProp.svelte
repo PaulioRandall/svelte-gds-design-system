@@ -1,8 +1,8 @@
 <script>
 	import List from '$govuk/List.svelte'
-	import Summary from '$govuk/Summary.svelte'
 	import SummaryCard from '$govuk/SummaryCard.svelte'
-	import SummaryItem from '$govuk/SummaryItem.svelte'
+	import SummaryList from '$govuk/SummaryList.svelte'
+	import SummaryListItem from '$govuk/SummaryListItem.svelte'
 
 	export let required = false
 	export let name // = ""
@@ -12,34 +12,34 @@
 	export let summary // = ""
 </script>
 
-<SummaryCard heading="<code>{name}</code>">
-	<Summary>
+<SummaryCard h3 heading="<code>{name}</code>">
+	<SummaryList>
 		{#if required}
-			<SummaryItem name="Required" />
+			<SummaryListItem name="Required" />
 		{:else}
-			<SummaryItem name="Optional" />
+			<SummaryListItem name="Optional" />
 		{/if}
-		<SummaryItem name="Type">
+		<SummaryListItem name="Type">
 			{@html type}
-		</SummaryItem>
+		</SummaryListItem>
 		{#if default_value}
-			<SummaryItem name="Default">
+			<SummaryListItem name="Default">
 				<span class="quoted">{@html default_value}</span>
-			</SummaryItem>
+			</SummaryListItem>
 		{/if}
 		{#if allows}
-			<SummaryItem name="Allows">
+			<SummaryListItem name="Allows">
 				<List bullets>
 					{#each allows as item}
 						<li class="quoted">{@html item}</li>
 					{/each}
 				</List>
-			</SummaryItem>
+			</SummaryListItem>
 		{/if}
-		<SummaryItem name="Summary">
+		<SummaryListItem name="Summary">
 			{@html summary}
-		</SummaryItem>
-	</Summary>
+		</SummaryListItem>
+	</SummaryList>
 </SummaryCard>
 
 <style>

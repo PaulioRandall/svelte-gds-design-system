@@ -1,7 +1,7 @@
 <script>
-	import Summary from '$govuk/Summary.svelte'
 	import SummaryCard from '$govuk/SummaryCard.svelte'
-	import SummaryItem from '$govuk/SummaryItem.svelte'
+	import SummaryList from '$govuk/SummaryList.svelte'
+	import SummaryListItem from '$govuk/SummaryListItem.svelte'
 
 	export let default_slot = false
 	export let name = undefined // ""
@@ -13,17 +13,17 @@
 	}
 </script>
 
-<SummaryCard heading="<code>{name}</code>">
-	<Summary>
+<SummaryCard h3 heading="<code>{name}</code>">
+	<SummaryList>
 		{#if default_value}
-			<SummaryItem name="Default">
+			<SummaryListItem name="Default">
 				<span class="quoted">{default_value}</span>
-			</SummaryItem>
+			</SummaryListItem>
 		{/if}
-		<SummaryItem name="Summary">
+		<SummaryListItem name="Summary">
 			{summary}
-		</SummaryItem>
-	</Summary>
+		</SummaryListItem>
+	</SummaryList>
 </SummaryCard>
 
 <style>

@@ -1,6 +1,4 @@
 <script>
-	import SectionBreak from '$govuk/SectionBreak.svelte'
-
 	import DocsExample from '$shared/DocsExample.svelte'
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsSlot from '$shared/DocsSlot.svelte'
@@ -22,6 +20,7 @@
 	examples="{[['example-minimalist', 'Minimalist']]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
+			first_example
 			id="example-minimalist"
 			heading="Minimalist"
 			src="{exampleCodeMinimalist}">

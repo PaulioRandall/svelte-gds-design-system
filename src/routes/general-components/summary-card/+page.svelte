@@ -7,19 +7,25 @@
 
 	import ExampleMinimalist from './ExampleMinimalist.svelte'
 	import exampleCodeMinimalist from './ExampleMinimalist.svelte?raw'
+
+	import ExampleActions from './ExampleActions.svelte'
+	import exampleCodeActions from './ExampleActions.svelte?raw'
 </script>
 
 <DocsPage
 	group="General components"
-	title="Heading"
-	gds_name="Headings"
-	gds_link="https://design-system.service.gov.uk/styles/typography/#headings"
+	title="Summary card"
+	gds_name="Summary card"
+	gds_link="https://design-system.service.gov.uk/components/summary-list/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/general-components', 'General components'],
-		['/general-components/heading', 'Heading'],
+		['/general-components/summary-card', 'Summary card'],
 	]}"
-	examples="{[['example-minimalist', 'Minimalist']]}">
+	examples="{[
+		['example-minimalist', 'Minimalist'],
+		['example-actions', 'Actions'],
+	]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
 			first_example
@@ -28,26 +34,29 @@
 			src="{exampleCodeMinimalist}">
 			<ExampleMinimalist />
 		</DocsExample>
+
+		<DocsExample
+			id="example-actions"
+			heading="Actions"
+			src="{exampleCodeActions}">
+			<ExampleActions />
+		</DocsExample>
 	</svelte:fragment>
 
 	<svelte:fragment slot="props">
-		<DocsProp name="id" type="string" summary="Element ID" />
+		<DocsProp name="id" type="string" summary="Wrapper element ID" />
+		<DocsProp required name="heading" type="string" summary="Heading text" />
 		<DocsPropExclusive
-			group_name="Element type"
+			required
+			group_name="Heading element type"
 			summary="Type of heading element"
-			props="{[['h1'], ['h2'], ['h3']]}" />
-		<DocsPropExclusive
-			group_name="Font size"
-			summary="Font size of the heading"
-			props="{[
-				['sm', 'small'],
-				['md', 'medium'],
-				['lg', 'large'],
-				['xl', 'extra large'],
-			]}" />
+			props="{[['h2'], ['h3'], ['h4']]}" />
 	</svelte:fragment>
 
 	<svelte:fragment slot="slots">
-		<DocsSlot default_slot summary="Heading text" />
+		<DocsSlot default_slot summary="A SummaryList component" />
+		<DocsSlot
+			name="actions"
+			summary="A series of SummaryCardAction components" />
 	</svelte:fragment>
 </DocsPage>

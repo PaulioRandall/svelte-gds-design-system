@@ -28,6 +28,8 @@ const generalDocsPages = [
 	'notification-banner',
 	'panel',
 	'paragraph',
+	'summary-card',
+	'summary-list',
 	'tabs',
 	'table',
 	'tag',

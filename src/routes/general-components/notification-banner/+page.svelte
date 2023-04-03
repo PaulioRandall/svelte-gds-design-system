@@ -1,10 +1,8 @@
 <script>
-	import SectionBreak from '$govuk/SectionBreak.svelte'
-
+	import DocsExample from '$shared/DocsExample.svelte'
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsProp from '$shared/DocsProp.svelte'
 	import DocsSlot from '$shared/DocsSlot.svelte'
-	import DocsExample from '$shared/DocsExample.svelte'
 
 	import ExampleMinimalist from './ExampleMinimalist.svelte'
 	import exampleCodeMinimalist from './ExampleMinimalist.svelte?raw'
@@ -41,13 +39,12 @@
 	]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
+			first_example
 			id="example-minimalist"
 			heading="Minimalist"
 			src="{exampleCodeMinimalist}">
 			<ExampleMinimalist />
 		</DocsExample>
-
-		<SectionBreak md />
 
 		<DocsExample
 			id="example-disabling-auto-focus"
@@ -56,8 +53,6 @@
 			<ExampleDisablingAutoFocus />
 		</DocsExample>
 
-		<SectionBreak md />
-
 		<DocsExample
 			id="example-content-heading"
 			heading="Content heading"
@@ -65,16 +60,12 @@
 			<ExampleContentHeading />
 		</DocsExample>
 
-		<SectionBreak md />
-
 		<DocsExample
 			id="example-content-link"
 			heading="Content link"
 			src="{exampleCodeContentLink}">
 			<ExampleContentLink />
 		</DocsExample>
-
-		<SectionBreak md />
 
 		<DocsExample
 			id="example-success"

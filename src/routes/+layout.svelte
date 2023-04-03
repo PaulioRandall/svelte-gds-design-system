@@ -19,7 +19,7 @@
 
 <style>
 	@import '$govuk/govuk-frontend-4.5.0.min.css';
-	@import '$govuk/variables.css';
+	@import '$govuk/constants.css';
 
 	.page {
 		display: flex;
