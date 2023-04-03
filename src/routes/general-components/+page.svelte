@@ -31,6 +31,10 @@
 
 	<List spaced>
 		<MenuItem href="/general-components/accordion">Accordion</MenuItem>
+		<List sub_list>
+			<MenuItem href="/general-components/accordion-section"
+				>Accordion section</MenuItem>
+		</List>
 		<MenuItem href="/general-components/breadcrumbs">Breadcrumbs</MenuItem>
 		<MenuItem href="/general-components/details">Details</MenuItem>
 		<MenuItem href="/general-components/heading">Heading</MenuItem>

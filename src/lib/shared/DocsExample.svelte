@@ -22,10 +22,3 @@
 	<slot />
 	<CodeBlock>{src}</CodeBlock>
 </SummaryCard>
-
-<style>
-	.docs-example {
-		padding: var(--spacing-responsive-1);
-		border: 1px solid var(--color-grey-border);
-	}
-</style>

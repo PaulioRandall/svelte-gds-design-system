@@ -1,18 +1,19 @@
 <script>
 	import { getContext } from 'svelte'
 
+	export let id = undefined // = ""
 	export let heading // = ""
 	export let summary = ''
 
 	if (!heading) {
-		throw new Error('An accordion section must have a heading')
+		throw new Error('An AccordionSection must have a heading')
 	}
 
 	const generateIds = getContext('id-generator')
 	const { headingId, summaryId, contentId } = generateIds()
 </script>
 
-<div class="govuk-accordion__section">
+<div id="{id}" class="govuk-accordion__section">
 	<div class="govuk-accordion__section-header">
 		<h2 class="govuk-accordion__section-heading">
 			<span class="govuk-accordion__section-button" id="{headingId}">
