@@ -11,24 +11,21 @@
 		["prop-name", "summary"]
 	] */
 	export let default_value = undefined // = ""
-	export let summary // = ""
+
+	// TODO: remove -replace with default slot
+	export let summary = ''
 </script>
 
-<SummaryCard h3 heading="(Mutually exclusive bool: {group_name})">
+<SummaryCard h3 heading="&nbsp;">
 	<SummaryList>
 		{#if required}
 			<SummaryListItem name="Required" />
-		{:else}
-			<SummaryListItem name="Optional" />
 		{/if}
-		<SummaryListItem name="Type">
-			{@html type}
-		</SummaryListItem>
-		<SummaryListItem name="Props">
+		<SummaryListItem name="Pick one" use_all_space>
 			<List>
 				{#each props as [name, summary]}
 					<li class="prop">
-						<span class="quoted">{name}</span>
+						{name}
 						{#if summary}
 							&nbsp;<span>({@html summary})</span>
 						{/if}
@@ -36,13 +33,20 @@
 				{/each}
 			</List>
 		</SummaryListItem>
+		<SummaryListItem name="Type" use_all_space>
+			{@html type}
+		</SummaryListItem>
 		{#if default_value}
-			<SummaryListItem name="Default">
+			<SummaryListItem name="Default" use_all_space>
 				<span class="quoted">{@html default_value}</span>
 			</SummaryListItem>
 		{/if}
-		<SummaryListItem name="Summary">
-			{@html summary}
+		<SummaryListItem name="Summary" use_all_space>
+			{#if $$slots.default}
+				<slot />
+			{:else}
+				{@html summary}
+			{/if}
 		</SummaryListItem>
 	</SummaryList>
 </SummaryCard>

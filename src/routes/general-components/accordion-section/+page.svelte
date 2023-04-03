@@ -41,25 +41,14 @@
 	</svelte:fragment>
 
 	<svelte:fragment slot="props">
-		<DocsProp name="id" type="string" summary="Wrapper element ID" />
-		<DocsProp required name="heading" type="string" summary="Section heading" />
-		<DocsProp
-			name="summary"
-			type="string"
-			summary="Summary always visible below heading" />
+		<DocsProp required name="heading" type="string">Heading text.</DocsProp>
+		<DocsProp name="id" type="string">Wrapper element ID</DocsProp>
+		<DocsProp name="summary" type="string">
+			Summary text shown below the heading. Always visible.
+		</DocsProp>
 	</svelte:fragment>
 
 	<svelte:fragment slot="slots">
-		<DocsSlot default_slot summary="Series of AccordionSection components" />
+		<DocsSlot default_slot>Main content of the accordion section.</DocsSlot>
 	</svelte:fragment>
 </DocsPage>
-
-<style>
-	:global(.type-object-brace) {
-		margin-left: 2ch;
-	}
-
-	:global(.type-object-member) {
-		margin-left: 4ch;
-	}
-</style>

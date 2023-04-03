@@ -1,18 +1,17 @@
 <script>
+	export let name = ''
 	export let change_url = ''
-	export let name // = ""
-
-	if (!name) {
-		throw new Error('A SummaryListItem must have a name prop')
-	}
+	export let use_all_space = false
 </script>
 
 <div
 	class="govuk-summary-list__row"
-	class:govuk-summary-list__row--no-actions="{!change_url}">
-	<dt class="govuk-summary-list__key">
-		{name}
-	</dt>
+	class:govuk-summary-list__row--no-actions="{!use_all_space && !change_url}">
+	{#if name}
+		<dt class="govuk-summary-list__key">
+			{name}
+		</dt>
+	{/if}
 	<dd class="govuk-summary-list__value">
 		<slot />
 	</dd>

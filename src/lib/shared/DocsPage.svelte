@@ -6,6 +6,9 @@
 	import List from '$govuk/List.svelte'
 	import MenuItem from '$govuk/MenuItem.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
+	import TabLabel from '$govuk/TabLabel.svelte'
+	import TabPanel from '$govuk/TabPanel.svelte'
+	import Tabs from '$govuk/Tabs.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
 	import StandardPage from '$shared/StandardPage.svelte'
@@ -44,27 +47,27 @@
 <StandardPage thick_content sticky_menu title="{title}">
 	<Breadcrumbs slot="breadcrumbs" collapsable crumbs="{crumbs}" />
 
-	<List slot="side-menu" spaced>
+	<List slot="side-menu">
 		<MenuItem bold href="#examples">Examples</MenuItem>
-		<List sub_list spaced>
+		<List bullets>
 			{#each examples as [id, label]}
 				<MenuItem href="#{id}">{label}</MenuItem>
 			{/each}
 		</List>
 		{#if hasConfig}
 			<MenuItem bold href="#interface">Interface</MenuItem>
-			<List sub_list spaced>
+			<List bullets>
 				{#if $$props.parents}
 					<MenuItem href="#parents">Parents</MenuItem>
 				{/if}
-				{#if $$props.children}
-					<MenuItem href="#children">Children</MenuItem>
+				{#if $$slots.props}
+					<MenuItem href="#props">Props</MenuItem>
 				{/if}
 				{#if $$slots.slots}
 					<MenuItem href="#slots">Slots</MenuItem>
 				{/if}
-				{#if $$slots.props}
-					<MenuItem href="#props">Props</MenuItem>
+				{#if $$props.children}
+					<MenuItem href="#children">Children</MenuItem>
 				{/if}
 			</List>
 		{/if}
@@ -96,42 +99,54 @@
 	</Section>
 
 	{#if hasConfig}
-		<div id="interface"></div>
-	{/if}
-
-	{#if $$props.parents}
-		<Section add_top_margin id="parents">
-			<Heading h2 lg>Parents</Heading>
-			<List bullets spaced>
-				{#each parents as [href, label]}
-					<MenuItem href="{href}">{label}</MenuItem>
-				{/each}
-			</List>
-		</Section>
-	{/if}
-
-	{#if $$props.children}
-		<Section add_top_margin id="children">
-			<Heading h2 lg>Children</Heading>
-			<List bullets spaced>
-				{#each children as [href, label]}
-					<MenuItem href="{href}">{label}</MenuItem>
-				{/each}
-			</List>
-		</Section>
-	{/if}
-
-	{#if $$slots.slots}
-		<Section add_top_margin id="slots">
-			<Heading h2 lg>Slots</Heading>
-			<slot name="slots" />
-		</Section>
-	{/if}
-
-	{#if $$slots.props}
-		<Section add_top_margin id="props">
-			<Heading h2 lg>Props</Heading>
-			<slot name="props" />
+		<Section add_top_margin id="interface">
+			<Heading h2 lg>Interface</Heading>
+			<Tabs>
+				<svelte:fragment slot="labels">
+					{#if $$props.parents}
+						<TabLabel id="parents">Parents</TabLabel>
+					{/if}
+					{#if $$slots.props}
+						<TabLabel id="props">Props</TabLabel>
+					{/if}
+					{#if $$slots.slots}
+						<TabLabel id="slots">Slots</TabLabel>
+					{/if}
+					{#if $$props.children}
+						<TabLabel id="children">Children</TabLabel>
+					{/if}
+				</svelte:fragment>
+				<svelte:fragment slot="panels">
+					{#if $$props.parents}
+						<TabPanel id="parents">
+							<List spaced>
+								{#each parents as [href, label]}
+									<MenuItem href="{href}">{label}</MenuItem>
+								{/each}
+							</List>
+						</TabPanel>
+					{/if}
+					{#if $$slots.props}
+						<TabPanel id="props">
+							<slot name="props" />
+						</TabPanel>
+					{/if}
+					{#if $$slots.slots}
+						<TabPanel id="slots">
+							<slot name="slots" />
+						</TabPanel>
+					{/if}
+					{#if $$props.children}
+						<TabPanel id="children">
+							<List spaced>
+								{#each children as [href, label]}
+									<MenuItem href="{href}">{label}</MenuItem>
+								{/each}
+							</List>
+						</TabPanel>
+					{/if}
+				</svelte:fragment>
+			</Tabs>
 		</Section>
 	{/if}
 </StandardPage>

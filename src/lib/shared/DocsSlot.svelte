@@ -6,7 +6,9 @@
 	export let default_slot = false
 	export let name = undefined // ""
 	export let default_value = undefined // = ""
-	export let summary // = ""
+
+	// TODO: Remove - replace with default slot
+	export let summary = ''
 
 	if (default_slot) {
 		name = '&lt;default&gt;'
@@ -16,12 +18,16 @@
 <SummaryCard h3 heading="<code>{name}</code>">
 	<SummaryList>
 		{#if default_value}
-			<SummaryListItem name="Default">
+			<SummaryListItem name="Default" use_all_space>
 				<span class="quoted">{default_value}</span>
 			</SummaryListItem>
 		{/if}
-		<SummaryListItem name="Summary">
-			{summary}
+		<SummaryListItem name="Summary" use_all_space>
+			{#if $$slots.default}
+				<slot />
+			{:else}
+				{@html summary}
+			{/if}
 		</SummaryListItem>
 	</SummaryList>
 </SummaryCard>

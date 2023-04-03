@@ -1,4 +1,6 @@
 <script>
+	import Link from '$govuk/Link.svelte'
+
 	import DocsExample from '$shared/DocsExample.svelte'
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsProp from '$shared/DocsProp.svelte'
@@ -31,20 +33,20 @@
 	</svelte:fragment>
 
 	<svelte:fragment slot="props">
-		<DocsProp name="id" type="string" summary="Wrapper element ID" />
-		<DocsProp
-			name="forget_expanded"
-			type="bool"
-			default_value="false"
-			summary="If set the accordion collapses when navigating away from the page" />
-		<DocsProp
-			name="custom_labels"
-			type="object"
-			summary="Custom interaction labels for showing and hiding content" />
+		<DocsProp name="id" type="string">Wrapper element ID</DocsProp>
+		<DocsProp name="forget_expanded" type="bool" default_value="false">
+			If set the accordion collapses when navigating away from the page.
+		</DocsProp>
+		<DocsProp name="custom_labels" type="object">
+			Override interaction labels for links that show and hide content.
+		</DocsProp>
 	</svelte:fragment>
 
 	<svelte:fragment slot="slots">
-		<DocsSlot default_slot summary="Series of AccordionSection components" />
+		<DocsSlot default_slot>
+			Series of <Link href="/general-components/accordion-section"
+				>AccordionSection</Link> components.
+		</DocsSlot>
 	</svelte:fragment>
 </DocsPage>
 
