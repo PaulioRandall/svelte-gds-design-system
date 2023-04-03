@@ -35,6 +35,7 @@
 			<MenuItem href="/general-components/accordion-section"
 				>Accordion section</MenuItem>
 		</List>
+		<MenuItem href="/general-components/back-link">Back link</MenuItem>
 		<MenuItem href="/general-components/breadcrumbs">Breadcrumbs</MenuItem>
 		<MenuItem href="/general-components/details">Details</MenuItem>
 		<MenuItem href="/general-components/heading">Heading</MenuItem>

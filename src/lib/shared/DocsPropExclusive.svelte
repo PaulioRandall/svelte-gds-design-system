@@ -6,7 +6,6 @@
 
 	export let required = false
 	export let type = 'bool'
-	export let group_name // = ""
 	export let props /* = [
 		["prop-name", "summary"]
 	] */

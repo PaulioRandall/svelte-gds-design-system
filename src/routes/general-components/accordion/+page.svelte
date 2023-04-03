@@ -49,13 +49,3 @@
 		</DocsSlot>
 	</svelte:fragment>
 </DocsPage>
-
-<style>
-	:global(.type-object-brace) {
-		margin-left: 2ch;
-	}
-
-	:global(.type-object-member) {
-		margin-left: 4ch;
-	}
-</style>
