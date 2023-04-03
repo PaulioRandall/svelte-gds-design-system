@@ -2,4 +2,4 @@
 	import Caption from '$govuk/Caption.svelte'
 </script>
 
-<Caption sm />
+<Caption sm>A caption</Caption>

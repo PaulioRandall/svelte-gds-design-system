@@ -8,6 +8,9 @@
 
 	import ExampleMinimalist from './ExampleMinimalist.svelte'
 	import exampleCodeMinimalist from './ExampleMinimalist.svelte?raw'
+
+	import ExampleHeadings from './ExampleHeadings.svelte'
+	import exampleCodeHeadings from './ExampleHeadings.svelte?raw'
 </script>
 
 <DocsPage
@@ -20,7 +23,10 @@
 		['/general-components', 'General components'],
 		['/general-components/caption', 'Caption'],
 	]}"
-	examples="{[['example-minimalist', 'Minimalist']]}">
+	examples="{[
+		['example-minimalist', 'Minimalist'],
+		['example-headings', 'Headings'],
+	]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
 			first_example
@@ -28,6 +34,13 @@
 			heading="Minimalist"
 			src="{exampleCodeMinimalist}">
 			<ExampleMinimalist />
+		</DocsExample>
+
+		<DocsExample
+			id="example-headings"
+			heading="Headings"
+			src="{exampleCodeHeadings}">
+			<ExampleHeadings />
 		</DocsExample>
 	</svelte:fragment>
 
