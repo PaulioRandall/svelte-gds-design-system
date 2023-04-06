@@ -29,13 +29,15 @@
 
 	<List spaced>
 		<MenuItem href="/general-components/accordion">Accordion</MenuItem>
-		<List sub_list>
+		<List double_indent>
 			<MenuItem href="/general-components/accordion-section"
 				>Accordion section</MenuItem>
 		</List>
 		<MenuItem href="/general-components/back-link">Back link</MenuItem>
-		<MenuItem href="/general-components/breadcrumb">Breadcrumb</MenuItem>
 		<MenuItem href="/general-components/breadcrumbs">Breadcrumbs</MenuItem>
+		<List double_indent>
+			<MenuItem href="/general-components/breadcrumb">Breadcrumb</MenuItem>
+		</List>
 		<MenuItem href="/general-components/caption">Caption</MenuItem>
 		<MenuItem href="/general-components/details">Details</MenuItem>
 		<MenuItem href="/general-components/heading">Heading</MenuItem>

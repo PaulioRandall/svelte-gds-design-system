@@ -1,9 +1,10 @@
 <script>
 	import { countTruthy } from '$govuk/util.js'
 
-	export let type = 'div' // Must be a standard HTML block element
-	export let id = undefined // ""
 	export let c = ''
+
+	export let id = undefined // ""
+	export let type = 'div' // Must be a standard HTML block element
 
 	export let full = false
 	export let three_quarters = false
