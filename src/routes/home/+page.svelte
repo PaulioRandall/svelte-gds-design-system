@@ -8,10 +8,10 @@
 	import Restyle from '$govuk/Restyle.svelte'
 
 	import CodeBlock from '$shared/CodeBlock.svelte'
-	import StandardPage from '$shared/StandardPage.svelte'
+	import SideMenuPage from '$shared/SideMenuPage.svelte'
 </script>
 
-<StandardPage title="Home">
+<SideMenuPage title="Home">
 	<List slot="side-menu" spaced>
 		<MenuItem href="/general-components">General components</MenuItem>
 		<MenuItem href="/form-components">Form components</MenuItem>
@@ -208,4 +208,4 @@
 			`	import defaultBarChartConfig from '$data/default-bar-chart-config.json'`,
 			`</script>`,
 		]}" />
-</StandardPage>
+</SideMenuPage>

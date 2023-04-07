@@ -13,7 +13,7 @@
 	const addTopMarginClass = add_top_margin ? 'section-add-top-margin' : ''
 </script>
 
-<Row type="section" id="{id}" c="{noTopPadClass} {addTopMarginClass}">
+<Row type="section" id="{id}" classes="{noTopPadClass} {addTopMarginClass}">
 	<Col width="full">
 		<slot />
 	</Col>

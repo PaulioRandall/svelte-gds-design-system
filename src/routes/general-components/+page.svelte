@@ -7,10 +7,10 @@
 	import MenuItem from '$govuk/MenuItem.svelte'
 	import Paragraph from '$govuk/Paragraph.svelte'
 
-	import StandardPage from '$shared/StandardPage.svelte'
+	import SideMenuPage from '$shared/SideMenuPage.svelte'
 </script>
 
-<StandardPage sticky_menu title="General components">
+<SideMenuPage sticky_menu title="General components">
 	<Breadcrumbs slot="breadcrumbs" collapsable>
 		<Breadcrumb href="/home">Home</Breadcrumb>
 		<Breadcrumb href="/general-components">General components</Breadcrumb>
@@ -55,4 +55,4 @@
 		<MenuItem href="/general-components/tag">Tag</MenuItem>
 		<MenuItem href="/general-components/warning-text">Warning text</MenuItem>
 	</List>
-</StandardPage>
+</SideMenuPage>

@@ -20,7 +20,7 @@
 	</svelte:fragment>
 
 	<Row>
-		<Col width="{menuWidth}" c="info-page-side-menu {stickyMenuClass}">
+		<Col width="{menuWidth}" classes="info-page-side-menu {stickyMenuClass}">
 			<slot name="side-menu" />
 		</Col>
 

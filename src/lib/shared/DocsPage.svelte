@@ -12,7 +12,7 @@
 	import Tabs from '$govuk/Tabs.svelte'
 	import WarningText from '$govuk/WarningText.svelte'
 
-	import StandardPage from '$shared/StandardPage.svelte'
+	import SideMenuPage from '$shared/SideMenuPage.svelte'
 	import Section from '$shared/Section.svelte'
 
 	export let group // = ""
@@ -45,7 +45,7 @@
 		$$props.parents || $$props.children || $$slots.slots || $$slots.props
 </script>
 
-<StandardPage thick_content sticky_menu title="{title}">
+<SideMenuPage thick_content sticky_menu title="{title}">
 	<Breadcrumbs slot="breadcrumbs" collapsable>
 		{#each crumbs as [href, label]}
 			<Breadcrumb href="{href}">{label}</Breadcrumb>
@@ -154,4 +154,4 @@
 			</Tabs>
 		</Section>
 	{/if}
-</StandardPage>
+</SideMenuPage>

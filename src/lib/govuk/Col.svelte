@@ -14,7 +14,7 @@
 <script>
 	import { countTruthy } from '$govuk/util.js'
 
-	export let c = ''
+	export let classes = ''
 
 	export let id = undefined // ""
 	export let type = 'div' // Must be a standard HTML block element
@@ -44,6 +44,6 @@
 <svelte:element
 	this="{type}"
 	id="{id}"
-	class="govuk-grid-column-{width} {desktopWidthClass} {c}">
+	class="govuk-grid-column-{width} {desktopWidthClass} {classes}">
 	<slot />
 </svelte:element>

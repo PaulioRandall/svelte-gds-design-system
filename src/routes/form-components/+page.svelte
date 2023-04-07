@@ -3,10 +3,10 @@
 	import MenuItem from '$govuk/MenuItem.svelte'
 	//import Paragraph from '$govuk/Paragraph.svelte'
 
-	import StandardPage from '$shared/StandardPage.svelte'
+	import SideMenuPage from '$shared/SideMenuPage.svelte'
 </script>
 
-<StandardPage title="Form components">
+<SideMenuPage title="Form components">
 	<!--
 			TODO:
 			+ Pagination
@@ -28,4 +28,4 @@
 		<MenuItem href="/form-components/text-input">Text input</MenuItem>
 		<MenuItem href="/form-components/textarea">Textarea</MenuItem>
 	</List>
-</StandardPage>
+</SideMenuPage>
