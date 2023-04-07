@@ -6,13 +6,13 @@
 	import Paragraph from '$govuk/Paragraph.svelte'
 	import Row from '$govuk/Row.svelte'
 
-	import Page from '$shared/Page.svelte'
+	import BasePage from '$shared/BasePage.svelte'
 </script>
 
-<Page title="{$page.status}">
+<BasePage title="{$page.status}">
 	<Main autospace>
 		<Row>
-			<Col two_thirds>
+			<Col width="two-thirds">
 				<Paragraph>
 					<b>{$page.status}:</b>
 					{$page.error.message}
@@ -20,4 +20,4 @@
 			</Col>
 		</Row>
 	</Main>
-</Page>
+</BasePage>

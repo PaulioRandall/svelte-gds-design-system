@@ -2,33 +2,33 @@
 	import Col from '$govuk/Col.svelte'
 	import Row from '$govuk/Row.svelte'
 
-	import Page from '$shared/Page.svelte'
+	import BasePage from '$shared/BasePage.svelte'
 
 	export let title = null
 	export let sticky_menu = false
 	export let thick_content = false
 
 	const stickyMenuClass = sticky_menu ? 'info-page-sticky-menu' : ''
+
+	const menuWidth = thick_content ? 'one-quarter' : 'one-third'
+	const contentWidth = thick_content ? 'three-quarters' : 'two-thirds'
 </script>
 
-<Page title="{title}">
+<BasePage title="{title}">
 	<svelte:fragment slot="breadcrumbs">
 		<slot name="breadcrumbs" />
 	</svelte:fragment>
 
 	<Row>
-		<Col
-			one_third="{!thick_content}"
-			one_quarter="{thick_content}"
-			c="info-page-side-menu {stickyMenuClass}">
+		<Col width="{menuWidth}" c="info-page-side-menu {stickyMenuClass}">
 			<slot name="side-menu" />
 		</Col>
 
-		<Col two_thirds="{!thick_content}" three_quarters="{thick_content}">
+		<Col width="{contentWidth}">
 			<slot />
 		</Col>
 	</Row>
-</Page>
+</BasePage>
 
 <style>
 	@media (max-width: 640px) {

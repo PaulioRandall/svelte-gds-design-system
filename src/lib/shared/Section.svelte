@@ -14,7 +14,7 @@
 </script>
 
 <Row type="section" id="{id}" c="{noTopPadClass} {addTopMarginClass}">
-	<Col full>
+	<Col width="full">
 		<slot />
 	</Col>
 </Row>

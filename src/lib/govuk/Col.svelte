@@ -1,3 +1,16 @@
+<script context="module">
+	export const widths = [
+		'full',
+		'three-quarters',
+		'two-thirds',
+		'one-half',
+		'one-third',
+		'one-quarter',
+	]
+
+	const isValidWidth = (w) => widths.includes(w)
+</script>
+
 <script>
 	import { countTruthy } from '$govuk/util.js'
 
@@ -5,82 +18,32 @@
 
 	export let id = undefined // ""
 	export let type = 'div' // Must be a standard HTML block element
+	export let width // = ""
+	export let desktop_width = undefined // ""
 
-	export let full = false
-	export let three_quarters = false
-	export let two_thirds = false
-	export let half = false
-	export let one_half = half
-	export let third = false
-	export let one_third = third
-	export let quarter = false
-	export let one_quarter = quarter
-
-	export let full_desktop = false
-	export let three_quarters_desktop = false
-	export let two_thirds_desktop = false
-	export let half_desktop = false
-	export let one_half_desktop = half_desktop
-	export let third_desktop = false
-	export let one_third_desktop = third_desktop
-	export let quarter_desktop = false
-	export let one_quarter_desktop = quarter_desktop
-
-	const numOfWidths = countTruthy(
-		full,
-		three_quarters,
-		two_thirds,
-		half,
-		one_half,
-		third,
-		one_third,
-		quarter,
-		one_quarter
-	)
-
-	const numOfDesktopWidths = countTruthy(
-		full_desktop,
-		three_quarters_desktop,
-		two_thirds_desktop,
-		half_desktop,
-		one_half_desktop,
-		third_desktop,
-		one_third_desktop,
-		quarter_desktop,
-		one_quarter_desktop
-	)
-
-	if (numOfWidths + numOfDesktopWidths === 0) {
-		throw new Error('A column (Col) must have a column width')
+	if (!width) {
+		throw new Error('A column (Col) must have a width')
 	}
 
-	if (numOfWidths > 1) {
-		throw new Error('A column (Col) cannot have more than one standard width')
+	if (!isValidWidth(width)) {
+		throw new Error('A column (Col) width must from the set of valid widths')
 	}
 
-	if (numOfDesktopWidths > 1) {
-		throw new Error('A column (Col) cannot have more than one desktop width')
+	let desktopWidthClass = ''
+	if (desktop_width) {
+		if (!isValidWidth(desktop_width)) {
+			throw new Error(
+				'A column (Col) desktop_width must from the set of valid widths'
+			)
+		}
+
+		desktopWidthClass = `govuk-grid-column-${desktop_width}-from-desktop`
 	}
 </script>
 
 <svelte:element
 	this="{type}"
 	id="{id}"
-	class:govuk-grid-column-full="{full}"
-	class:govuk-grid-column-three-quarters="{three_quarters}"
-	class:govuk-grid-column-two-thirds="{two_thirds}"
-	class:govuk-grid-column-one-half="{half || one_half}"
-	class:govuk-grid-column-one-third="{third || one_third}"
-	class:govuk-grid-column-one-quarter="{quarter || one_quarter}"
-	class:govuk-grid-column-full-from-desktop="{full_desktop}"
-	class:govuk-grid-column-three-quarters-from-desktop="{three_quarters_desktop}"
-	class:govuk-grid-column-two-thirds-from-desktop="{two_thirds_desktop}"
-	class:govuk-grid-column-one-half-from-desktop="{half_desktop ||
-		one_half_desktop}"
-	class:govuk-grid-column-one-third-from-desktop="{third_desktop ||
-		one_third_desktop}"
-	class:govuk-grid-column-one-quarter-from-desktop="{quarter_desktop ||
-		one_quarter_desktop}"
-	class="{c}">
+	class="govuk-grid-column-{width} {desktopWidthClass} {c}">
 	<slot />
 </svelte:element>

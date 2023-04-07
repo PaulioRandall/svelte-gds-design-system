@@ -2,9 +2,6 @@
 	import SectionBreak from '$govuk/SectionBreak.svelte'
 	import SummaryCard from '$govuk/SummaryCard.svelte'
 
-	import ButtonGroup from '$govuk/forms/ButtonGroup.svelte'
-	import Button from '$govuk/forms/Button.svelte'
-
 	import CodeBlock from '$shared/CodeBlock.svelte'
 
 	export let first_example = false
