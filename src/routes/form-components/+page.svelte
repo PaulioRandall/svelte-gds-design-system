@@ -44,7 +44,11 @@
 		<MenuItem href="/form-components/error-summary">ErrorSummary</MenuItem>
 		<!--<MenuItem href="/form-components/fieldset">Fieldset</MenuItem>-->
 		<!--<MenuItem href="/form-components/file-upload">File upload</MenuItem>-->
-		<MenuItem href="/form-components/radio-group">RadioGroup</MenuItem>
+		<MenuItem href="/form-components/radios">Radios</MenuItem>
+		<List double_indent>
+			<MenuItem href="/form-components/radio-group">RadioGroup</MenuItem>
+			<MenuItem href="/form-components/radio-button">RadioButton</MenuItem>
+		</List>
 		<MenuItem href="/form-components/select">Select</MenuItem>
 		<MenuItem href="/form-components/start-button">StartButton</MenuItem>
 		<MenuItem href="/form-components/text-input">TextInput</MenuItem>

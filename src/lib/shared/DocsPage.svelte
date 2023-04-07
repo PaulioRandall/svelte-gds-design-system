@@ -36,13 +36,22 @@
 		...
 	] */
 
+	export let see_also = null /* = [
+		['href', 'label'],
+		...
+	] */
+
 	export let examples /* = [
 		['id', 'label'],
 		...
 	] */
 
 	const hasConfig =
-		$$props.parents || $$props.children || $$slots.slots || $$slots.props
+		$$props.parents ||
+		$$props.children ||
+		$$props.see_also ||
+		$$slots.slots ||
+		$$slots.props
 </script>
 
 <SideMenuPage thick_content sticky_menu title="{title}">
@@ -73,6 +82,9 @@
 				{/if}
 				{#if $$props.children}
 					<MenuItem href="#children">Children</MenuItem>
+				{/if}
+				{#if $$props.see_also}
+					<MenuItem href="#see-also">See also</MenuItem>
 				{/if}
 			</List>
 		{/if}
@@ -120,6 +132,9 @@
 					{#if $$props.children}
 						<TabLabel id="children">Children</TabLabel>
 					{/if}
+					{#if $$props.see_also}
+						<TabLabel id="see-also">See also</TabLabel>
+					{/if}
 				</svelte:fragment>
 				<svelte:fragment slot="panels">
 					{#if $$props.parents}
@@ -145,6 +160,15 @@
 						<TabPanel id="children">
 							<List spaced="{$$props.children.length > 1}">
 								{#each children as [href, label]}
+									<MenuItem href="{href}">{label}</MenuItem>
+								{/each}
+							</List>
+						</TabPanel>
+					{/if}
+					{#if $$props.see_also}
+						<TabPanel id="see-also">
+							<List spaced="{$$props.see_also.length > 1}">
+								{#each see_also as [href, label]}
 									<MenuItem href="{href}">{label}</MenuItem>
 								{/each}
 							</List>
