@@ -1,4 +1,6 @@
 <script>
+	import Link from '$govuk/Link.svelte'
+
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsProp from '$shared/DocsProp.svelte'
 	import DocsSlot from '$shared/DocsSlot.svelte'
@@ -10,15 +12,16 @@
 
 <DocsPage
 	group="Form components"
-	title="Date input"
-	gds_name="Date input"
+	title="DateInput"
+	gds_name="DateInput"
 	gds_link="https://design-system.service.gov.uk/components/date-input/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/form-components', 'Form components'],
-		['/form-components/date-input', 'Date input'],
+		['/form-components/date-input', 'DateInput'],
 	]}"
-	examples="{[['example-minimalist', 'Minimalist']]}">
+	examples="{[['example-minimalist', 'Minimalist']]}"
+	children="{[['/form-components/date-unit', 'DateUnit']]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
 			first_example
@@ -30,12 +33,13 @@
 	</svelte:fragment>
 
 	<svelte:fragment slot="props">
-		<DocsProp name="id" type="string" summary="Wrapper element ID" />
+		<DocsProp name="id" type="string" summary="Form group element ID" />
 	</svelte:fragment>
 
 	<svelte:fragment slot="slots">
-		<DocsSlot
-			default_slot
-			summary="DateUnit's in the order they are to be presented" />
+		<DocsSlot required default_slot>
+			Series of <Link href="/form-components/date-unit">DateUnit</Link> components
+			in the order they are to be presented.
+		</DocsSlot>
 	</svelte:fragment>
 </DocsPage>

@@ -9,15 +9,16 @@
 
 <DocsPage
 	group="Form components"
-	title="Date unit"
-	gds_name="Date input"
+	title="DateUnit"
+	gds_name="DateInput"
 	gds_link="https://design-system.service.gov.uk/components/date-input/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/form-components', 'Form components'],
-		['/form-components/date-unit', 'Date unit'],
+		['/form-components/date-unit', 'DateUnit'],
 	]}"
-	examples="{[['example-minimalist', 'Minimalist']]}">
+	examples="{[['example-minimalist', 'Minimalist']]}"
+	parents="{[['/form-components/date-input', 'DateInput']]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
 			first_example
@@ -30,7 +31,7 @@
 
 	<svelte:fragment slot="props">
 		<DocsProp name="id" type="string" summary="Wrapper element ID" />
-		<DocsProp name="name" type="string" summary="Form field name" />
-		<DocsProp name="label" type="string" summary="Label text" />
+		<DocsProp required name="name" type="string" summary="Form field name" />
+		<DocsProp required name="label" type="string" summary="Label text" />
 	</svelte:fragment>
 </DocsPage>

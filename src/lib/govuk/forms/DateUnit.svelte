@@ -4,21 +4,20 @@
 	export let label // = ""
 
 	if (!name) {
-		throw new Error('A date unit must have a form field name')
+		throw new Error('A DateUnit must have a form field name')
 	}
 
 	if (!label) {
-		throw new Error('A date unit must have a label')
+		throw new Error('A DateUnit must have a label')
 	}
 </script>
 
-<div class="govuk-date-input__item">
+<div id="{id}" class="govuk-date-input__item">
 	<div class="govuk-form-group">
 		<label class="govuk-label govuk-date-input__label" for="{name}">
 			{label}
 		</label>
 		<input
-			id="{id}"
 			class="govuk-input govuk-date-input__input govuk-input--width-2"
 			name="{name}"
 			type="text"
