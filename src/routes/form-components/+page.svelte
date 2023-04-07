@@ -24,26 +24,30 @@
 
 	<Heading id="page-title" h1 xl>
 		<Caption xl>Svelte components</Caption>
-		General components
+		Form components
 	</Heading>
 
 	<List spaced>
 		<MenuItem href="/form-components/button">Button</MenuItem>
 		<List double_indent>
-			<MenuItem href="/form-components/button-group">Button group</MenuItem>
+			<MenuItem href="/form-components/button-group">ButtonGroup</MenuItem>
 		</List>
 		<MenuItem href="/form-components/checkboxes">Checkboxes</MenuItem>
-		<MenuItem href="/form-components/date-input">Date input</MenuItem>
 		<List double_indent>
-			<MenuItem href="/form-components/date-unit">Date unit</MenuItem>
+			<MenuItem href="/form-components/checkbox">Checkbox</MenuItem>
+			<MenuItem href="/form-components/checkbox-group">CheckboxGroup</MenuItem>
 		</List>
-		<MenuItem href="/form-components/error-summary">Error summary</MenuItem>
+		<MenuItem href="/form-components/date-input">DateInput</MenuItem>
+		<List double_indent>
+			<MenuItem href="/form-components/date-unit">DateUnit</MenuItem>
+		</List>
+		<MenuItem href="/form-components/error-summary">ErrorSummary</MenuItem>
 		<!--<MenuItem href="/form-components/fieldset">Fieldset</MenuItem>-->
 		<!--<MenuItem href="/form-components/file-upload">File upload</MenuItem>-->
-		<MenuItem href="/form-components/radio-group">Radio group</MenuItem>
+		<MenuItem href="/form-components/radio-group">RadioGroup</MenuItem>
 		<MenuItem href="/form-components/select">Select</MenuItem>
-		<MenuItem href="/form-components/start-button">Start button</MenuItem>
-		<MenuItem href="/form-components/text-input">Text input</MenuItem>
+		<MenuItem href="/form-components/start-button">StartButton</MenuItem>
+		<MenuItem href="/form-components/text-input">TextInput</MenuItem>
 		<MenuItem href="/form-components/textarea">Textarea</MenuItem>
 	</List>
 </SideMenuPage>

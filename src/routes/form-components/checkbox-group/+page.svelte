@@ -1,6 +1,9 @@
 <script>
+	import Link from '$govuk/Link.svelte'
+
 	import DocsPage from '$shared/DocsPage.svelte'
 	import DocsProp from '$shared/DocsProp.svelte'
+	import DocsSlot from '$shared/DocsSlot.svelte'
 	import DocsExample from '$shared/DocsExample.svelte'
 
 	import ExampleMinimalist from './ExampleMinimalist.svelte'
@@ -9,15 +12,16 @@
 
 <DocsPage
 	group="Form components"
-	title="Checkboxes"
+	title="CheckboxGroup"
 	gds_name="Checkboxes"
 	gds_link="https://design-system.service.gov.uk/components/checkboxes/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/form-components', 'Form components'],
-		['/form-components/checkboxes', 'Checkboxes'],
+		['/form-components/checkbox-group', 'CheckboxGroup'],
 	]}"
-	examples="{[['example-minimalist', 'Minimalist']]}">
+	examples="{[['example-minimalist', 'Minimalist']]}"
+	children="{[['/form-components/checkbox', 'Checkbox']]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
 			first_example
@@ -29,13 +33,12 @@
 	</svelte:fragment>
 
 	<svelte:fragment slot="props">
-		<DocsProp name="id" type="string" summary="Wrapper element ID" />
-		<DocsProp required name="name" type="string" summary="Form field name" />
-		<DocsProp required name="label" type="string" summary="Label text" />
-		<DocsProp
-			required
-			name="options"
-			type="[['value', 'label', 'id']...]"
-			summary="List of options" />
+		<DocsProp name="id" type="string" summary="Input element ID" />
+	</svelte:fragment>
+
+	<svelte:fragment slot="slots">
+		<DocsSlot default_slot>
+			Series of <Link href="/form-components/checkbox">Checkbox</Link> components.
+		</DocsSlot>
 	</svelte:fragment>
 </DocsPage>

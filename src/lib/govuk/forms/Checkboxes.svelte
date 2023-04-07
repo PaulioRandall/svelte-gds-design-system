@@ -1,5 +1,6 @@
 <script>
 	import Checkbox from '$govuk/forms/Checkbox.svelte'
+	import CheckboxGroup from '$govuk/forms/CheckboxGroup.svelte'
 
 	export let id = undefined // ""
 	export let name // = ""
@@ -17,10 +18,8 @@
 	}
 </script>
 
-<div class="govuk-form-group">
-	<div id="{id}" class="govuk-checkboxes" data-module="govuk-checkboxes">
-		{#each options as [value, label, optId]}
-			<Checkbox name="{name}" value="{value}" label="{label}" id="{optId}" />
-		{/each}
-	</div>
-</div>
+<CheckboxGroup id="{id}">
+	{#each options as [value, label, optId]}
+		<Checkbox name="{name}" value="{value}" label="{label}" id="{optId}" />
+	{/each}
+</CheckboxGroup>

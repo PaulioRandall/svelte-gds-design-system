@@ -44,6 +44,8 @@ const formDocsPages = [
 	'button',
 	'button-group',
 	'checkboxes',
+	'checkbox',
+	'checkbox-group',
 	'date-input',
 	'date-unit',
 	'error-summary',

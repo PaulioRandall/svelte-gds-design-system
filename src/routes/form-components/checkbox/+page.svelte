@@ -9,15 +9,16 @@
 
 <DocsPage
 	group="Form components"
-	title="Checkboxes"
+	title="Checkbox"
 	gds_name="Checkboxes"
 	gds_link="https://design-system.service.gov.uk/components/checkboxes/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/form-components', 'Form components'],
-		['/form-components/checkboxes', 'Checkboxes'],
+		['/form-components/checkbox', 'Checkbox'],
 	]}"
-	examples="{[['example-minimalist', 'Minimalist']]}">
+	examples="{[['example-minimalist', 'Minimalist']]}"
+	parents="{[['/form-components/checkbox-group', 'CheckboxGroup']]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
 			first_example
@@ -29,13 +30,9 @@
 	</svelte:fragment>
 
 	<svelte:fragment slot="props">
-		<DocsProp name="id" type="string" summary="Wrapper element ID" />
+		<DocsProp name="id" type="string" summary="Input element ID" />
 		<DocsProp required name="name" type="string" summary="Form field name" />
+		<DocsProp required name="value" type="string" summary="Form field value" />
 		<DocsProp required name="label" type="string" summary="Label text" />
-		<DocsProp
-			required
-			name="options"
-			type="[['value', 'label', 'id']...]"
-			summary="List of options" />
 	</svelte:fragment>
 </DocsPage>
