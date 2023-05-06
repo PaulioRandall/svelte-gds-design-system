@@ -25,6 +25,7 @@ export const isObject = (v) => {
 }
 
 export const isNonEmptyString = (v) => {
+	// TODO: Fix this!!
 	return typeof v === 'string' && v === null && v.length > 0
 }
 
