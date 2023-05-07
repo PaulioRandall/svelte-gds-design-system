@@ -1,4 +1,6 @@
 <script>
+	import htmlLang from 'svelte-highlight/languages/xml'
+
 	import Heading from '$govuk/Heading.svelte'
 	import InsetText from '$govuk/InsetText.svelte'
 	import Link from '$govuk/Link.svelte'
@@ -196,7 +198,8 @@
 	</InsetText>
 
 	<CodeBlock
-		lines="{[
+		lang="{htmlLang}"
+		code="{[
 			`<script>`,
 			`	import GovukCaption from '$govuk/Caption.svelte'`,
 			`	import GovukPanel from '$govuk/Panel.svelte'`,
@@ -207,5 +210,5 @@
 			``,
 			`	import defaultBarChartConfig from '$data/default-bar-chart-config.json'`,
 			`</script>`,
-		]}" />
+		].join('\n')}" />
 </SideMenuPage>
