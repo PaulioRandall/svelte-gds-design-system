@@ -1,5 +1,5 @@
 {
-	"name": "sveltekit-template",
+	"name": "svelte-gds-design-system",
 	"version": "0.1.0",
 	"type": "module",
 	"engines": {
@@ -19,7 +19,7 @@
 		"test-service-cypress": "cypress run --headless -b electron",
 		"test-service": "start-server-and-test \"npm run test-service-start\" http://localhost:4000 \"npm run test-service-cypress\"",
 		"yay": "cat ./scripts/well-done.txt",
-		"==========================#=#==========================": "",
+		"=======================================================1": "",
 		"clean": "rm -rf .svelte-kit .vercel && bash ./scripts/govuk-frontend-clean.sh",
 		"init": "bash ./scripts/govuk-frontend-init.sh",
 		"build": "npm run fmt && vite build",
@@ -27,7 +27,7 @@
 		"preview": "npm run build && vite preview --port 3000",
 		"test": "npm run test-code && npm run test-service",
 		"ready?": "npm run build && npm run test && npm run yay",
-		"=========================#=#=#=========================": "",
+		"=======================================================2": "",
 		"auto-build": "vite build",
 		"auto-test": "npm run test-code"
 	},
