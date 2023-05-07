@@ -20,7 +20,9 @@
 		['/general-components', 'General components'],
 		['/general-components/breadcrumbs', 'Breadcrumbs'],
 	]}"
-	children="{[['/general-components/breadcrumb', 'Breadcrumb']]}"
+	children="{[
+		['/general-components/breadcrumbs-segment', 'Breadcrumbs segment'],
+	]}"
 	examples="{[['example-minimalist', 'Minimalist']]}">
 	<svelte:fragment slot="examples">
 		<DocsExample
@@ -44,7 +46,8 @@
 
 	<svelte:fragment slot="slots">
 		<DocsSlot required default_slot>
-			Serise of <Link href="/general-components/breadcrumb">Breadcrumb</Link> components.
+			Serise of <Link href="/general-components/breadcrumbs-segment"
+				>Breadcrumbs segment</Link> components.
 		</DocsSlot>
 	</svelte:fragment>
 </DocsPage>

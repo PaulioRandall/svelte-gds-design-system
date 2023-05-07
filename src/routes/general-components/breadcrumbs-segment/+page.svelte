@@ -12,13 +12,13 @@
 
 <DocsPage
 	group="General components"
-	title="Breadcrumb"
+	title="Breadcrumbs segment"
 	gds_name="Breadcrumbs"
 	gds_link="https://design-system.service.gov.uk/components/breadcrumbs/"
 	crumbs="{[
 		['/home', 'Home'],
 		['/general-components', 'General components'],
-		['/general-components/breadcrumb', 'Breadcrumb'],
+		['/general-components/breadcrumbs-segment', 'Breadcrumbs segment'],
 	]}"
 	parents="{[['/general-components/breadcrumbs', 'Breadcrumbs']]}"
 	examples="{[['example-minimalist', 'Minimalist']]}">

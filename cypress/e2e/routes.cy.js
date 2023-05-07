@@ -23,7 +23,7 @@ const generalDocsPages = [
 	'accordion-section',
 	'back-link',
 	'breadcrumbs',
-	'breadcrumb',
+	'breadcrumbs-segment',
 	'caption',
 	'details',
 	'heading',

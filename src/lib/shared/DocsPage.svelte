@@ -1,6 +1,6 @@
 <script>
 	import Breadcrumbs from '$govuk/Breadcrumbs.svelte'
-	import Breadcrumb from '$govuk/Breadcrumb.svelte'
+	import BreadcrumbsSegment from '$govuk/BreadcrumbsSegment.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import Link from '$govuk/Link.svelte'
@@ -57,7 +57,7 @@
 <SideMenuPage thick_content sticky_menu title="{title}">
 	<Breadcrumbs slot="breadcrumbs" collapsable>
 		{#each crumbs as [href, label]}
-			<Breadcrumb href="{href}">{label}</Breadcrumb>
+			<BreadcrumbsSegment href="{href}">{label}</BreadcrumbsSegment>
 		{/each}
 	</Breadcrumbs>
 

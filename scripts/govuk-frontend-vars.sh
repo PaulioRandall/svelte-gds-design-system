@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # These variables are shared between 'govuk-frontend-init.sh' and
-# 'govuk-frontend-clean.sh'  
+# 'govuk-frontend-clean.sh'
 
-version="4.5.0"
+# https://github.com/alphagov/govuk-frontend
+version="4.6.0"
 
 src_dir="./govuk-frontend/dist"
 filename="govuk-frontend-${version}"

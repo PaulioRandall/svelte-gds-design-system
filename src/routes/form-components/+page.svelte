@@ -1,6 +1,6 @@
 <script>
 	import Breadcrumbs from '$govuk/Breadcrumbs.svelte'
-	import Breadcrumb from '$govuk/Breadcrumb.svelte'
+	import BreadcrumbsSegment from '$govuk/BreadcrumbsSegment.svelte'
 	import Caption from '$govuk/Caption.svelte'
 	import Heading from '$govuk/Heading.svelte'
 	import List from '$govuk/List.svelte'
@@ -12,8 +12,9 @@
 
 <SideMenuPage sticky_menu title="General components">
 	<Breadcrumbs slot="breadcrumbs" collapsable>
-		<Breadcrumb href="/home">Home</Breadcrumb>
-		<Breadcrumb href="/form-components">Form components</Breadcrumb>
+		<BreadcrumbsSegment href="/home">Home</BreadcrumbsSegment>
+		<BreadcrumbsSegment href="/form-components"
+			>Form components</BreadcrumbsSegment>
 	</Breadcrumbs>
 
 	<!--
